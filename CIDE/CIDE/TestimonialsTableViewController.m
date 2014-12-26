@@ -8,6 +8,7 @@
 
 #import "TestimonialsTableViewController.h"
 #import <AFHTTPRequestOperationManager.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -43,6 +44,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.center = self.view.center;
+    [self.view addSubview:loginView];
+    
+    
     self.genderData = @[@"Masculino", @"Femenino"];
     self.educationData = @[@"Primaria", @"Secundaria", @"Técnico", @"Medio superior", @"Superior", @"Maestría", @"Doctorado"];
     self.categoryData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];

@@ -15,6 +15,8 @@
 		EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A431A4D123000046820 /* LaunchScreen.xib */; };
 		EFEF6A511A4D123000046820 /* CIDETests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A501A4D123000046820 /* CIDETests.m */; };
 		EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A5B1A4D19A200046820 /* TestimonialsTableViewController.m */; };
+		EFEF6D581A4E0C8800046820 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6C3D1A4E0C8700046820 /* FacebookSDK.framework */; };
+		EFEF6D591A4E0C8800046820 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6C3E1A4E0C8700046820 /* FBAudienceNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		EFEF6A501A4D123000046820 /* CIDETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIDETests.m; sourceTree = "<group>"; };
 		EFEF6A5A1A4D19A200046820 /* TestimonialsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialsTableViewController.h; sourceTree = "<group>"; };
 		EFEF6A5B1A4D19A200046820 /* TestimonialsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialsTableViewController.m; sourceTree = "<group>"; };
+		EFEF6C3D1A4E0C8700046820 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		EFEF6C3E1A4E0C8700046820 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAudienceNetwork.framework; path = FacebookSDK/FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +56,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3191832CD86C943D575AED91 /* libPods-CIDE.a in Frameworks */,
+				EFEF6D581A4E0C8800046820 /* FacebookSDK.framework in Frameworks */,
+				EFEF6D591A4E0C8800046820 /* FBAudienceNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,8 @@
 		4365F88347F75898323020D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFEF6C3D1A4E0C8700046820 /* FacebookSDK.framework */,
+				EFEF6C3E1A4E0C8700046820 /* FBAudienceNetwork.framework */,
 				A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */,
 			);
 			name = Frameworks;
@@ -208,6 +216,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = EFEF6A281A4D123000046820;
 			productRefGroup = EFEF6A321A4D123000046820 /* Products */;
@@ -403,6 +412,10 @@
 			baseConfigurationReference = FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+				);
 				INFOPLIST_FILE = CIDE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +427,10 @@
 			baseConfigurationReference = 0F773C2C6F2CD1C903C2F623 /* Pods-CIDE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+				);
 				INFOPLIST_FILE = CIDE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
