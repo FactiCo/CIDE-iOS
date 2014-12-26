@@ -92,7 +92,7 @@
 
 - (void)collectData {
     
-    self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text};
+    self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text,@"dispositivo":@"iPhone"};
     
    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:@"http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
