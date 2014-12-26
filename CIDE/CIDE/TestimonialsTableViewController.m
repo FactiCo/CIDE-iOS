@@ -7,6 +7,7 @@
 //
 
 #import "TestimonialsTableViewController.h"
+#import <AFHTTPRequestOperationManager.h>
 
 @interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -23,11 +24,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *educationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *entityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 
 @property (nonatomic, retain) NSArray *genderData;
 @property (nonatomic, retain) NSArray *educationData;
 @property (nonatomic, retain) NSArray *categoryData;
 @property (nonatomic, retain) NSArray *entityData;
+@property (nonatomic, retain) NSDictionary *params;
 
 @property (nonatomic) BOOL isGenderSelected;
 @property (nonatomic) BOOL isEducationSelected;
@@ -44,6 +47,10 @@
     self.educationData = @[@"Primaria", @"Secundaria", @"Técnico", @"Medio superior", @"Superior", @"Maestría", @"Doctorado"];
     self.categoryData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];
     self.entityData = @[@"Aguascalientes", @"Baja California", @"Baja California Sur", @"Campeche", @"Chiapas", @"Chihuahua", @"Coahuila", @"Colima", @"Distrito Federal", @"Durango",@"Estado de México", @"Guanajuato", @"Guerrero", @"Hidalgo", @"Jalisco", @"Michoacán", @"Morelos", @"Nayarit", @"Nuevo León", @"Oaxaca", @"Puebla", @"Querétaro", @"Quintana Roo", @"San Luis Potosí", @"Sinaloa", @"Sonora", @"Tabasco", @"Tamaulipas", @"Tlaxcala", @"Veracruz", @"Yucatán", @"Zacatecas"];
+    self.genderLabel.text = [self.genderData objectAtIndex:0];
+    self.educationLabel.text = [self.educationData objectAtIndex:0];
+    self.categoryLabel.text = [self.categoryData objectAtIndex:0];
+    self.entityLabel.text = [self.entityData objectAtIndex:0];
     
 }
 
@@ -52,24 +59,48 @@
 }
 
 - (IBAction)doneAction:(id)sender {
-    [self verifyCorrectData];
+    BOOL data = [self verifyCorrectData];
+    if (data) {
+        [self collectData];
+    }
 }
 
 
-- (void)verifyCorrectData {
+- (BOOL)verifyCorrectData {
     if ([self.emailTextField.text length] > 0) {
         if (![self validateEmail: self.emailTextField.text]) {
             [self showAlert:@"Datos incorrectos" msg:@"Ingresa una dirección de correo válida"];
+            return NO;
         }
     }
     if ([self.ageTextField.text length] == 0) {
         [self showAlert:@"Datos incompletos" msg:@"Ingresa tu edad"];
-    } else {
-        if (![self validateAge:self.ageTextField.text]) {
-            [self showAlert:@"Datos incorrectos" msg:@"Ingresa una edad válida"];
-        }
+        return NO;
+    }
+    if (![self validateAge:self.ageTextField.text]) {
+        [self showAlert:@"Datos incorrectos" msg:@"Ingresa una edad válida"];
+        return NO;
+    }
+
+    if ([self.explanationTextView.text length] == 0) {
+        [self showAlert:@"Datos incompletos" msg:@"Ingresa una explicación"];
+        return NO;
     }
     
+    return YES;
+}
+
+- (void)collectData {
+    
+    self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text};
+    
+   /* AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:@"http://example.com/resources.json" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];*/
+   
 }
 
 - (void)showAlert:(NSString *)title msg:(NSString *)message {
@@ -97,6 +128,15 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     
     return [emailTest evaluateWithObject:candidate];
+}
+
+
+- (BOOL)validateExplanationLength:(NSUInteger)length {
+    return length <= 2000;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)string {
+    return [self validateExplanationLength:self.explanationTextView.text.length + string.length - range.length];
 }
 
 - (void)hideNumericKeyboard {
@@ -144,8 +184,9 @@
         } else {
             return 44;
         }
-    }
-    else {
+    } else if (indexPath.section == 2 && indexPath.row == 2){
+        return 150;
+    } else {
         return self.tableView.rowHeight;
     }
 }
@@ -223,6 +264,24 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self hideNumericKeyboard];
+}
+
+#pragma mark - textView explicacion
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if (![textView hasText]) {
+        self.explanationLabel.hidden = NO;
+    }
+}
+
+- (void) textViewDidChange:(UITextView *)textView
+{
+    if(![textView hasText]) {
+        self.explanationLabel.hidden = NO;
+    } else {
+        self.explanationLabel.hidden = YES;
+    }
 }
 
 @end

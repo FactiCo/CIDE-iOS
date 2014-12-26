@@ -10,7 +10,6 @@
 		3191832CD86C943D575AED91 /* libPods-CIDE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */; };
 		EFEF6A371A4D123000046820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A361A4D123000046820 /* main.m */; };
 		EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A391A4D123000046820 /* AppDelegate.m */; };
-		EFEF6A3D1A4D123000046820 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A3C1A4D123000046820 /* ViewController.m */; };
 		EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */; };
 		EFEF6A421A4D123000046820 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A411A4D123000046820 /* Images.xcassets */; };
 		EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A431A4D123000046820 /* LaunchScreen.xib */; };
@@ -36,8 +35,6 @@
 		EFEF6A361A4D123000046820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EFEF6A381A4D123000046820 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EFEF6A391A4D123000046820 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EFEF6A3B1A4D123000046820 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EFEF6A3C1A4D123000046820 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EFEF6A3F1A4D123000046820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Testimonials.storyboard; sourceTree = "<group>"; };
 		EFEF6A411A4D123000046820 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFEF6A441A4D123000046820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -110,8 +107,6 @@
 			children = (
 				EFEF6A381A4D123000046820 /* AppDelegate.h */,
 				EFEF6A391A4D123000046820 /* AppDelegate.m */,
-				EFEF6A3B1A4D123000046820 /* ViewController.h */,
-				EFEF6A3C1A4D123000046820 /* ViewController.m */,
 				EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */,
 				EFEF6A5A1A4D19A200046820 /* TestimonialsTableViewController.h */,
 				EFEF6A5B1A4D19A200046820 /* TestimonialsTableViewController.m */,
@@ -283,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFEF6A3D1A4D123000046820 /* ViewController.m in Sources */,
 				EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */,
 				EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */,
 				EFEF6A371A4D123000046820 /* main.m in Sources */,

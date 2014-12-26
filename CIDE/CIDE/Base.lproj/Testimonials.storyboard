@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-196" y="296"/>
         </scene>
-        <!--FORMULARIO-->
+        <!--TESTIMONIOS-->
         <scene sceneID="d4t-ki-bwD">
             <objects>
                 <tableViewController id="u9C-CI-tbw" customClass="TestimonialsTableViewController" sceneMemberID="viewController">
@@ -123,7 +123,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Escolaridad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM2-rw-Tu4">
-                                                    <rect key="frame" x="21" y="11" width="87" height="21"/>
+                                                    <rect key="frame" x="19" y="11" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -191,13 +191,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entidad Federativa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gg-HB-QUd">
-                                                    <rect key="frame" x="17" y="15" width="128" height="21"/>
+                                                    <rect key="frame" x="19" y="15" width="128" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZx-ZW-Di9">
-                                                    <rect key="frame" x="153" y="14" width="152" height="21"/>
+                                                    <rect key="frame" x="160" y="14" width="152" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -217,17 +217,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="48" id="h0U-II-E8o">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="h0U-II-E8o">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h0U-II-E8o" id="9Zc-mf-dkJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Explicación:" translatesAutoresizingMaskIntoConstraints="NO" id="Le9-Ix-1mF">
-                                                    <rect key="frame" x="12" y="0.0" width="296" height="47"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Le9-Ix-1mF">
+                                                    <rect key="frame" x="12" y="1" width="296" height="47"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="u9C-CI-tbw" id="CdU-2z-ho8"/>
+                                                    </connections>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explicación" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myl-qq-Gb7">
+                                                    <rect key="frame" x="19" y="8" width="104" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Le9-Ix-1mF" firstAttribute="top" secondItem="9Zc-mf-dkJ" secondAttribute="top" id="0CW-xx-Pqg"/>
@@ -245,7 +254,7 @@
                             <outlet property="delegate" destination="u9C-CI-tbw" id="nu7-V1-nQn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="FORMULARIO" id="EEE-bK-TBg">
+                    <navigationItem key="navigationItem" title="TESTIMONIOS" id="EEE-bK-TBg">
                         <barButtonItem key="rightBarButtonItem" title="Listo" id="ko5-lX-C38">
                             <connections>
                                 <action selector="doneAction:" destination="u9C-CI-tbw" id="DZv-zl-TVV"/>
@@ -263,6 +272,7 @@
                         <outlet property="emailTextField" destination="zOC-81-3Rq" id="BRn-s8-IPr"/>
                         <outlet property="entityLabel" destination="WZx-ZW-Di9" id="vft-c9-TEt"/>
                         <outlet property="entityPicker" destination="Q3l-m9-b3q" id="VQ5-tz-V7x"/>
+                        <outlet property="explanationLabel" destination="myl-qq-Gb7" id="6hI-Zs-98O"/>
                         <outlet property="explanationTextView" destination="Le9-Ix-1mF" id="JO8-Tf-z76"/>
                         <outlet property="genderLabel" destination="7EQ-UO-RpH" id="sRe-mg-mvO"/>
                         <outlet property="genderPicker" destination="0HR-Dd-7kV" id="B2K-bp-evG"/>
@@ -271,7 +281,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KQ-Fv-4Ma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="612"/>
+            <point key="canvasLocation" x="188" y="611"/>
         </scene>
     </scenes>
 </document>
