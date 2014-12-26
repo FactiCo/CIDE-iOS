@@ -94,12 +94,12 @@
     
     self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text};
     
-   /* AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://example.com/resources.json" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:@"http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-    }];*/
+    }];
    
 }
 
