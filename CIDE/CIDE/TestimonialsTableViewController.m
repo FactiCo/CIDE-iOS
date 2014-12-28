@@ -7,8 +7,7 @@
 //
 
 #import "TestimonialsTableViewController.h"
-#import <AFHTTPRequestOperationManager.h>
-#import <FacebookSDK/FacebookSDK.h>
+#import "LoginViewController.h"
 
 @interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -45,10 +44,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.center = self.view.center;
-    [self.view addSubview:loginView];
     
     
     self.genderData = @[@"Masculino", @"Femenino"];
@@ -102,12 +97,7 @@
     
     self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text};
     
-   /* AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://example.com/resources.json" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];*/
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
    
 }
 
@@ -283,13 +273,21 @@
     }
 }
 
-- (void) textViewDidChange:(UITextView *)textView
+- (void)textViewDidChange:(UITextView *)textView
 {
     if(![textView hasText]) {
         self.explanationLabel.hidden = NO;
     } else {
         self.explanationLabel.hidden = YES;
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"loginSegue"]) {
+        LoginViewController *controller = segue.destinationViewController;
+        controller.params = self.params;
+    }
+
 }
 
 @end

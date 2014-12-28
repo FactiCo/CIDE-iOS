@@ -4,7 +4,6 @@
 target 'CIDE' do
 pod 'AFNetworking', '2.2.1'
 pod 'Facebook-iOS-SDK'
-pod 'mopub-ios-sdk'
 
 end
 
