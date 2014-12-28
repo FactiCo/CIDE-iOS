@@ -7,7 +7,7 @@
 //
 
 #import "TestimonialsTableViewController.h"
-#import <AFHTTPRequestOperationManager.h>
+#import "LoginViewController.h"
 
 @interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -43,6 +43,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     self.genderData = @[@"Masculino", @"Femenino"];
     self.educationData = @[@"Primaria", @"Secundaria", @"Técnico", @"Medio superior", @"Superior", @"Maestría", @"Doctorado"];
     self.categoryData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];
@@ -94,13 +97,7 @@
     
     self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text,@"dispositivo":@"iPhone"};
     
-   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-   
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }
 
 - (void)showAlert:(NSString *)title msg:(NSString *)message {
@@ -275,13 +272,21 @@
     }
 }
 
-- (void) textViewDidChange:(UITextView *)textView
+- (void)textViewDidChange:(UITextView *)textView
 {
     if(![textView hasText]) {
         self.explanationLabel.hidden = NO;
     } else {
         self.explanationLabel.hidden = YES;
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"loginSegue"]) {
+        LoginViewController *controller = segue.destinationViewController;
+        controller.params = self.params;
+    }
+
 }
 
 @end

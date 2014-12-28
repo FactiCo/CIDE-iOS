@@ -15,6 +15,20 @@
 		EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A431A4D123000046820 /* LaunchScreen.xib */; };
 		EFEF6A511A4D123000046820 /* CIDETests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A501A4D123000046820 /* CIDETests.m */; };
 		EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A5B1A4D19A200046820 /* TestimonialsTableViewController.m */; };
+		EFEF6E1A1A4F7BF100046820 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E191A4F7BF100046820 /* Twitter.framework */; };
+		EFEF6E1D1A4F7D9200046820 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6E1C1A4F7D9200046820 /* LoginViewController.m */; };
+		EFEF6E1F1A4F80C800046820 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E1E1A4F80C800046820 /* Parse.framework */; };
+		EFEF6E211A4F80F000046820 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E201A4F80F000046820 /* AudioToolbox.framework */; };
+		EFEF6E231A4F80F700046820 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E221A4F80F700046820 /* CFNetwork.framework */; };
+		EFEF6E251A4F810000046820 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E241A4F810000046820 /* CoreGraphics.framework */; };
+		EFEF6E271A4F810600046820 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E261A4F810600046820 /* CoreLocation.framework */; };
+		EFEF6E291A4F810E00046820 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E281A4F810E00046820 /* MobileCoreServices.framework */; };
+		EFEF6E2B1A4F811800046820 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E2A1A4F811800046820 /* QuartzCore.framework */; };
+		EFEF6E2D1A4F812100046820 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E2C1A4F812100046820 /* Security.framework */; };
+		EFEF6E2F1A4F812900046820 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E2E1A4F812900046820 /* StoreKit.framework */; };
+		EFEF6E311A4F813300046820 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E301A4F813300046820 /* SystemConfiguration.framework */; };
+		EFEF6E331A4F814000046820 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E321A4F814000046820 /* libz.dylib */; };
+		EFEF6E351A4F815800046820 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E341A4F815800046820 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +57,21 @@
 		EFEF6A501A4D123000046820 /* CIDETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIDETests.m; sourceTree = "<group>"; };
 		EFEF6A5A1A4D19A200046820 /* TestimonialsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialsTableViewController.h; sourceTree = "<group>"; };
 		EFEF6A5B1A4D19A200046820 /* TestimonialsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialsTableViewController.m; sourceTree = "<group>"; };
+		EFEF6E191A4F7BF100046820 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		EFEF6E1B1A4F7D9200046820 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EFEF6E1C1A4F7D9200046820 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EFEF6E1E1A4F80C800046820 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		EFEF6E201A4F80F000046820 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EFEF6E221A4F80F700046820 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EFEF6E241A4F810000046820 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EFEF6E261A4F810600046820 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EFEF6E281A4F810E00046820 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EFEF6E2A1A4F811800046820 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EFEF6E2C1A4F812100046820 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EFEF6E2E1A4F812900046820 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EFEF6E301A4F813300046820 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EFEF6E321A4F814000046820 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EFEF6E341A4F815800046820 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +80,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFEF6E351A4F815800046820 /* libsqlite3.dylib in Frameworks */,
+				EFEF6E331A4F814000046820 /* libz.dylib in Frameworks */,
+				EFEF6E311A4F813300046820 /* SystemConfiguration.framework in Frameworks */,
+				EFEF6E2F1A4F812900046820 /* StoreKit.framework in Frameworks */,
+				EFEF6E2D1A4F812100046820 /* Security.framework in Frameworks */,
+				EFEF6E2B1A4F811800046820 /* QuartzCore.framework in Frameworks */,
+				EFEF6E291A4F810E00046820 /* MobileCoreServices.framework in Frameworks */,
+				EFEF6E271A4F810600046820 /* CoreLocation.framework in Frameworks */,
+				EFEF6E251A4F810000046820 /* CoreGraphics.framework in Frameworks */,
+				EFEF6E231A4F80F700046820 /* CFNetwork.framework in Frameworks */,
+				EFEF6E211A4F80F000046820 /* AudioToolbox.framework in Frameworks */,
+				EFEF6E1A1A4F7BF100046820 /* Twitter.framework in Frameworks */,
+				EFEF6E1F1A4F80C800046820 /* Parse.framework in Frameworks */,
 				3191832CD86C943D575AED91 /* libPods-CIDE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +110,19 @@
 		4365F88347F75898323020D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFEF6E341A4F815800046820 /* libsqlite3.dylib */,
+				EFEF6E321A4F814000046820 /* libz.dylib */,
+				EFEF6E301A4F813300046820 /* SystemConfiguration.framework */,
+				EFEF6E2E1A4F812900046820 /* StoreKit.framework */,
+				EFEF6E2C1A4F812100046820 /* Security.framework */,
+				EFEF6E2A1A4F811800046820 /* QuartzCore.framework */,
+				EFEF6E281A4F810E00046820 /* MobileCoreServices.framework */,
+				EFEF6E261A4F810600046820 /* CoreLocation.framework */,
+				EFEF6E241A4F810000046820 /* CoreGraphics.framework */,
+				EFEF6E221A4F80F700046820 /* CFNetwork.framework */,
+				EFEF6E201A4F80F000046820 /* AudioToolbox.framework */,
+				EFEF6E1E1A4F80C800046820 /* Parse.framework */,
+				EFEF6E191A4F7BF100046820 /* Twitter.framework */,
 				A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */,
 			);
 			name = Frameworks;
@@ -108,6 +163,8 @@
 				EFEF6A381A4D123000046820 /* AppDelegate.h */,
 				EFEF6A391A4D123000046820 /* AppDelegate.m */,
 				EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */,
+				EFEF6E1B1A4F7D9200046820 /* LoginViewController.h */,
+				EFEF6E1C1A4F7D9200046820 /* LoginViewController.m */,
 				EFEF6A5A1A4D19A200046820 /* TestimonialsTableViewController.h */,
 				EFEF6A5B1A4D19A200046820 /* TestimonialsTableViewController.m */,
 				EFEF6A411A4D123000046820 /* Images.xcassets */,
@@ -208,6 +265,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = EFEF6A281A4D123000046820;
 			productRefGroup = EFEF6A321A4D123000046820 /* Products */;
@@ -278,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFEF6E1D1A4F7D9200046820 /* LoginViewController.m in Sources */,
 				EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */,
 				EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */,
 				EFEF6A371A4D123000046820 /* main.m in Sources */,
@@ -403,6 +462,11 @@
 			baseConfigurationReference = FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CIDE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -415,6 +479,11 @@
 			baseConfigurationReference = 0F773C2C6F2CD1C903C2F623 /* Pods-CIDE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CIDE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

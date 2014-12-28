@@ -20,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sop-5d-x0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="296"/>
+            <point key="canvasLocation" x="-157" y="337"/>
         </scene>
         <!--TESTIMONIOS-->
         <scene sceneID="d4t-ki-bwD">
@@ -277,11 +277,32 @@
                         <outlet property="genderLabel" destination="7EQ-UO-RpH" id="sRe-mg-mvO"/>
                         <outlet property="genderPicker" destination="0HR-Dd-7kV" id="B2K-bp-evG"/>
                         <outlet property="nameTextField" destination="cfr-vp-7xm" id="lZf-1n-0yZ"/>
+                        <segue destination="LOq-NK-6tU" kind="show" identifier="loginSegue" id="Rfw-mj-plh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KQ-Fv-4Ma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="611"/>
+            <point key="canvasLocation" x="233" y="653"/>
+        </scene>
+        <!--TESTIMONIOS-->
+        <scene sceneID="oNj-yM-R9m">
+            <objects>
+                <viewController title="TESTIMONIOS" id="LOq-NK-6tU" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ER2-dV-2aF"/>
+                        <viewControllerLayoutGuide type="bottom" id="XOE-Cy-BsT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IHb-Ky-zkO">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpf-gN-lZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="337"/>
         </scene>
     </scenes>
 </document>
