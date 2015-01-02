@@ -92,7 +92,7 @@
 }
 
 - (void)collectData {
-    self.params = @{@"nombre":self.nameTextField.text,@"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text,@"dispositivo":@"iPhone"};
+    self.params = @{@"nombre":self.nameTextField.text, @"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text, @"dispositivo":@"iPhone"};
     [self sendData];
 }
 

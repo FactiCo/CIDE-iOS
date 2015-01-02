@@ -34,12 +34,6 @@
     self.descriptionTextView.text = [self.descriptionData objectAtIndex:option];
 }
 
-- (IBAction)goFormulario:(id)sender {
-    [self performSegueWithIdentifier:@"goToFormulario" sender:self];
-}
-- (IBAction)seeTest:(id)sender {
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"goToFormulario"]) {
         TestimonialsTableViewController *controller = segue.destinationViewController;

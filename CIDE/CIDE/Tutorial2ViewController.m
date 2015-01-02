@@ -1,19 +1,19 @@
 //
-//  TutorialViewController.m
+//  Tutorial2ViewController.m
 //  CIDE
 //
 //  Created by Nayely Vergara on 31/12/14.
-//  Copyright (c) 2014 Nayely Vergara. All rights reserved.
+//  Copyright (c) 2015 Nayely Vergara. All rights reserved.
 //
 
-#import "TutorialViewController.h"
+#import "Tutorial2ViewController.h"
 
-@interface TutorialViewController ()
+@interface Tutorial2ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
-@implementation TutorialViewController
+@implementation Tutorial2ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,11 +30,6 @@
     UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, height, width, height)];
     image2.image = [UIImage imageNamed:@"pag2.png"];
     [self.scrollView addSubview:image2];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
 }
 
 - (void)didReceiveMemoryWarning {

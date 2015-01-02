@@ -14,6 +14,8 @@
 		EFB8F6101A54C03B003EA845 /* CategoryDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60F1A54C03B003EA845 /* CategoryDescriptionViewController.m */; };
 		EFB8F6131A566732003EA845 /* pag1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6111A566732003EA845 /* pag1.png */; };
 		EFB8F6141A566732003EA845 /* pag2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6121A566732003EA845 /* pag2.png */; };
+		EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6161A56CAEE003EA845 /* Tutorial2ViewController.m */; };
+		EFB8F6191A56CC4F003EA845 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8F6181A56CC4F003EA845 /* MapKit.framework */; };
 		EFEF6A371A4D123000046820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A361A4D123000046820 /* main.m */; };
 		EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A391A4D123000046820 /* AppDelegate.m */; };
 		EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */; };
@@ -59,6 +61,9 @@
 		EFB8F60F1A54C03B003EA845 /* CategoryDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDescriptionViewController.m; sourceTree = "<group>"; };
 		EFB8F6111A566732003EA845 /* pag1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pag1.png; sourceTree = "<group>"; };
 		EFB8F6121A566732003EA845 /* pag2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pag2.png; sourceTree = "<group>"; };
+		EFB8F6151A56CAEE003EA845 /* Tutorial2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial2ViewController.h; sourceTree = "<group>"; };
+		EFB8F6161A56CAEE003EA845 /* Tutorial2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial2ViewController.m; sourceTree = "<group>"; };
+		EFB8F6181A56CC4F003EA845 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EFEF6A311A4D123000046820 /* CIDE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIDE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEF6A351A4D123000046820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFEF6A361A4D123000046820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB8F6191A56CC4F003EA845 /* MapKit.framework in Frameworks */,
 				EFEF6E351A4F815800046820 /* libsqlite3.dylib in Frameworks */,
 				EFEF6E331A4F814000046820 /* libz.dylib in Frameworks */,
 				EFEF6E311A4F813300046820 /* SystemConfiguration.framework in Frameworks */,
@@ -123,6 +129,7 @@
 		4365F88347F75898323020D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFB8F6181A56CC4F003EA845 /* MapKit.framework */,
 				EFEF6E341A4F815800046820 /* libsqlite3.dylib */,
 				EFEF6E321A4F814000046820 /* libz.dylib */,
 				EFEF6E301A4F813300046820 /* SystemConfiguration.framework */,
@@ -183,6 +190,8 @@
 				EFB8F60F1A54C03B003EA845 /* CategoryDescriptionViewController.m */,
 				EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */,
 				EFB8F6001A54A21E003EA845 /* TutorialViewController.m */,
+				EFB8F6151A56CAEE003EA845 /* Tutorial2ViewController.h */,
+				EFB8F6161A56CAEE003EA845 /* Tutorial2ViewController.m */,
 				EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */,
 				EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */,
 				EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */,
@@ -360,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */,
+				EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */,
 				EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */,
 				EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */,
 				EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */,
