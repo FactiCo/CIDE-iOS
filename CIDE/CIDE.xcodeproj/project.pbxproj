@@ -34,6 +34,9 @@
 		EFB8F63D1A5A2882003EA845 /* imagenPerfil.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F63C1A5A2882003EA845 /* imagenPerfil.png */; };
 		EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F63F1A5A291C003EA845 /* SeeTestTableViewController.m */; };
 		EFB8F6431A5A296C003EA845 /* TestCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6421A5A296C003EA845 /* TestCellTableViewCell.m */; };
+		EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD70BDB1A5AA1A100316C51 /* background1.png */; };
+		EFD70BDE1A5AA2A700316C51 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD70BDD1A5AA2A700316C51 /* background2.png */; };
+		EFD70BE01A5AA4F200316C51 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD70BDF1A5AA4F200316C51 /* background4.png */; };
 		EFEF6A371A4D123000046820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A361A4D123000046820 /* main.m */; };
 		EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A391A4D123000046820 /* AppDelegate.m */; };
 		EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */; };
@@ -102,6 +105,9 @@
 		EFB8F63F1A5A291C003EA845 /* SeeTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeTestTableViewController.m; sourceTree = "<group>"; };
 		EFB8F6411A5A296C003EA845 /* TestCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCellTableViewCell.h; sourceTree = "<group>"; };
 		EFB8F6421A5A296C003EA845 /* TestCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCellTableViewCell.m; sourceTree = "<group>"; };
+		EFD70BDB1A5AA1A100316C51 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		EFD70BDD1A5AA2A700316C51 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
+		EFD70BDF1A5AA4F200316C51 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		EFEF6A311A4D123000046820 /* CIDE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIDE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEF6A351A4D123000046820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFEF6A361A4D123000046820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -249,6 +255,9 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFD70BDF1A5AA4F200316C51 /* background4.png */,
+				EFD70BDD1A5AA2A700316C51 /* background2.png */,
+				EFD70BDB1A5AA1A100316C51 /* background1.png */,
 				EFB8F63C1A5A2882003EA845 /* imagenPerfil.png */,
 				EFB8F61C1A577B12003EA845 /* emprendedores.png */,
 				EFB8F61D1A577B12003EA845 /* familia.png */,
@@ -382,9 +391,11 @@
 				EFB8F63A1A577B12003EA845 /* vecinal.png in Resources */,
 				EFB8F6391A577B12003EA845 /* tut4.png in Resources */,
 				EFB8F6341A577B12003EA845 /* splash.png in Resources */,
+				EFD70BE01A5AA4F200316C51 /* background4.png in Resources */,
 				EFB8F62C1A577B12003EA845 /* emprendedores.png in Resources */,
 				EFB8F63D1A5A2882003EA845 /* imagenPerfil.png in Resources */,
 				EFB8F62E1A577B12003EA845 /* funcionarios.png in Resources */,
+				EFD70BDE1A5AA2A700316C51 /* background2.png in Resources */,
 				EFB8F6301A577B12003EA845 /* Logo.png in Resources */,
 				EFB8F62F1A577B12003EA845 /* ingresar.png in Resources */,
 				EFB8F6381A577B12003EA845 /* tut3.png in Resources */,
@@ -392,6 +403,7 @@
 				EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */,
 				EFB8F63B1A577B12003EA845 /* verTest.png in Resources */,
 				EFEF6A421A4D123000046820 /* Images.xcassets in Resources */,
+				EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */,
 				EFB8F6321A577B12003EA845 /* option0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

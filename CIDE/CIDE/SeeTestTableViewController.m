@@ -21,15 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
 }
 
 - (NSMutableArray *)testimonials {
     if (!_testimonials) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+        [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSLog(@"JSON : %@", responseObject);
-            _testimonials = [NSMutableArray arrayWithArray:responseObject];
+            _testimonials = [NSMutableArray arrayWithArray:responseObject[@"items"]];
             [self.tableView reloadData];
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -58,7 +58,7 @@
     if (cell == nil) {
         cell = [[TestCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
     }
-    NSDictionary *data = self.testimonials[[indexPath row]];
+    NSDictionary *data = self.testimonials[indexPath.row];
     cell.nameLabel.text = data[@"name"];
     cell.explanationLabel.text = data[@"explanation"];
     return cell;

@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageCategory;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
+@property (weak, nonatomic) IBOutlet UIButton *addTest;
+@property (weak, nonatomic) IBOutlet UIButton *seeTest;
+
 @end
 
 @implementation CategoryDescriptionViewController
@@ -33,7 +36,12 @@
 
 - (void)setDataCategory:(NSInteger )option {
     self.imageCategory.image = [self.imageData objectAtIndex:option];
+    [self.view bringSubviewToFront:self.imageCategory];
     self.descriptionTextView.text = [self.descriptionData objectAtIndex:option];
+    [self.view bringSubviewToFront:self.descriptionTextView];
+    [self.view bringSubviewToFront:self.addTest];
+    [self.view bringSubviewToFront:self.seeTest];
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
