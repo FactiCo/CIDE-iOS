@@ -8,8 +8,9 @@
 
 #import "TestimonialsTableViewController.h"
 #import <AFHTTPRequestOperationManager.h>
+#import <Social/Social.h>
 
-@interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIAlertViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
@@ -92,18 +93,63 @@
 }
 
 - (void)collectData {
-    self.params = @{@"nombre":self.nameTextField.text, @"correo":self.emailTextField.text, @"edad":self.ageTextField.text, @"genero":self.genderLabel.text, @"escolaridad":self.educationLabel.text, @"categoria":self.categoryLabel.text, @"entidad":self.entityLabel.text, @"explicacion": self.explanationTextView.text, @"dispositivo":@"iPhone"};
+    self.params = @{@"name":self.nameTextField.text, @"email":self.emailTextField.text, @"age":self.ageTextField.text, @"gender":self.genderLabel.text, @"grade":self.educationLabel.text, @"category":self.categoryLabel.text, @"entidadFederativa":self.entityLabel.text, @"explanation": self.explanationTextView.text};
     [self sendData];
 }
 
 - (void)sendData {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://www.factico.com.mx/CIDE/APIBeta/expediente.php?q=add" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager POST:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:self.params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        [self showAlert:@"!Gracias¡" msg:@"Gracias por enviar tu formulario"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"¡Gracias!" message:@"Gracias por enviar tu testimonio" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Compartir", nil];
+        [alert setTag:1];
+        [alert show];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+       
     }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {
+            [alertView dismissWithClickedButtonIndex:1 animated:YES];
+            UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Compartir vía:" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", nil];
+            [sheet showInView:self.view];
+        }
+    }
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self postToFacebook];
+    } else if (buttonIndex == 1) {
+        [self postToTwitter];
+    }
+}
+
+- (void)postToTwitter {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"Great fun to learn iOS programming at appcoda.com!"];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    
+}
+
+- (void)postToFacebook {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [controller setInitialText:@"First post from my iPhone app"];
+        [self presentViewController:controller animated:YES completion:Nil];
+    }
+    
 }
 
 - (void)showAlert:(NSString *)title msg:(NSString *)message {

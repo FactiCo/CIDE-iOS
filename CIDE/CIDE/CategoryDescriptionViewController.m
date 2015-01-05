@@ -8,6 +8,7 @@
 
 #import "CategoryDescriptionViewController.h"
 #import "TestimonialsTableViewController.h"
+#import "SeeTestTableViewController.h"
 
 @interface CategoryDescriptionViewController ()
 @property (nonatomic, retain) NSArray *imageData;
@@ -23,9 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageData = @[[UIImage imageNamed:@"pag1.png"], [UIImage imageNamed:@"pag2.png"], [UIImage imageNamed:@"pag1.png"], [UIImage imageNamed:@"pag2.png"], [UIImage imageNamed:@"pag1.png"], [UIImage imageNamed:@"pag2.png"]];
-    self.descriptionData = @[@"Esta es la descripcion  de justicia en el trabajo",@"Esta es la descripcion de justicia en la familia", @"Esta es la descripción de Justicia vecinal y comunitaria", @"Esta es la descripción de justicia para funcionarios", @"Esta es la descripción de Justicia para emprendedores", @"Esta es la otra justicia"];
+    self.imageData = @[[UIImage imageNamed:@"trabajo.png"], [UIImage imageNamed:@"familia.png"], [UIImage imageNamed:@"vecinal.png"], [UIImage imageNamed:@"funcionarios.png"], [UIImage imageNamed:@"emprendedores.png"]];
     
+    self.descriptionData = @[@"Esta es la descripcion  de justicia en el trabajo",@"Esta es la descripcion de justicia en la familia", @"Esta es la descripción de Justicia vecinal y comunitaria", @"Esta es la descripción de justicia para funcionarios", @"Esta es la descripción de Justicia para emprendedores"];
+    self.nameData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];
     [self setDataCategory: self.option];
 }
 
@@ -38,7 +40,10 @@
     if ([segue.identifier isEqualToString:@"goToFormulario"]) {
         TestimonialsTableViewController *controller = segue.destinationViewController;
         controller.option = self.option;
-        
+    }
+    if ([segue.identifier isEqualToString:@"goToSeeTest"]) {
+        SeeTestTableViewController *controller = segue.destinationViewController;
+        controller.category = [self.nameData objectAtIndex:self.option];
     }
 }
 
