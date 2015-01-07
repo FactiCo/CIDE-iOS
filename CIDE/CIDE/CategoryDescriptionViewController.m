@@ -86,6 +86,9 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
             _testimonials = [NSMutableArray arrayWithCapacity:3];
+            if ([_testimonials count]!=0) {
+                
+            
             for (NSDictionary *item in [responseObject[@"items"] reverseObjectEnumerator]) {
                 if ([item[@"category"] isEqualToString:self.categoryKeys[self.option]]) {
                     [_testimonials addObject:item];
@@ -95,6 +98,17 @@
                 }
             }
             [self.tableView reloadData];
+            }
+            else{
+                _tableView.hidden=TRUE;
+                _seeTest.hidden=TRUE;
+                UILabel *empty=[[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height-100, self.view.frame.size.width-32, 40)];
+                empty.textAlignment=NSTextAlignmentCenter;
+                empty.backgroundColor=[UIColor whiteColor];
+                
+                empty.text=@"Sin testimonios en esta categoría";
+                [self.view addSubview:empty];
+            }
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error %@", error);
