@@ -402,10 +402,11 @@
 				TargetAttributes = {
 					EFEF6A301A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 9T723N9YB2;
+						DevelopmentTeam = E48473Z6UM;
 					};
 					EFEF6A491A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = E48473Z6UM;
 						TestTargetID = EFEF6A301A4D123000046820;
 					};
 				};

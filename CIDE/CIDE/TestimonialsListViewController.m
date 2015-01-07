@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.categoryKeys = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];
+    self.categoryKeys = @[@"Justicia en el trabajo", @"Justicia en las familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
 }

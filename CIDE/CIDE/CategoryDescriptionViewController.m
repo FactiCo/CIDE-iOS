@@ -88,8 +88,7 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
             _testimonials = [NSMutableArray arrayWithCapacity:3];
-            if ([_testimonials count]!=0) {
-                
+          
             
             for (NSDictionary *item in [responseObject[@"items"] reverseObjectEnumerator]) {
                 if ([item[@"category"] isEqualToString:self.categoryKeys[self.option]]) {
@@ -99,6 +98,8 @@
                     break;
                 }
             }
+            if ([_testimonials count]!=0) {
+                
             [self.tableView reloadData];
             }
             else{
