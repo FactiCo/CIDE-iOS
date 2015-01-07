@@ -98,7 +98,7 @@
     NSString *entity = [NSString stringWithFormat: @"%ld", (long)self.entityId];
     NSLog(@"%s",[self.ageLabel.text UTF8String]);
     NSString *ageAux= [NSString stringWithFormat:@"%s",[self.ageLabel.text UTF8String]];
-    NSLog(@"%s",[self.explanationTextView.text UTF8String]);
+    //NSLog(@"%s",[self.explanationTextView.text UTF8String]);
     NSString *explanationAux=[NSString stringWithFormat:@"%s",[self.explanationTextView.text UTF8String]];
     NSString *gradeAux=[NSString stringWithFormat:@"%s",[self.educationLabel.text UTF8String]];
     self.params = @{@"name":self.nameTextField.text, @"email":self.emailTextField.text, @"age":ageAux, @"gender":self.genderLabel.text, @"grade":gradeAux, @"category":self.categoryLabel.text, @"state":entity, @"explanation": explanationAux  };
