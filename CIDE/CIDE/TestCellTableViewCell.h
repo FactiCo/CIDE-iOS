@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TestCellTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
-
-
+@property (weak, nonatomic) IBOutlet UITextView *explanationTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end

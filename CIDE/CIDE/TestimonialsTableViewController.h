@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TestimonialsTableViewController : UITableViewController
+
 @property (nonatomic)NSInteger option;
+
+- (IBAction)doneAction:(id)sender;
 
 @end

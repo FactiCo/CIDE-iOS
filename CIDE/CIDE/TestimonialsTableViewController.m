@@ -13,26 +13,30 @@
 @interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIAlertViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextView *explanationTextView;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *agePicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *genderPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *educationPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *categoryPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *entityPicker;
 
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *educationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *entityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 
+@property (nonatomic, retain) NSArray *ageData;
 @property (nonatomic, retain) NSArray *genderData;
 @property (nonatomic, retain) NSArray *educationData;
 @property (nonatomic, retain) NSArray *categoryData;
 @property (nonatomic, retain) NSArray *entityData;
 @property (nonatomic, retain) NSDictionary *params;
+@property (nonatomic) NSInteger entityId;
 
+@property (nonatomic) BOOL isAgeSelected;
 @property (nonatomic) BOOL isGenderSelected;
 @property (nonatomic) BOOL isEducationSelected;
 @property (nonatomic) BOOL isCategorySelected;
@@ -44,15 +48,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.genderData = @[@"Masculino", @"Femenino"];
-    self.educationData = @[@"Primaria", @"Secundaria", @"Técnico", @"Medio superior", @"Superior", @"Maestría", @"Doctorado"];
-    self.categoryData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];
+    
+    self.genderData = @[@"Masculino", @"Femenino", @"Sin especificar"];
+    self.educationData = @[@"Sin estudios", @"Primaria", @"Secundaria", @"Técnico", @"Medio superior", @"Superior", @"Posgrado", @"Sin especificar"];
+    self.categoryData = @[@"Justicia en el trabajo", @"Justicia en las familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     self.entityData = @[@"Aguascalientes", @"Baja California", @"Baja California Sur", @"Campeche", @"Chiapas", @"Chihuahua", @"Coahuila", @"Colima", @"Distrito Federal", @"Durango",@"Estado de México", @"Guanajuato", @"Guerrero", @"Hidalgo", @"Jalisco", @"Michoacán", @"Morelos", @"Nayarit", @"Nuevo León", @"Oaxaca", @"Puebla", @"Querétaro", @"Quintana Roo", @"San Luis Potosí", @"Sinaloa", @"Sonora", @"Tabasco", @"Tamaulipas", @"Tlaxcala", @"Veracruz", @"Yucatán", @"Zacatecas"];
+    self.ageData = @[@"Menos de 18 años", @"18 - 25 años", @"26 - 30 años",
+                     @"31 - 35 años", @"36 - 40 años", @"41 - 45 años",
+                     @"46 - 50 años", @"51 - 55 años", @"56 - 60 años",
+                     @"61 - 65 años", @"66 - 70 años", @"Más de 70 años"];
+    
+    self.ageLabel.text = [self.ageData objectAtIndex:0];
     self.genderLabel.text = [self.genderData objectAtIndex:0];
     self.educationLabel.text = [self.educationData objectAtIndex:0];
     self.categoryLabel.text = [self.categoryData objectAtIndex:self.option];
     self.entityLabel.text = [self.entityData objectAtIndex:0];
+    self.entityId = 1;
     
 }
 
@@ -75,15 +86,6 @@
             return NO;
         }
     }
-    if ([self.ageTextField.text length] == 0) {
-        [self showAlert:@"Datos incompletos" msg:@"Ingresa tu edad"];
-        return NO;
-    }
-    if (![self validateAge:self.ageTextField.text]) {
-        [self showAlert:@"Datos incorrectos" msg:@"Ingresa una edad válida"];
-        return NO;
-    }
-
     if ([self.explanationTextView.text length] == 0) {
         [self showAlert:@"Datos incompletos" msg:@"Ingresa una explicación"];
         return NO;
@@ -93,7 +95,8 @@
 }
 
 - (void)collectData {
-    self.params = @{@"name":self.nameTextField.text, @"email":self.emailTextField.text, @"age":self.ageTextField.text, @"gender":self.genderLabel.text, @"grade":self.educationLabel.text, @"category":self.categoryLabel.text, @"entidadFederativa":self.entityLabel.text, @"explanation": self.explanationTextView.text};
+    NSString *entity = [NSString stringWithFormat: @"%ld", (long)self.entityId];
+    self.params = @{@"name":self.nameTextField.text, @"email":self.emailTextField.text, @"age":self.ageLabel.text, @"gender":self.genderLabel.text, @"grade":self.educationLabel.text, @"category":self.categoryLabel.text, @"entidadFederativa":entity, @"explanation": self.explanationTextView.text};
     [self sendData];
 }
 
@@ -108,7 +111,7 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-       
+        
     }];
 }
 
@@ -187,8 +190,8 @@
 }
 
 - (void)hideNumericKeyboard {
-    if ([self.ageTextField isFirstResponder])
-        [self.ageTextField resignFirstResponder];
+    if ([self.emailTextField isFirstResponder])
+        [self.emailTextField resignFirstResponder];
 }
 
 #pragma mark - textField Delegate
@@ -197,9 +200,7 @@
     if (textField == self.nameTextField) {
         [self.emailTextField becomeFirstResponder];
     } else if (textField == self.emailTextField) {
-        [self.ageTextField becomeFirstResponder];
-    } else if (textField == self.ageTextField){
-        [textField resignFirstResponder];
+        [self.emailTextField resignFirstResponder];
     }
     return NO;
 }
@@ -207,7 +208,14 @@
 #pragma mark - pickers
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 && indexPath.row == 1) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        if (self.isAgeSelected) {
+            return 219;
+        } else {
+            return 44;
+        }
+    }
+    else if (indexPath.section == 1 && indexPath.row == 1) {
         if (self.isGenderSelected) {
             return 219;
         } else {
@@ -239,7 +247,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 && indexPath.row == 1) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        [self hidePickersExcept:&_isAgeSelected newValue:!self.isAgeSelected];
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
         [self hidePickersExcept:&_isGenderSelected newValue:!self.isGenderSelected];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
         [self hidePickersExcept:&_isEducationSelected newValue:!self.isEducationSelected];
@@ -252,6 +262,7 @@
 }
 
 - (void)hidePickersExcept:(BOOL *)flag newValue:(BOOL)value {
+    self.isAgeSelected = NO;
     self.isGenderSelected = NO;
     self.isEducationSelected = NO;
     self.isCategorySelected = NO;
@@ -272,7 +283,9 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    if(pickerView == self.genderPicker) {
+    if (pickerView == self.agePicker) {
+        return [self.ageData count];
+    } else if (pickerView == self.genderPicker) {
         return [self.genderData count];
     } else if (pickerView == self.educationPicker) {
         return [self.educationData count];
@@ -285,7 +298,9 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if(pickerView == self.genderPicker) {
+    if (pickerView == self.agePicker) {
+        return [self.ageData objectAtIndex:row];
+    } else if (pickerView == self.genderPicker) {
         return [self.genderData objectAtIndex:row];
     } else if (pickerView == self.educationPicker) {
         return [self.educationData objectAtIndex:row];
@@ -298,7 +313,9 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (pickerView == self.genderPicker) {
+    if (pickerView == self.agePicker) {
+        self.ageLabel.text = [self.ageData objectAtIndex:row];
+    } else if (pickerView == self.genderPicker) {
         self.genderLabel.text = [self.genderData objectAtIndex:row];
     } else if (pickerView == self.educationPicker) {
         self.educationLabel.text = [self.educationData objectAtIndex:row];
@@ -306,6 +323,7 @@
         self.categoryLabel.text = [self.categoryData objectAtIndex:row];
     } else if (pickerView == self.entityPicker) {
         self.entityLabel.text = [self.entityData objectAtIndex:row];
+        self.entityId = row + 1;
     }
 }
 

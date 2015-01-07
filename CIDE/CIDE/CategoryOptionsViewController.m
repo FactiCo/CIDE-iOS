@@ -31,6 +31,10 @@
     [self performSegueWithIdentifier:@"goToDescription" sender:self];
 }
 
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"goToDescription"]) {
         CategoryDescriptionViewController *controller = segue.destinationViewController;

@@ -16,6 +16,13 @@
 		EF20E9081A5CD8FE00542567 /* femenino.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9061A5CD8FE00542567 /* femenino.png */; };
 		EF20E9091A5CD8FE00542567 /* masculino.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9071A5CD8FE00542567 /* masculino.png */; };
 		EF20E90C1A5CDDEF00542567 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */; };
+		EF20E90F1A5D4CFF00542567 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E90E1A5D4CFF00542567 /* MapViewController.m */; };
+		EF20E9121A5D4DE200542567 /* TestimonialFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9111A5D4DE200542567 /* TestimonialFormViewController.m */; };
+		EF20E9181A5D4E6200542567 /* TestimonialsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9171A5D4E6200542567 /* TestimonialsListViewController.m */; };
+		EF20E91C1A5D5E1000542567 /* justicia-ciudadana-postal01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9191A5D5E1000542567 /* justicia-ciudadana-postal01.jpg */; };
+		EF20E91D1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */; };
+		EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */; };
+		EF20E9201A5D5FB200542567 /* fondo1.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91F1A5D5FB200542567 /* fondo1.png */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -89,6 +96,16 @@
 		EF20E9071A5CD8FE00542567 /* masculino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masculino.png; sourceTree = "<group>"; };
 		EF20E90A1A5CDDEF00542567 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		EF20E90D1A5D4CFF00542567 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		EF20E90E1A5D4CFF00542567 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		EF20E9101A5D4DE200542567 /* TestimonialFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialFormViewController.h; sourceTree = "<group>"; };
+		EF20E9111A5D4DE200542567 /* TestimonialFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialFormViewController.m; sourceTree = "<group>"; };
+		EF20E9161A5D4E6200542567 /* TestimonialsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialsListViewController.h; sourceTree = "<group>"; };
+		EF20E9171A5D4E6200542567 /* TestimonialsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialsListViewController.m; sourceTree = "<group>"; };
+		EF20E9191A5D5E1000542567 /* justicia-ciudadana-postal01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal01.jpg"; sourceTree = "<group>"; };
+		EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Justicia-Ciudadana-postal02.jpg"; sourceTree = "<group>"; };
+		EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal03.jpg"; sourceTree = "<group>"; };
+		EF20E91F1A5D5FB200542567 /* fondo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo1.png; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -267,6 +284,12 @@
 				EFEF6A341A4D123000046820 /* Supporting Files */,
 				EF20E90A1A5CDDEF00542567 /* SettingsViewController.h */,
 				EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */,
+				EF20E90D1A5D4CFF00542567 /* MapViewController.h */,
+				EF20E90E1A5D4CFF00542567 /* MapViewController.m */,
+				EF20E9101A5D4DE200542567 /* TestimonialFormViewController.h */,
+				EF20E9111A5D4DE200542567 /* TestimonialFormViewController.m */,
+				EF20E9161A5D4E6200542567 /* TestimonialsListViewController.h */,
+				EF20E9171A5D4E6200542567 /* TestimonialsListViewController.m */,
 			);
 			path = CIDE;
 			sourceTree = "<group>";
@@ -274,6 +297,10 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF20E91F1A5D5FB200542567 /* fondo1.png */,
+				EF20E9191A5D5E1000542567 /* justicia-ciudadana-postal01.jpg */,
+				EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */,
+				EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */,
 				EF20E9061A5CD8FE00542567 /* femenino.png */,
 				EF20E9071A5CD8FE00542567 /* masculino.png */,
 				EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */,
@@ -416,7 +443,9 @@
 				EF20E9091A5CD8FE00542567 /* masculino.png in Resources */,
 				EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */,
 				EFB8F6351A577B12003EA845 /* trabajo.png in Resources */,
+				EF20E91C1A5D5E1000542567 /* justicia-ciudadana-postal01.jpg in Resources */,
 				EFB8F6331A577B12003EA845 /* settings.png in Resources */,
+				EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */,
 				EFB8F63A1A577B12003EA845 /* vecinal.png in Resources */,
 				EFB8F6391A577B12003EA845 /* tut4.png in Resources */,
 				EFB8F6341A577B12003EA845 /* splash.png in Resources */,
@@ -426,6 +455,7 @@
 				EFB8F62E1A577B12003EA845 /* funcionarios.png in Resources */,
 				EFD70BDE1A5AA2A700316C51 /* background2.png in Resources */,
 				EFB8F6301A577B12003EA845 /* Logo.png in Resources */,
+				EF20E91D1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg in Resources */,
 				EF20E9021A5CD6A100542567 /* iconos_categorias-03.png in Resources */,
 				EFB8F62F1A577B12003EA845 /* ingresar.png in Resources */,
 				EFB8F6381A577B12003EA845 /* tut3.png in Resources */,
@@ -435,6 +465,7 @@
 				EFB8F63B1A577B12003EA845 /* verTest.png in Resources */,
 				EFEF6A421A4D123000046820 /* Images.xcassets in Resources */,
 				EF20E9081A5CD8FE00542567 /* femenino.png in Resources */,
+				EF20E9201A5D5FB200542567 /* fondo1.png in Resources */,
 				EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */,
 				EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */,
 				EFB8F6321A577B12003EA845 /* option0.png in Resources */,
@@ -490,7 +521,10 @@
 			files = (
 				EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */,
 				EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */,
+				EF20E9181A5D4E6200542567 /* TestimonialsListViewController.m in Sources */,
 				EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */,
+				EF20E90F1A5D4CFF00542567 /* MapViewController.m in Sources */,
+				EF20E9121A5D4DE200542567 /* TestimonialFormViewController.m in Sources */,
 				EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */,
 				EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */,
 				EFB8F6431A5A296C003EA845 /* TestCellTableViewCell.m in Sources */,
