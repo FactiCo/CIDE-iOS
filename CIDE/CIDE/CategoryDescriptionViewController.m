@@ -29,7 +29,7 @@
     [super viewDidLoad];
     self.imageData = @[[UIImage imageNamed:@"trabajo.png"], [UIImage imageNamed:@"familia.png"], [UIImage imageNamed:@"vecinal.png"], [UIImage imageNamed:@"funcionarios.png"], [UIImage imageNamed:@"emprendedores.png"]];
     
-    self.descriptionData = @[@"Esta es la descripcion  de justicia en el trabajo",@"Esta es la descripcion de justicia en la familia", @"Esta es la descripción de Justicia vecinal y comunitaria", @"Esta es la descripción de justicia para funcionarios", @"Esta es la descripción de Justicia para emprendedores"];
+    self.descriptionData = @[@"La Justicia Laboral es un tema pendiente en México. Actualmente, los procesos para obtener justicia en el trabajo son caros, complejos y las figuras de justicia alternativa se utilizan poco. ",@"Justicia en las Familias trata diversos temas y conflictos como el divorcio, sucesiones, pensiones alimenticias, entre otros. Es un tema complejo, pues intervienen relaciones de poder y vínculos afectivos. Las mujeres suelen ser las personas más desfavorecidas. ", @"La convivencia vecinal y comunitaria es probablemente el mayor tema de conflictos diarios entre personas que habitan un mismo espacio o territorio. Conflictos derivados de los espacios públicos y uso de suelo se tratarán en este apartado. ", @"Esta es la descripción de justicia para funcionarios", @"Emprender es un reto constante en términos legales. Los micro, pequeños y medianos empresarios se enfrentan a numerosos obstáculos y las alternativas de justicia son pocas. "];
     self.nameData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para funcionarios", @"Justicia para emprendedores"];
     [self setDataCategory: self.option];
 }

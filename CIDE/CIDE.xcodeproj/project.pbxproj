@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3191832CD86C943D575AED91 /* libPods-CIDE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */; };
+		EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */; };
+		EF20E9021A5CD6A100542567 /* iconos_categorias-03.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FD1A5CD6A100542567 /* iconos_categorias-03.png */; };
+		EF20E9031A5CD6A100542567 /* iconos_categorias-04.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FE1A5CD6A100542567 /* iconos_categorias-04.png */; };
+		EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FF1A5CD6A100542567 /* iconos_categorias-05.png */; };
+		EF20E9051A5CD6A100542567 /* iconos_categorias-06.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9001A5CD6A100542567 /* iconos_categorias-06.png */; };
+		EF20E9081A5CD8FE00542567 /* femenino.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9061A5CD8FE00542567 /* femenino.png */; };
+		EF20E9091A5CD8FE00542567 /* masculino.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9071A5CD8FE00542567 /* masculino.png */; };
+		EF20E90C1A5CDDEF00542567 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -72,6 +80,15 @@
 /* Begin PBXFileReference section */
 		0F773C2C6F2CD1C903C2F623 /* Pods-CIDE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.release.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.release.xcconfig"; sourceTree = "<group>"; };
 		A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIDE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-02.png"; sourceTree = "<group>"; };
+		EF20E8FD1A5CD6A100542567 /* iconos_categorias-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-03.png"; sourceTree = "<group>"; };
+		EF20E8FE1A5CD6A100542567 /* iconos_categorias-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-04.png"; sourceTree = "<group>"; };
+		EF20E8FF1A5CD6A100542567 /* iconos_categorias-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-05.png"; sourceTree = "<group>"; };
+		EF20E9001A5CD6A100542567 /* iconos_categorias-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-06.png"; sourceTree = "<group>"; };
+		EF20E9061A5CD8FE00542567 /* femenino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femenino.png; sourceTree = "<group>"; };
+		EF20E9071A5CD8FE00542567 /* masculino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masculino.png; sourceTree = "<group>"; };
+		EF20E90A1A5CDDEF00542567 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -248,6 +265,8 @@
 				EFEF6A411A4D123000046820 /* Images.xcassets */,
 				EFEF6A431A4D123000046820 /* LaunchScreen.xib */,
 				EFEF6A341A4D123000046820 /* Supporting Files */,
+				EF20E90A1A5CDDEF00542567 /* SettingsViewController.h */,
+				EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */,
 			);
 			path = CIDE;
 			sourceTree = "<group>";
@@ -255,6 +274,13 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF20E9061A5CD8FE00542567 /* femenino.png */,
+				EF20E9071A5CD8FE00542567 /* masculino.png */,
+				EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */,
+				EF20E8FD1A5CD6A100542567 /* iconos_categorias-03.png */,
+				EF20E8FE1A5CD6A100542567 /* iconos_categorias-04.png */,
+				EF20E8FF1A5CD6A100542567 /* iconos_categorias-05.png */,
+				EF20E9001A5CD6A100542567 /* iconos_categorias-06.png */,
 				EFD70BDF1A5AA4F200316C51 /* background4.png */,
 				EFD70BDD1A5AA2A700316C51 /* background2.png */,
 				EFD70BDB1A5AA1A100316C51 /* background1.png */,
@@ -384,8 +410,11 @@
 			files = (
 				EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */,
 				EFB8F62D1A577B12003EA845 /* familia.png in Resources */,
+				EF20E9051A5CD6A100542567 /* iconos_categorias-06.png in Resources */,
 				EFB8F6311A577B12003EA845 /* mapa.png in Resources */,
 				EFB8F6361A577B12003EA845 /* tut1.png in Resources */,
+				EF20E9091A5CD8FE00542567 /* masculino.png in Resources */,
+				EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */,
 				EFB8F6351A577B12003EA845 /* trabajo.png in Resources */,
 				EFB8F6331A577B12003EA845 /* settings.png in Resources */,
 				EFB8F63A1A577B12003EA845 /* vecinal.png in Resources */,
@@ -397,13 +426,17 @@
 				EFB8F62E1A577B12003EA845 /* funcionarios.png in Resources */,
 				EFD70BDE1A5AA2A700316C51 /* background2.png in Resources */,
 				EFB8F6301A577B12003EA845 /* Logo.png in Resources */,
+				EF20E9021A5CD6A100542567 /* iconos_categorias-03.png in Resources */,
 				EFB8F62F1A577B12003EA845 /* ingresar.png in Resources */,
 				EFB8F6381A577B12003EA845 /* tut3.png in Resources */,
 				EFB8F6371A577B12003EA845 /* tut2.png in Resources */,
 				EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */,
+				EF20E9031A5CD6A100542567 /* iconos_categorias-04.png in Resources */,
 				EFB8F63B1A577B12003EA845 /* verTest.png in Resources */,
 				EFEF6A421A4D123000046820 /* Images.xcassets in Resources */,
+				EF20E9081A5CD8FE00542567 /* femenino.png in Resources */,
 				EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */,
+				EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */,
 				EFB8F6321A577B12003EA845 /* option0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +496,7 @@
 				EFB8F6431A5A296C003EA845 /* TestCellTableViewCell.m in Sources */,
 				EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */,
 				EFEF6A371A4D123000046820 /* main.m in Sources */,
+				EF20E90C1A5CDDEF00542567 /* SettingsViewController.m in Sources */,
 				EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */,
 				EFB8F6101A54C03B003EA845 /* CategoryDescriptionViewController.m in Sources */,
 			);
