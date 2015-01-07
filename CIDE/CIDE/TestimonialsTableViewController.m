@@ -144,7 +144,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"Great fun to learn iOS programming at appcoda.com!"];
+        [tweetSheet setInitialText:@"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx"];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     
@@ -154,7 +154,7 @@
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [controller setInitialText:@"First post from my iPhone app"];
+        [controller setInitialText:@"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx"];
         [self presentViewController:controller animated:YES completion:Nil];
     }
     

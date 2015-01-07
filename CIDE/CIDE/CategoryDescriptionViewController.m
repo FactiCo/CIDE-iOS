@@ -55,7 +55,9 @@
     self.imageCategory.image = image;
     [self.view bringSubviewToFront:self.imageCategory];
     self.descriptionTextView.text = [self.descriptionData objectAtIndex:option];
+   
     [self.view bringSubviewToFront:self.descriptionTextView];
+     [_descriptionTextView sizeToFit];
     [self.view bringSubviewToFront:self.addTest];
     [self.view bringSubviewToFront:self.seeTest];
 }
