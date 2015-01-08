@@ -127,41 +127,23 @@
         }
         if (buttonIndex == 1) {
             [alertView dismissWithClickedButtonIndex:1 animated:YES];
-            UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Compartir vía:" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", nil];
-            [sheet showInView:self.view];
+            [self shareAction];
         }
     }
     
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [self postToFacebook];
-    } else if (buttonIndex == 1) {
-        [self postToTwitter];
-    }
-}
-
-- (void)postToTwitter {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController
-                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx"];
-        [self presentViewController:tweetSheet animated:YES completion:nil];
-            
-    }
-    
-}
-
-- (void)postToFacebook {
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        [controller setInitialText:@"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx"];
-        [self presentViewController:controller animated:YES completion:Nil];
-    }
-    
+- (void)shareAction {
+    NSString *string = @"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx";
+    __block UIViewController *weakSelf = self;
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]
+                                                        initWithActivityItems:@[string]
+                                                        applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop];
+    [activityViewController setCompletionWithItemsHandler:^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError){
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
+    [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (void)showAlert:(NSString *)title msg:(NSString *)message {
