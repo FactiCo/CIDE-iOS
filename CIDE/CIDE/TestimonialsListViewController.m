@@ -76,7 +76,7 @@
     NSDictionary *data = self.testimonials[indexPath.row];
     cell.nameLabel.text = data[@"name"];
     cell.explanationTextView.text = data[@"explanation"];
-    if ([data[@"gender"] isEqualToString:@"Femenino"]) {
+    if ([data[@"gender"] isEqualToString:@"Mujer"]) {
         cell.profileImageView.image = self.femeninoImage;
     } else {
         cell.profileImageView.image = self.masculinoImage;

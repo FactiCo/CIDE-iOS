@@ -122,6 +122,9 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 1) {
+        if (buttonIndex == 0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
         if (buttonIndex == 1) {
             [alertView dismissWithClickedButtonIndex:1 animated:YES];
             UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Compartir vía:" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", nil];
@@ -146,6 +149,7 @@
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:@"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx"];
         [self presentViewController:tweetSheet animated:YES completion:nil];
+            
     }
     
 }
