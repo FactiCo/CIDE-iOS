@@ -47,7 +47,7 @@
     [back.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
     
     UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*6-50, unitw*42, 50)];
-    map.backgroundColor=[UIColor greenColor];
+    map.backgroundColor=[UIColor colorWithRed:(83/255.0) green:(203/255.0) blue:(140/255.0) alpha:1];
     [map setTitle:@"Mapa de testimonios" forState:UIControlStateNormal];
     [[map layer] setBorderWidth:2.0f];
     [map addTarget:self
