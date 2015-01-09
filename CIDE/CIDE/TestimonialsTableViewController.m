@@ -65,6 +65,7 @@
     self.entityLabel.text = [self.entityData objectAtIndex:0];
     self.entityId = 1;
     
+    [self.tableView setSeparatorColor:[UIColor greenColor]];
 }
 
 - (void)didReceiveMemoryWarning {

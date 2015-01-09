@@ -46,6 +46,8 @@
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     
+    [self.tableView setSeparatorColor:[UIColor greenColor]];
+    
     [self setDataCategory: self.option];
 }
 
@@ -142,6 +144,10 @@
         cell.profileImageView.image = self.masculinoImage;
     }
     return cell;
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 @end

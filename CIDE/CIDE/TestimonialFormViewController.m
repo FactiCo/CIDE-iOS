@@ -12,6 +12,7 @@
 @interface TestimonialFormViewController ()
 
 @property (strong, nonatomic) TestimonialsTableViewController *formController;
+@property (weak, nonatomic) IBOutlet UIView *container;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view bringSubviewToFront:self.container];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +43,10 @@
 
 - (IBAction)sendAction:(id)sender {
     [self.formController doneAction:sender];
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 @end
