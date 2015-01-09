@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSArray *categoryKeys;
 @property (strong, nonatomic) NSMutableArray *testimonials;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) UIImage *femeninoImage, *masculinoImage;
 
@@ -29,6 +30,11 @@
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     [self.tableView setSeparatorColor:[UIColor greenColor]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.activityIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +52,8 @@
     if (!_testimonials) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+            [self.activityIndicator stopAnimating];
+            self.activityIndicator.hidden = YES;
             _testimonials = [NSMutableArray array];
             for (NSDictionary *item in [responseObject[@"items"] reverseObjectEnumerator]) {
                 if ([item[@"category"] isEqualToString:self.categoryKeys[self.option]]) {
@@ -56,6 +64,8 @@
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error %@", error);
+            [self.activityIndicator stopAnimating];
+            self.activityIndicator.hidden = YES;
         }];
         _testimonials = [NSMutableArray array];
     }

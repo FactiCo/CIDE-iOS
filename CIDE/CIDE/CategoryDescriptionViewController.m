@@ -27,6 +27,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *addTest;
 @property (weak, nonatomic) IBOutlet UIButton *seeTest;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIView *tableContainer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *controlView;
 
 @property (strong, nonatomic) NSMutableArray *testimonials;
 
@@ -47,6 +51,9 @@
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     
     [self.tableView setSeparatorColor:[UIColor greenColor]];
+    self.tableContainer.hidden = YES;
+    
+    [self.activityIndicator startAnimating];
     
     [self setDataCategory: self.option];
 }
@@ -57,9 +64,9 @@
     self.imageCategory.image = image;
     [self.view bringSubviewToFront:self.imageCategory];
     self.descriptionTextView.text = [self.descriptionData objectAtIndex:option];
-   
+    
     [self.view bringSubviewToFront:self.descriptionTextView];
-     [_descriptionTextView sizeToFit];
+    [_descriptionTextView sizeToFit];
     [self.view bringSubviewToFront:self.addTest];
     [self.view bringSubviewToFront:self.seeTest];
 }
@@ -89,8 +96,9 @@
     if (!_testimonials) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
+            [self.activityIndicator stopAnimating];
+            self.activityIndicator.hidden = YES;
             _testimonials = [NSMutableArray arrayWithCapacity:3];
-          
             
             for (NSDictionary *item in [responseObject[@"items"] reverseObjectEnumerator]) {
                 if ([item[@"category"] isEqualToString:self.categoryKeys[self.option]]) {
@@ -100,9 +108,9 @@
                     break;
                 }
             }
+            [self showTableWithCount:[_testimonials count]];
             if ([_testimonials count]!=0) {
-                
-            [self.tableView reloadData];
+                [self.tableView reloadData];
             }
             else{
                 _tableView.hidden=TRUE;
@@ -117,10 +125,19 @@
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error %@", error);
+            [self.activityIndicator stopAnimating];
+            self.activityIndicator.hidden = YES;
         }];
         _testimonials = [NSMutableArray array];
     }
     return _testimonials;
+}
+
+- (void)showTableWithCount:(NSInteger)count {
+    CGFloat height = 70 * count + 30;
+    height = MIN(height, self.controlView.bounds.size.height);
+    self.tableHeightConstraint.constant = height;
+    self.tableContainer.hidden = NO;
 }
 
 #pragma mark - table view
