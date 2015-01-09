@@ -60,7 +60,7 @@
 
 - (void)setDataCategory:(NSInteger )option {
     self.navigationTitle.text = self.nameData[option];
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"iconos_categorias-0%d.png", option + 2]];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"iconos_categorias-0%ld.png", option + 2]];
     self.imageCategory.image = image;
     [self.view bringSubviewToFront:self.imageCategory];
     self.descriptionTextView.text = [self.descriptionData objectAtIndex:option];
