@@ -39,6 +39,7 @@
 
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+       [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)sendAction:(id)sender {
