@@ -112,7 +112,7 @@
     [self.view addSubview:viewWhitOption2];
     UILabel *textCategory2=[[UILabel alloc]initWithFrame:CGRectMake(category2.frame.origin.x, category2.frame.origin.y+category2.frame.size.height +5 , category2.frame.size.width, 30)];
     textCategory2.backgroundColor=[UIColor clearColor];
-    textCategory2.text=@"Justicia en la familia";
+    textCategory2.text=@"Justicia para familias";
     textCategory2.numberOfLines=2;
     textCategory2.textColor=[UIColor colorWithRed:(86/255.0) green:(197/255.0) blue:(105/255.0) alpha:1];
     [textCategory2 setFont:[UIFont boldSystemFontOfSize:10 ]];

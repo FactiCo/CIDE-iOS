@@ -18,7 +18,6 @@
 @property (nonatomic, retain) NSArray *imageData;
 @property (nonatomic, retain) NSArray *descriptionData;
 @property (nonatomic, retain) NSArray *nameData;
-@property (nonatomic, retain) NSArray *categoryKeys;
 
 @property (weak, nonatomic) IBOutlet UILabel *navigationTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *imageCategory;
@@ -42,14 +41,13 @@
 
 - (void)viewDidLoad {
     
-  
-    
     [super viewDidLoad];
     self.imageData = @[[UIImage imageNamed:@"trabajo.png"], [UIImage imageNamed:@"familia.png"], [UIImage imageNamed:@"vecinal.png"], [UIImage imageNamed:@"funcionarios.png"], [UIImage imageNamed:@"emprendedores.png"]];
     
     self.descriptionData = @[@"La Justicia Laboral es un tema pendiente en México. Actualmente, los procesos para obtener justicia en el trabajo son caros, complejos y las figuras de justicia alternativa se utilizan poco. ", @"Justicia en las Familias trata diversos temas y conflictos como el divorcio, sucesiones, pensiones alimenticias, entre otros. Es un tema complejo, pues intervienen relaciones de poder y vínculos afectivos. Las mujeres suelen ser las personas más desfavorecidas. ", @"La convivencia vecinal y comunitaria es probablemente el mayor tema de conflictos diarios entre personas que habitan un mismo espacio o territorio. Conflictos derivados de los espacios públicos y uso de suelo se tratarán en este apartado. ", @"Los ciudadanos tienen la facultad de defenderse frente a actos injustos de las autoridades. Sin embargo, en muchas ocasiones estos procesos resultan mucho más largos y complejos que la reparación del daño. La responsabilidad patrimonial del Estado es un tema fundamental.", @"Emprender es un reto constante en términos legales. Los micro, pequeños y medianos empresarios se enfrentan a numerosos obstáculos y las alternativas de justicia son pocas. "];
-    self.nameData = @[@"Justicia en el trabajo", @"Justicia en la familia", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
-    self.categoryKeys = @[@"Justicia en el trabajo", @"Justicia en las familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
+    
+    self.nameData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
+    
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     
@@ -104,8 +102,8 @@
             self.activityIndicator.hidden = YES;
             _testimonials = [NSMutableArray arrayWithCapacity:3];
             
-            for (NSDictionary *item in [responseObject[@"items"] reverseObjectEnumerator]) {
-                if ([item[@"category"] isEqualToString:self.categoryKeys[self.option]]) {
+            for (NSDictionary *item in responseObject[@"items"]) {
+                if ([item[@"category"] isEqualToString:self.nameData[self.option]]) {
                     [_testimonials addObject:item];
                 }
                 if ([_testimonials count] >= 3) {
@@ -113,17 +111,17 @@
                 }
             }
             [self showTableWithCount:[_testimonials count]];
-            if ([_testimonials count]!=0) {
+            if ([_testimonials count]) {
                 [self.tableView reloadData];
             }
             else{
-                _tableView.hidden=TRUE;
-                _seeTest.hidden=TRUE;
-                UILabel *empty=[[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height-100, self.view.frame.size.width-32, 40)];
-                empty.textAlignment=NSTextAlignmentCenter;
-                empty.backgroundColor=[UIColor whiteColor];
+                self.tableView.hidden=TRUE;
+                self.seeTest.hidden=TRUE;
+                UILabel *empty = [[UILabel alloc]initWithFrame:CGRectMake(16, self.view.frame.size.height - 100, self.view.frame.size.width - 32, 40)];
+                empty.textAlignment = NSTextAlignmentCenter;
+                empty.backgroundColor = [UIColor whiteColor];
                 
-                empty.text=@"Sin testimonios en esta categoría";
+                empty.text = @"Sin testimonios en esta categoría";
                 [self.view addSubview:empty];
             }
             
@@ -174,8 +172,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Acción del boton ver más ....
-    
-    
+    [self performSegueWithIdentifier:@"goToSeeTest" sender:self];
 }
 @end

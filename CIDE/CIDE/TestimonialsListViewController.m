@@ -12,7 +12,7 @@
 
 @interface TestimonialsListViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain) NSArray *categoryKeys;
+@property (nonatomic, retain) NSArray *nameData;
 @property (strong, nonatomic) NSMutableArray *testimonials;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.categoryKeys = @[@"Justicia en el trabajo", @"Justicia en las familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
+    self.nameData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     [self.tableView setSeparatorColor:[UIColor greenColor]];
@@ -56,8 +56,8 @@
             [self.activityIndicator stopAnimating];
             self.activityIndicator.hidden = YES;
             _testimonials = [NSMutableArray array];
-            for (NSDictionary *item in [responseObject[@"items"] reverseObjectEnumerator]) {
-                if ([item[@"category"] isEqualToString:self.categoryKeys[self.option]]) {
+            for (NSDictionary *item in responseObject[@"items"]) {
+                if ([item[@"category"] isEqualToString:self.nameData[self.option]]) {
                     [_testimonials addObject:item];
                 }
             }
