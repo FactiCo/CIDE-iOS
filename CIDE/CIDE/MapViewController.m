@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.urlMap = @"http://www.carloscastellanos.com.mx/mapas/mexico.html";
+    self.urlMap = @"http://justiciacotidiana.mx/es/JusticiaCotidiana/mapatestimonios";
     NSURL *targetURL = [NSURL URLWithString:self.urlMap];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];

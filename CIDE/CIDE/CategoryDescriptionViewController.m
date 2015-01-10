@@ -170,5 +170,12 @@
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+#pragma mark - Table view delegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Acción del boton ver más ....
+    
+    
+}
 @end
