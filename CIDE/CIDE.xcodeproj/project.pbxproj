@@ -22,6 +22,9 @@
 		EF20E91D1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */; };
 		EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */; };
 		EF20E9201A5D5FB200542567 /* fondo1.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91F1A5D5FB200542567 /* fondo1.png */; };
+		EF20E9231A61FCB400542567 /* LoginFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9221A61FCB400542567 /* LoginFBViewController.m */; };
+		EF20E9641A62144800542567 /* PropuestasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9631A62144800542567 /* PropuestasViewController.m */; };
+		EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -106,6 +109,12 @@
 		EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Justicia-Ciudadana-postal02.jpg"; sourceTree = "<group>"; };
 		EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal03.jpg"; sourceTree = "<group>"; };
 		EF20E91F1A5D5FB200542567 /* fondo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo1.png; sourceTree = "<group>"; };
+		EF20E9211A61FCB400542567 /* LoginFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginFBViewController.h; sourceTree = "<group>"; };
+		EF20E9221A61FCB400542567 /* LoginFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginFBViewController.m; sourceTree = "<group>"; };
+		EF20E9621A62144800542567 /* PropuestasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropuestasViewController.h; sourceTree = "<group>"; };
+		EF20E9631A62144800542567 /* PropuestasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestasViewController.m; sourceTree = "<group>"; };
+		EF20E9651A62161100542567 /* PropuestasCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropuestasCategoryViewController.h; sourceTree = "<group>"; };
+		EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestasCategoryViewController.m; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -264,6 +273,8 @@
 			children = (
 				EFEF6A381A4D123000046820 /* AppDelegate.h */,
 				EFEF6A391A4D123000046820 /* AppDelegate.m */,
+				EF20E9211A61FCB400542567 /* LoginFBViewController.h */,
+				EF20E9221A61FCB400542567 /* LoginFBViewController.m */,
 				EFB8F63E1A5A291C003EA845 /* SeeTestTableViewController.h */,
 				EFB8F63F1A5A291C003EA845 /* SeeTestTableViewController.m */,
 				EFB8F6411A5A296C003EA845 /* TestCellTableViewCell.h */,
@@ -292,6 +303,10 @@
 				EF20E9111A5D4DE200542567 /* TestimonialFormViewController.m */,
 				EF20E9161A5D4E6200542567 /* TestimonialsListViewController.h */,
 				EF20E9171A5D4E6200542567 /* TestimonialsListViewController.m */,
+				EF20E9621A62144800542567 /* PropuestasViewController.h */,
+				EF20E9631A62144800542567 /* PropuestasViewController.m */,
+				EF20E9651A62161100542567 /* PropuestasCategoryViewController.h */,
+				EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */,
 			);
 			path = CIDE;
 			sourceTree = "<group>";
@@ -532,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF20E9641A62144800542567 /* PropuestasViewController.m in Sources */,
 				EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */,
 				EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */,
 				EF20E9181A5D4E6200542567 /* TestimonialsListViewController.m in Sources */,
@@ -539,11 +555,13 @@
 				EF20E90F1A5D4CFF00542567 /* MapViewController.m in Sources */,
 				EF20E9121A5D4DE200542567 /* TestimonialFormViewController.m in Sources */,
 				EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */,
+				EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */,
 				EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */,
 				EFB8F6431A5A296C003EA845 /* TestCellTableViewCell.m in Sources */,
 				EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */,
 				EFEF6A371A4D123000046820 /* main.m in Sources */,
 				EF20E90C1A5CDDEF00542567 /* SettingsViewController.m in Sources */,
+				EF20E9231A61FCB400542567 /* LoginFBViewController.m in Sources */,
 				EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */,
 				EFB8F6101A54C03B003EA845 /* CategoryDescriptionViewController.m in Sources */,
 			);

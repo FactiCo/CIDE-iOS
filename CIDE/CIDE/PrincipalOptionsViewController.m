@@ -7,6 +7,7 @@
 //
 
 #import "PrincipalOptionsViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface PrincipalOptionsViewController () <UIActionSheetDelegate>
 
@@ -40,6 +41,14 @@
         [self performSegueWithIdentifier:@"goToAviso" sender:self];
     } else if (buttonIndex == 1) {
         [self performSegueWithIdentifier:@"goToTutorial2" sender:self];
+    }
+}
+
+- (IBAction)propuestasAction:(id)sender {
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
     }
 }
 
