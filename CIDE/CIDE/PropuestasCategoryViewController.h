@@ -10,4 +10,7 @@
 
 @interface PropuestasCategoryViewController : UIViewController
 
+@property (strong, nonatomic) NSString *category;
+@property (nonatomic) NSUInteger pageIndex;
+
 @end
