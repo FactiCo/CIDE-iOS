@@ -50,7 +50,7 @@
     [super viewDidLoad];
     
     self.genderData = @[@"Hombre", @"Mujer", @"Sin especificar"];
-    self.educationData = @[@"Sin estudios", @"Primaria", @"Secundaria", @"Técnico", @"Medio superior", @"Superior", @"Posgrado", @"Sin especificar"];
+    self.educationData = @[@"Sin estudios", @"Primaria", @"Secundaria", @"Técnico", @"Media superior", @"Superior", @"Posgrado", @"Sin especificar"];
     
     self.categoryData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     

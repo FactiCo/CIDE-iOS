@@ -37,16 +37,16 @@
     background.image=[UIImage imageNamed:@"fondo1.png"];
     [self.view addSubview:background];
     
-    UIButton *back=[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/100, 27, 30, 30)];
+    UIButton *back=[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/100, 27, 80, 30)];
     back.backgroundColor=[UIColor clearColor];
     [back addTarget:self
                  action:@selector(backAction:)
        forControlEvents:UIControlEventTouchDown];
-    [back setImage:[UIImage imageNamed:@"backTmp.png"] forState:UIControlStateNormal];
+    [back setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     //[back setTitle:@"Regresar" forState:UIControlStateNormal];
     [back.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
     
-    UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*6-50, unitw*42, 50)];
+    UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*4-50, unitw*42, 50)];
     map.backgroundColor=[UIColor colorWithRed:(83/255.0) green:(203/255.0) blue:(140/255.0) alpha:1];
     [map setTitle:@"Mapa de testimonios" forState:UIControlStateNormal];
     [[map layer] setBorderWidth:2.0f];
@@ -54,7 +54,7 @@
              action:@selector(goToMAp:)
    forControlEvents:UIControlEventTouchDown];
     [[map layer] setBorderColor:[UIColor whiteColor].CGColor];
-     [map.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
+     [map.titleLabel setFont:[UIFont boldSystemFontOfSize:13]];
     [self.view addSubview:map];
     [self.view addSubview:back];
     [self makeViews];
