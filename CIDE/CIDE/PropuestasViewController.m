@@ -7,6 +7,7 @@
 //
 
 #import "PropuestasViewController.h"
+#import <AFHTTPRequestOperationManager.h>
 #import "PropuestasCategoryViewController.h"
 
 @interface PropuestasViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
@@ -90,7 +91,7 @@
 }
 
 - (IBAction)backAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
