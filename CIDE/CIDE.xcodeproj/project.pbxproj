@@ -25,6 +25,8 @@
 		EF20E9231A61FCB400542567 /* LoginFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9221A61FCB400542567 /* LoginFBViewController.m */; };
 		EF20E9641A62144800542567 /* PropuestasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9631A62144800542567 /* PropuestasViewController.m */; };
 		EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */; };
+		EFA4655C1A62FAA800BE92D8 /* PropuestaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA4655B1A62FAA800BE92D8 /* PropuestaDetailViewController.m */; };
+		EFA4655F1A631F3100BE92D8 /* ArgumentosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA4655E1A631F3100BE92D8 /* ArgumentosViewController.m */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -115,6 +117,10 @@
 		EF20E9631A62144800542567 /* PropuestasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestasViewController.m; sourceTree = "<group>"; };
 		EF20E9651A62161100542567 /* PropuestasCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropuestasCategoryViewController.h; sourceTree = "<group>"; };
 		EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestasCategoryViewController.m; sourceTree = "<group>"; };
+		EFA4655A1A62FAA800BE92D8 /* PropuestaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropuestaDetailViewController.h; sourceTree = "<group>"; };
+		EFA4655B1A62FAA800BE92D8 /* PropuestaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestaDetailViewController.m; sourceTree = "<group>"; };
+		EFA4655D1A631F3100BE92D8 /* ArgumentosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArgumentosViewController.h; sourceTree = "<group>"; };
+		EFA4655E1A631F3100BE92D8 /* ArgumentosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArgumentosViewController.m; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -307,6 +313,10 @@
 				EF20E9631A62144800542567 /* PropuestasViewController.m */,
 				EF20E9651A62161100542567 /* PropuestasCategoryViewController.h */,
 				EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */,
+				EFA4655A1A62FAA800BE92D8 /* PropuestaDetailViewController.h */,
+				EFA4655B1A62FAA800BE92D8 /* PropuestaDetailViewController.m */,
+				EFA4655D1A631F3100BE92D8 /* ArgumentosViewController.h */,
+				EFA4655E1A631F3100BE92D8 /* ArgumentosViewController.m */,
 			);
 			path = CIDE;
 			sourceTree = "<group>";
@@ -548,12 +558,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF20E9641A62144800542567 /* PropuestasViewController.m in Sources */,
+				EFA4655F1A631F3100BE92D8 /* ArgumentosViewController.m in Sources */,
 				EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */,
 				EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */,
 				EF20E9181A5D4E6200542567 /* TestimonialsListViewController.m in Sources */,
 				EFEF6A5C1A4D19A200046820 /* TestimonialsTableViewController.m in Sources */,
 				EF20E90F1A5D4CFF00542567 /* MapViewController.m in Sources */,
 				EF20E9121A5D4DE200542567 /* TestimonialFormViewController.m in Sources */,
+				EFA4655C1A62FAA800BE92D8 /* PropuestaDetailViewController.m in Sources */,
 				EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */,
 				EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */,
 				EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */,

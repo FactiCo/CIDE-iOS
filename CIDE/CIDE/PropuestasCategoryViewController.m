@@ -8,14 +8,13 @@
 
 #import "PropuestasCategoryViewController.h"
 #import <AFHTTPRequestOperationManager.h>
+#import "PropuestaDetailViewController.h"
 
 @interface PropuestasCategoryViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *categoryTitle;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
-@property (strong, nonatomic) NSMutableArray *propuestas;
 
 @end
 
@@ -38,6 +37,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PropuestaDetail"]) {
+        PropuestaDetailViewController *controller = segue.destinationViewController;
+        controller.propuesta = sender;
+        self.propuestas = nil;
+    }
 }
 
 #pragma mark - data
@@ -78,6 +86,10 @@
     cell.textLabel.text = data[@"title"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"PropuestaDetail" sender:self.propuestas[indexPath.row]];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle {

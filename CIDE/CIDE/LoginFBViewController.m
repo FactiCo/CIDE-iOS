@@ -7,8 +7,9 @@
 //
 
 #import "LoginFBViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface LoginFBViewController ()
+@interface LoginFBViewController () <FBLoginViewDelegate>
 
 @end
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +27,15 @@
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
+                            user:(id<FBGraphUser>)user {
+    [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
+}
+
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

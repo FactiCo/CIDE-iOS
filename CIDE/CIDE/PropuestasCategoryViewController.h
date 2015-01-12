@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *category;
 @property (nonatomic) NSUInteger pageIndex;
+@property (strong, nonatomic) NSMutableArray *propuestas;
 
 @end

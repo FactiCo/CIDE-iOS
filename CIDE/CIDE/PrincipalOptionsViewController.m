@@ -45,10 +45,10 @@
 }
 
 - (IBAction)propuestasAction:(id)sender {
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded || FBSession.activeSession.state == FBSessionStateOpen) {
         [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
     } else {
-        [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
+        [self performSegueWithIdentifier:@"goToLogin" sender:self];
     }
 }
 
