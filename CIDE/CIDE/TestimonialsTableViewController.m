@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *entityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *titlesLabel;
 @property (nonatomic, retain) NSArray *ageData;
 @property (nonatomic, retain) NSArray *genderData;
 @property (nonatomic, retain) NSArray *educationData;
@@ -68,7 +69,16 @@
     self.entityLabel.text = [self.entityData objectAtIndex:0];
     self.entityId = 1;
     
-    [self.tableView setSeparatorColor:[UIColor greenColor]];
+    //SET FONT
+    self.ageLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    for (UILabel *label in self.titlesLabel) {
+        [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:14.0]];
+    }
+    self.nameTextField.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    self.emailTextField.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    
+    
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1]];
 }
 
 - (void)didReceiveMemoryWarning {

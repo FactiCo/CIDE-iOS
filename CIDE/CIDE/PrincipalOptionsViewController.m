@@ -11,13 +11,27 @@
 
 @interface PrincipalOptionsViewController () <UIActionSheetDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *headerLabel;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *descriptionLabels;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *titlesLabel;
+
 @end
 
 @implementation PrincipalOptionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    for(UILabel *lbl in self.descriptionLabels) {
+        [lbl setFont:[UIFont fontWithName:@"SourceSansPro-Light" size:18.0]];
+    }
+
+    for (UILabel *label in self.titlesLabel) {
+        [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:20.0]];
+    }
+    
+    self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:18.0];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -13,10 +13,7 @@
 @interface TestimonialsListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, retain) NSArray *nameData;
-@property (strong, nonatomic) NSMutableArray *testimonials;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
 @property (strong, nonatomic) UIImage *femeninoImage, *masculinoImage;
 
 @end
@@ -29,12 +26,13 @@
     self.nameData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
-    [self.tableView setSeparatorColor:[UIColor greenColor]];
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1]];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.activityIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,11 +42,11 @@
 
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-        [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark - data
-
+/*
 - (NSMutableArray *)testimonials {
     if (!_testimonials) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -71,7 +69,7 @@
         _testimonials = [NSMutableArray array];
     }
     return _testimonials;
-}
+}*/
 
 #pragma mark - table view
 
@@ -86,6 +84,11 @@
         cell = [[TestCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
     }
     NSDictionary *data = self.testimonials[indexPath.row];
+    
+    //SET FONT
+    cell.nameLabel.font = [UIFont fontWithName:@"SourceSansPro-Bold" size:16.0];
+    cell.explanationTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    
     cell.nameLabel.text = data[@"name"];
     cell.explanationTextView.text = data[@"explanation"];
     if ([data[@"gender"] isEqualToString:@"Mujer"]) {

@@ -46,12 +46,17 @@
     
     self.descriptionData = @[@"La Justicia Laboral es un tema pendiente en México. Actualmente, los procesos para obtener justicia en el trabajo son caros, complejos y las figuras de justicia alternativa se utilizan poco. ", @"Justicia en las Familias trata diversos temas y conflictos como el divorcio, sucesiones, pensiones alimenticias, entre otros. Es un tema complejo, pues intervienen relaciones de poder y vínculos afectivos. Las mujeres suelen ser las personas más desfavorecidas. ", @"La convivencia vecinal y comunitaria es probablemente el mayor tema de conflictos diarios entre personas que habitan un mismo espacio o territorio. Conflictos derivados de los espacios públicos y uso de suelo se tratarán en este apartado. ", @"Los ciudadanos tienen la facultad de defenderse frente a actos injustos de las autoridades. Sin embargo, en muchas ocasiones estos procesos resultan mucho más largos y complejos que la reparación del daño. La responsabilidad patrimonial del Estado es un tema fundamental.", @"Emprender es un reto constante en términos legales. Los micro, pequeños y medianos empresarios se enfrentan a numerosos obstáculos y las alternativas de justicia son pocas. "];
     
+    //SET FONT
+    self.descriptionTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    self.addTest.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:16.0];
+    self.seeTest.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:16.0];
+    
     self.nameData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     
-    [self.tableView setSeparatorColor:[UIColor greenColor]];
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1]];
     self.tableContainer.hidden = YES;
     
     [self.activityIndicator startAnimating];
@@ -80,8 +85,15 @@
     if ([segue.identifier isEqualToString:@"goToSeeTest"]) {
         TestimonialsListViewController *controller = segue.destinationViewController;
         controller.option = self.option;
+        controller.testimonials = self.testimonials;
+        
     }
 }
+
+- (IBAction)seeMore:(id)sender {
+    [self performSegueWithIdentifier:@"goToSeeTest" sender:self];
+}
+
 
 - (IBAction)backAction:(id)sender {
    // [self.navigationController popViewControllerAnimated:YES];
@@ -155,6 +167,10 @@
         cell = [[TestCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
     }
     NSDictionary *data = self.testimonials[indexPath.row];
+    //SET FONT
+    cell.nameLabel.font = [UIFont fontWithName:@"SourceSansPro-Bold" size:16.0];
+    cell.explanationTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    
     cell.nameLabel.text = data[@"name"];
     cell.explanationTextView.text = data[@"explanation"];
     if ([data[@"gender"] isEqualToString:@"Mujer"]) {
@@ -174,4 +190,5 @@
 {
     [self performSegueWithIdentifier:@"goToSeeTest" sender:self];
 }
+
 @end

@@ -10,6 +10,9 @@
 
 @interface SettingsViewController ()
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *settingsButtons;
+
+
 @end
 
 @implementation SettingsViewController
@@ -17,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    for (UILabel *label in self.settingsButtons) {
+        [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:16.0]];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

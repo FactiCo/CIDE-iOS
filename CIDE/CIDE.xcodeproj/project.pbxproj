@@ -27,6 +27,13 @@
 		EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9661A62161100542567 /* PropuestasCategoryViewController.m */; };
 		EFA4655C1A62FAA800BE92D8 /* PropuestaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA4655B1A62FAA800BE92D8 /* PropuestaDetailViewController.m */; };
 		EFA4655F1A631F3100BE92D8 /* ArgumentosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA4655E1A631F3100BE92D8 /* ArgumentosViewController.m */; };
+		EFA465611A64DE5A00BE92D8 /* botones_navegacion_cerrar.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */; };
+		EFA465661A64DE7700BE92D8 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */; };
+		EFA465671A64DE7700BE92D8 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */; };
+		EFA465681A64DE7700BE92D8 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */; };
+		EFA465691A64DE7700BE92D8 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */; };
+		EFA4656B1A64DE8800BE92D8 /* botones_navegacion_settins.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */; };
+		EFA4656D1A6548D100BE92D8 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4656C1A6548D100BE92D8 /* next.png */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -121,6 +128,13 @@
 		EFA4655B1A62FAA800BE92D8 /* PropuestaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestaDetailViewController.m; sourceTree = "<group>"; };
 		EFA4655D1A631F3100BE92D8 /* ArgumentosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArgumentosViewController.h; sourceTree = "<group>"; };
 		EFA4655E1A631F3100BE92D8 /* ArgumentosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArgumentosViewController.m; sourceTree = "<group>"; };
+		EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botones_navegacion_cerrar.png; sourceTree = "<group>"; };
+		EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
+		EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botones_navegacion_settins.png; sourceTree = "<group>"; };
+		EFA4656C1A6548D100BE92D8 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -324,6 +338,13 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFA4656C1A6548D100BE92D8 /* next.png */,
+				EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */,
+				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
+				EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */,
+				EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */,
+				EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */,
+				EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */,
 				F33D8BE91A64B8D000E5C250 /* back.png */,
 				EF20E91F1A5D5FB200542567 /* fondo1.png */,
 				F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */,
@@ -438,11 +459,11 @@
 				TargetAttributes = {
 					EFEF6A301A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = E48473Z6UM;
+						DevelopmentTeam = 35F5988A69;
 					};
 					EFEF6A491A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = E48473Z6UM;
+						DevelopmentTeam = 35F5988A69;
 						TestTargetID = EFEF6A301A4D123000046820;
 					};
 				};
@@ -480,12 +501,17 @@
 				EF20E9091A5CD8FE00542567 /* masculino.png in Resources */,
 				EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */,
 				EFB8F6351A577B12003EA845 /* trabajo.png in Resources */,
+				EFA465681A64DE7700BE92D8 /* SourceSansPro-Regular.ttf in Resources */,
+				EFA4656B1A64DE8800BE92D8 /* botones_navegacion_settins.png in Resources */,
 				EFB8F6331A577B12003EA845 /* settings.png in Resources */,
 				EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */,
 				EFB8F63A1A577B12003EA845 /* vecinal.png in Resources */,
+				EFA465661A64DE7700BE92D8 /* SourceSansPro-Bold.ttf in Resources */,
+				EFA4656D1A6548D100BE92D8 /* next.png in Resources */,
 				F33D8BEA1A64B8D000E5C250 /* back.png in Resources */,
 				EFB8F6391A577B12003EA845 /* tut4.png in Resources */,
 				EFB8F6341A577B12003EA845 /* splash.png in Resources */,
+				EFA465691A64DE7700BE92D8 /* RobotoSlab-Regular.ttf in Resources */,
 				EFD70BE01A5AA4F200316C51 /* background4.png in Resources */,
 				EFB8F62C1A577B12003EA845 /* emprendedores.png in Resources */,
 				EFB8F63D1A5A2882003EA845 /* imagenPerfil.png in Resources */,
@@ -500,12 +526,14 @@
 				EFB8F6371A577B12003EA845 /* tut2.png in Resources */,
 				EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */,
 				EF20E9031A5CD6A100542567 /* iconos_categorias-04.png in Resources */,
+				EFA465671A64DE7700BE92D8 /* SourceSansPro-Light.ttf in Resources */,
 				EFB8F63B1A577B12003EA845 /* verTest.png in Resources */,
 				EFEF6A421A4D123000046820 /* Images.xcassets in Resources */,
 				EF20E9081A5CD8FE00542567 /* femenino.png in Resources */,
 				EF20E9201A5D5FB200542567 /* fondo1.png in Resources */,
 				EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */,
 				EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */,
+				EFA465611A64DE5A00BE92D8 /* botones_navegacion_cerrar.png in Resources */,
 				EFB8F6321A577B12003EA845 /* option0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

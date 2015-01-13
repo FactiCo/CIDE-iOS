@@ -11,5 +11,6 @@
 @interface TestimonialsListViewController : UIViewController
 
 @property (nonatomic)NSInteger option;
+@property (strong, nonatomic) NSMutableArray *testimonials;
 
 @end

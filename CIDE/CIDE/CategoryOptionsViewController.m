@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 @interface CategoryOptionsViewController ()
 @property (nonatomic)NSInteger option;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -49,6 +50,7 @@
     UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*4-50, unitw*42, 50)];
     map.backgroundColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [map setTitle:@"Mapa de testimonios" forState:UIControlStateNormal];
+    map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:18.0];
    // [[map layer] setBorderWidth:2.0f];
     [map addTarget:self
              action:@selector(goToMAp:)
@@ -57,6 +59,7 @@
      [map.titleLabel setFont:[UIFont boldSystemFontOfSize:13]];
     [self.view addSubview:map];
     [self.view addSubview:back];
+    [self.view bringSubviewToFront:self.titleLabel];
     [self makeViews];
 
     

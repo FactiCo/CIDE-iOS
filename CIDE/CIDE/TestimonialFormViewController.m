@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) TestimonialsTableViewController *formController;
 @property (weak, nonatomic) IBOutlet UIView *container;
+@property (strong, nonatomic) IBOutlet UIButton *sendButton;
 
 @end
 
@@ -21,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.sendButton.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:16.0];
+    
     [self.view bringSubviewToFront:self.container];
 }
 
