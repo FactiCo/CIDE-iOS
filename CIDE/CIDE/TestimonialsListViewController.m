@@ -90,6 +90,10 @@
     cell.explanationTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
     
     cell.nameLabel.text = data[@"name"];
+    
+    // TEST Size
+    
+    
     cell.explanationTextView.text = data[@"explanation"];
     if ([data[@"gender"] isEqualToString:@"Mujer"]) {
         cell.profileImageView.image = self.femeninoImage;
@@ -98,7 +102,10 @@
     }
     return cell;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
