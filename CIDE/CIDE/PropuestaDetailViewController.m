@@ -36,8 +36,9 @@
     self.button3.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
     self.propuestaLabel.text = self.propuesta[@"title"];
-    self.detailTextView.text = self.propuesta[@"description"];
-    
+   // self.detailTextView.text = self.propuesta[@"description"];
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[_propuesta[@"description"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    _detailTextView.attributedText = attributedString;
     [self setupQuestion:self.propuesta[@"question"]];
     
     [self getFacebookData];

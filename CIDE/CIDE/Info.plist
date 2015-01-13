@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>factiCo.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>factiCo.$(PRODUCT_NAME:rfc1034identifier).Justicia</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -21,9 +21,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb989735351041607</string>
+				<string>fb654570061331636</string>
 			</array>
 		</dict>
 	</array>
