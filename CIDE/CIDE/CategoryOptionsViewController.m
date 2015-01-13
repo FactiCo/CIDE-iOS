@@ -47,13 +47,13 @@
     [back.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
     
     UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*4-50, unitw*42, 50)];
-    map.backgroundColor=[UIColor colorWithRed:(83/255.0) green:(203/255.0) blue:(140/255.0) alpha:1];
+    map.backgroundColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [map setTitle:@"Mapa de testimonios" forState:UIControlStateNormal];
-    [[map layer] setBorderWidth:2.0f];
+   // [[map layer] setBorderWidth:2.0f];
     [map addTarget:self
              action:@selector(goToMAp:)
    forControlEvents:UIControlEventTouchDown];
-    [[map layer] setBorderColor:[UIColor whiteColor].CGColor];
+    //[[map layer] setBorderColor:[UIColor whiteColor].CGColor];
      [map.titleLabel setFont:[UIFont boldSystemFontOfSize:13]];
     [self.view addSubview:map];
     [self.view addSubview:back];
@@ -89,7 +89,7 @@
     textCategory1.backgroundColor=[UIColor clearColor];
     textCategory1.text=@"Justicia en el trabajo";
     textCategory1.numberOfLines=2;
-    textCategory1.textColor=[UIColor colorWithRed:(86/255.0) green:(197/255.0) blue:(105/255.0) alpha:1];
+    textCategory1.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [textCategory1 setFont:[UIFont boldSystemFontOfSize:10 ]];
     textCategory1.textAlignment=NSTextAlignmentCenter;
 
@@ -114,7 +114,7 @@
     textCategory2.backgroundColor=[UIColor clearColor];
     textCategory2.text=@"Justicia para familias";
     textCategory2.numberOfLines=2;
-    textCategory2.textColor=[UIColor colorWithRed:(86/255.0) green:(197/255.0) blue:(105/255.0) alpha:1];
+    textCategory2.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [textCategory2 setFont:[UIFont boldSystemFontOfSize:10 ]];
     textCategory2.textAlignment=NSTextAlignmentCenter;
     
@@ -143,8 +143,7 @@
     textCategory3.backgroundColor=[UIColor clearColor];
     textCategory3.text=@"Justicia vecinal y comunitaria";
     textCategory3.numberOfLines=2;
-    textCategory3.textColor=[UIColor colorWithRed:(86/255.0) green:(197/255.0) blue:(105/255.0) alpha:1];
-    [textCategory3 setFont:[UIFont boldSystemFontOfSize:10 ]];
+    textCategory3.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];    [textCategory3 setFont:[UIFont boldSystemFontOfSize:10 ]];
     textCategory3.textAlignment=NSTextAlignmentCenter;
     
     [viewWhitOption3 addSubview: textCategory3];
@@ -174,7 +173,7 @@
     textCategory4.backgroundColor=[UIColor clearColor];
     textCategory4.text=@"Justicia para ciudadanos";
     textCategory4.numberOfLines=2;
-    textCategory4.textColor=[UIColor colorWithRed:(86/255.0) green:(197/255.0) blue:(105/255.0) alpha:1];
+    textCategory4.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [textCategory4 setFont:[UIFont boldSystemFontOfSize:10 ]];
     textCategory4.textAlignment=NSTextAlignmentCenter;
     
@@ -205,7 +204,7 @@
     textCategory5.backgroundColor=[UIColor clearColor];
     textCategory5.text=@"Justicia para emprendedores";
     textCategory5.numberOfLines=4;
-    textCategory5.textColor=[UIColor colorWithRed:(86/255.0) green:(197/255.0) blue:(105/255.0) alpha:1];
+    textCategory5.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [textCategory5 setFont:[UIFont boldSystemFontOfSize:10 ]];
     textCategory5.textAlignment=NSTextAlignmentCenter;
     
