@@ -35,7 +35,7 @@
     [application registerForRemoteNotifications];
     
     //SET CUSTOM FONT
-    [[UILabel appearance] setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:21.0]];
+    //[[UILabel appearance] setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:21.0]];
     
     return YES;
 }

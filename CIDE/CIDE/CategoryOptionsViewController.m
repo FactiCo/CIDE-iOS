@@ -12,6 +12,7 @@
 @interface CategoryOptionsViewController ()
 @property (nonatomic)NSInteger option;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) UIView *viewWhitOption6;
 
 @end
 
@@ -29,6 +30,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.titleLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:34.0];
     
     //Test
     unitH=(self.view.frame.size.height/100);
@@ -56,7 +59,7 @@
              action:@selector(goToMAp:)
    forControlEvents:UIControlEventTouchDown];
     //[[map layer] setBorderColor:[UIColor whiteColor].CGColor];
-     [map.titleLabel setFont:[UIFont boldSystemFontOfSize:13]];
+     //[map.titleLabel setFont:[UIFont boldSystemFontOfSize:13]];
     [self.view addSubview:map];
     [self.view addSubview:back];
     [self.view bringSubviewToFront:self.titleLabel];
@@ -91,9 +94,9 @@
     UILabel *textCategory1=[[UILabel alloc]initWithFrame:CGRectMake(category1.frame.origin.x, category1.frame.origin.y+category1.frame.size.height +5 , category1.frame.size.width, 30)];
     textCategory1.backgroundColor=[UIColor clearColor];
     textCategory1.text=@"Justicia en el trabajo";
+    textCategory1.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:23.0];
     textCategory1.numberOfLines=2;
     textCategory1.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    [textCategory1 setFont:[UIFont boldSystemFontOfSize:10 ]];
     textCategory1.textAlignment=NSTextAlignmentCenter;
 
     [viewWhitOption1 addSubview: textCategory1];
@@ -118,7 +121,7 @@
     textCategory2.text=@"Justicia para familias";
     textCategory2.numberOfLines=2;
     textCategory2.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    [textCategory2 setFont:[UIFont boldSystemFontOfSize:10 ]];
+    textCategory2.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:23.0];
     textCategory2.textAlignment=NSTextAlignmentCenter;
     
     [viewWhitOption2 addSubview: textCategory2];
@@ -146,7 +149,8 @@
     textCategory3.backgroundColor=[UIColor clearColor];
     textCategory3.text=@"Justicia vecinal y comunitaria";
     textCategory3.numberOfLines=2;
-    textCategory3.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];    [textCategory3 setFont:[UIFont boldSystemFontOfSize:10 ]];
+    textCategory3.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
+    textCategory3.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:23.0];
     textCategory3.textAlignment=NSTextAlignmentCenter;
     
     [viewWhitOption3 addSubview: textCategory3];
@@ -177,15 +181,15 @@
     textCategory4.text=@"Justicia para ciudadanos";
     textCategory4.numberOfLines=2;
     textCategory4.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    [textCategory4 setFont:[UIFont boldSystemFontOfSize:10 ]];
+    textCategory4.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:23.0];
     textCategory4.textAlignment=NSTextAlignmentCenter;
     
     [viewWhitOption4 addSubview: textCategory4];
     
     [self.view addSubview:viewWhitOption4];
 
-    // View 5
-    
+//    // View 5
+//    
     viewWhitOption5=[[UIView alloc]init];
     viewWhitOption5.frame=CGRectMake(unitw*35, 90+viewWhitOption1.frame.size.height+unitH*3, unitw*29, unitH*31);
     viewWhitOption5.backgroundColor=[UIColor whiteColor];
@@ -208,13 +212,43 @@
     textCategory5.text=@"Justicia para emprendedores";
     textCategory5.numberOfLines=4;
     textCategory5.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    [textCategory5 setFont:[UIFont boldSystemFontOfSize:10 ]];
+    textCategory5.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:23.0];
     textCategory5.textAlignment=NSTextAlignmentCenter;
     
     [viewWhitOption5 addSubview: textCategory5];
     
     [self.view addSubview:viewWhitOption5];
-
+    
+    // View 6
+    
+    self.viewWhitOption6 = [[UIView alloc] init];
+    self.viewWhitOption6.frame = CGRectMake(unitw * 65, 90 + viewWhitOption1.frame.size.height + unitH * 3, unitw * 29, unitH * 31);
+    self.viewWhitOption6.backgroundColor = [UIColor whiteColor];
+    self.viewWhitOption6.tag = 3;
+    /***************************************/
+    /*  Codigo Gesto Touch para View     */
+    /***************************************/
+    
+    UITapGestureRecognizer *tapGesture6 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
+    
+    [self.viewWhitOption6 addGestureRecognizer:tapGesture6];
+    
+    // Set Category Image
+    UIImageView *category6 = [[UIImageView alloc] initWithFrame:CGRectMake((self.viewWhitOption6.frame.size.width / 10) * 1, (self.viewWhitOption6.frame.size.height / 10) * 2, (self.viewWhitOption6.frame.size.width / 10) * 8, (self.viewWhitOption6.frame.size.width/10)*8)];
+    category6.image = [UIImage imageNamed:@"iconos_categorias-06.png"];
+    [self.viewWhitOption6 addSubview:category6];
+    [self.view addSubview:self.viewWhitOption6];
+    UILabel *textCategory6 = [[UILabel alloc]initWithFrame:CGRectMake(category6.frame.origin.x, category6.frame.origin.y + category6.frame.size.height + 5 , category6.frame.size.width, 30)];
+    textCategory6.backgroundColor = [UIColor clearColor];
+    textCategory6.text = @"Otros temas de Justicia Cotidiana";
+    textCategory6.numberOfLines = 4;
+    textCategory6.textColor = [UIColor colorWithRed:(108 / 255.0) green:(218 / 255.0) blue:(132 / 255.0) alpha:1];
+    textCategory6.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:23.0];
+    textCategory6.textAlignment = NSTextAlignmentCenter;
+    
+    [self.viewWhitOption6 addSubview: textCategory6];
+    
+    [self.view addSubview:self.viewWhitOption6];
 
 }
 -(void)goToDescription2:(int)option{

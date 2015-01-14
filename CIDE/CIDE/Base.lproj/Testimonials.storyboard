@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dt2-KS-mSQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dt2-KS-mSQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -75,7 +75,17 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEg-Iq-7zx">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6rZ-iI-Xia" id="Ae8-in-aEj"/>
+                                </connections>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="H6G-Fj-ecg">
+                                <rect key="frame" x="281" y="265" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.2901960784" green="0.50980392159999999" blue="0.57647058819999997" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="6rZ-iI-Xia" eventType="valueChanged" id="nPi-Lk-b88"/>
+                                </connections>
+                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDW-bP-K5a">
                                 <rect key="frame" x="281" y="28" width="31" height="30"/>
                                 <constraints>
@@ -92,18 +102,21 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UEg-Iq-7zx" secondAttribute="trailing" id="2oS-hr-4kO"/>
                             <constraint firstItem="UEg-Iq-7zx" firstAttribute="top" secondItem="jP9-tb-iwh" secondAttribute="bottom" id="4Ju-Ha-z9M"/>
+                            <constraint firstAttribute="centerY" secondItem="H6G-Fj-ecg" secondAttribute="centerY" id="5ns-5W-JfF"/>
                             <constraint firstItem="tDW-bP-K5a" firstAttribute="top" secondItem="jP9-tb-iwh" secondAttribute="bottom" constant="8" id="6rg-rz-sZj"/>
                             <constraint firstItem="UEg-Iq-7zx" firstAttribute="leading" secondItem="V5i-WN-oue" secondAttribute="leading" id="7JH-d9-wOh"/>
                             <constraint firstAttribute="trailing" secondItem="tDW-bP-K5a" secondAttribute="trailing" constant="8" id="Pxu-MY-RKW"/>
+                            <constraint firstAttribute="trailing" secondItem="H6G-Fj-ecg" secondAttribute="trailing" id="bEm-yB-SCq"/>
                             <constraint firstItem="zlV-D1-1Dy" firstAttribute="top" secondItem="UEg-Iq-7zx" secondAttribute="bottom" id="dnD-DS-D1O"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="pageControl" destination="H6G-Fj-ecg" id="0vu-oA-mjB"/>
                         <outlet property="scrollView" destination="UEg-Iq-7zx" id="fb5-1i-Acw"/>
                     </connections>
                 </viewController>
@@ -123,7 +136,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1.png" translatesAutoresizingMaskIntoConstraints="NO" id="IM5-IP-mcZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="IM5-IP-mcZ">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-pa-lWw">
@@ -173,15 +186,6 @@
                                             <constraint firstAttribute="width" constant="60" id="6U0-tn-rY2"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primer contacto ciudadanía - gobierno para resolver abusos cometidos a diario" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-TR-qX4">
-                                        <rect key="frame" x="92" y="28" width="215" height="82"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="82" id="HIQ-bw-yDp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-mh-Jpe">
                                         <rect key="frame" x="205" y="8" width="125" height="30"/>
                                         <constraints>
@@ -195,6 +199,15 @@
                                             <segue destination="haW-1S-Ajb" kind="presentation" id="xaU-Id-3PY"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primer contacto ciudadanía - gobierno para resolver abusos cometidos a diario" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-TR-qX4">
+                                        <rect key="frame" x="92" y="28" width="215" height="82"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="HIQ-bw-yDp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="Wa4-TR-qX4" secondAttribute="centerY" constant="-0.5" id="0Ji-It-CkF"/>
@@ -207,7 +220,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué es la justicia cotidiana?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1a-dm-zwA">
-                                <rect key="frame" x="16" y="213" width="250" height="21"/>
+                                <rect key="frame" x="16" y="213" width="274" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -313,7 +326,7 @@
                             <constraint firstItem="ADS-pa-lWw" firstAttribute="leading" secondItem="cqu-oW-vHi" secondAttribute="leading" id="wZI-tB-L4Y"/>
                             <constraint firstItem="Xui-5q-gx4" firstAttribute="top" secondItem="gEj-pa-MeP" secondAttribute="bottom" constant="4" id="wve-mh-XUI"/>
                             <constraint firstItem="aWN-Qo-pIZ" firstAttribute="top" secondItem="oOB-Jm-ZU6" secondAttribute="bottom" constant="4" id="xuu-5d-1S7"/>
-                            <constraint firstItem="mNL-zq-3jG" firstAttribute="leading" secondItem="g1a-dm-zwA" secondAttribute="trailing" constant="1" id="xxd-L7-ake"/>
+                            <constraint firstItem="mNL-zq-3jG" firstAttribute="leading" secondItem="g1a-dm-zwA" secondAttribute="trailing" constant="-23" id="xxd-L7-ake"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wWg-MY-Ou6"/>
@@ -421,7 +434,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="privButton" destination="hY5-Yd-rVN" id="S1D-Qk-Lrw"/>
                         <outletCollection property="settingsButtons" destination="hY5-Yd-rVN" id="on8-m4-JV1"/>
                         <outletCollection property="settingsButtons" destination="c75-vZ-geE" id="kiG-Tg-qLI"/>
                     </connections>
@@ -659,7 +671,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hbt-JH-1dL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hbt-JH-1dL">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XH-ip-YNG">
@@ -1900,7 +1912,7 @@ dos veces</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xda-1Y-MnQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xda-1Y-MnQ">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQV-du-IpO">
@@ -1996,7 +2008,6 @@ dos veces</string>
     <resources>
         <image name="Logo.png" width="273" height="268"/>
         <image name="back.png" width="161" height="61"/>
-        <image name="background1.png" width="1081" height="1708"/>
         <image name="botones_navegacion_settins.png" width="122" height="26"/>
         <image name="femenino.png" width="47" height="44"/>
         <image name="fondo1.png" width="1081" height="1708"/>

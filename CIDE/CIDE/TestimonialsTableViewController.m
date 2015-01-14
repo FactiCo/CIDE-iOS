@@ -10,7 +10,7 @@
 #import <AFHTTPRequestOperationManager.h>
 #import <Social/Social.h>
 
-@interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIAlertViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate>
+@interface TestimonialsTableViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIAlertViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextView *explanationTextView;
@@ -77,8 +77,12 @@
     self.nameTextField.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
     self.emailTextField.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
     
-    
     [self.tableView setSeparatorColor:[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1]];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissComment)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,7 +148,6 @@
             [self shareAction];
         }
     }
-    
 }
 
 - (void)shareAction {
@@ -191,6 +194,11 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)string {
+    
+    if([string isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
     return [self validateExplanationLength:self.explanationTextView.text.length + string.length - range.length];
 }
 
@@ -351,6 +359,12 @@
         self.explanationLabel.hidden = NO;
     } else {
         self.explanationLabel.hidden = YES;
+    }
+}
+
+- (void)dismissComment {
+    if ([self.explanationTextView isFirstResponder]) {
+        [self.explanationTextView resignFirstResponder];
     }
 }
 

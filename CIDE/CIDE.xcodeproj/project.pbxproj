@@ -41,28 +41,14 @@
 		EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6161A56CAEE003EA845 /* Tutorial2ViewController.m */; };
 		EFB8F6191A56CC4F003EA845 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8F6181A56CC4F003EA845 /* MapKit.framework */; };
 		EFB8F61B1A570208003EA845 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFB8F61A1A570208003EA845 /* Social.framework */; };
-		EFB8F62C1A577B12003EA845 /* emprendedores.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F61C1A577B12003EA845 /* emprendedores.png */; };
-		EFB8F62D1A577B12003EA845 /* familia.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F61D1A577B12003EA845 /* familia.png */; };
-		EFB8F62E1A577B12003EA845 /* funcionarios.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F61E1A577B12003EA845 /* funcionarios.png */; };
-		EFB8F62F1A577B12003EA845 /* ingresar.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F61F1A577B12003EA845 /* ingresar.png */; };
 		EFB8F6301A577B12003EA845 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6201A577B12003EA845 /* Logo.png */; };
-		EFB8F6311A577B12003EA845 /* mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6211A577B12003EA845 /* mapa.png */; };
-		EFB8F6321A577B12003EA845 /* option0.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6221A577B12003EA845 /* option0.png */; };
-		EFB8F6331A577B12003EA845 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6231A577B12003EA845 /* settings.png */; };
 		EFB8F6341A577B12003EA845 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6241A577B12003EA845 /* splash.png */; };
-		EFB8F6351A577B12003EA845 /* trabajo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6251A577B12003EA845 /* trabajo.png */; };
 		EFB8F6361A577B12003EA845 /* tut1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6261A577B12003EA845 /* tut1.png */; };
 		EFB8F6371A577B12003EA845 /* tut2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6271A577B12003EA845 /* tut2.png */; };
 		EFB8F6381A577B12003EA845 /* tut3.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6281A577B12003EA845 /* tut3.png */; };
 		EFB8F6391A577B12003EA845 /* tut4.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F6291A577B12003EA845 /* tut4.png */; };
-		EFB8F63A1A577B12003EA845 /* vecinal.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F62A1A577B12003EA845 /* vecinal.png */; };
-		EFB8F63B1A577B12003EA845 /* verTest.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F62B1A577B12003EA845 /* verTest.png */; };
-		EFB8F63D1A5A2882003EA845 /* imagenPerfil.png in Resources */ = {isa = PBXBuildFile; fileRef = EFB8F63C1A5A2882003EA845 /* imagenPerfil.png */; };
 		EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F63F1A5A291C003EA845 /* SeeTestTableViewController.m */; };
 		EFB8F6431A5A296C003EA845 /* TestCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6421A5A296C003EA845 /* TestCellTableViewCell.m */; };
-		EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD70BDB1A5AA1A100316C51 /* background1.png */; };
-		EFD70BDE1A5AA2A700316C51 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD70BDD1A5AA2A700316C51 /* background2.png */; };
-		EFD70BE01A5AA4F200316C51 /* background4.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD70BDF1A5AA4F200316C51 /* background4.png */; };
 		EFEF6A371A4D123000046820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A361A4D123000046820 /* main.m */; };
 		EFEF6A3A1A4D123000046820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEF6A391A4D123000046820 /* AppDelegate.m */; };
 		EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEF6A3E1A4D123000046820 /* Testimonials.storyboard */; };
@@ -147,30 +133,16 @@
 		EFB8F6161A56CAEE003EA845 /* Tutorial2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial2ViewController.m; sourceTree = "<group>"; };
 		EFB8F6181A56CC4F003EA845 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EFB8F61A1A570208003EA845 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		EFB8F61C1A577B12003EA845 /* emprendedores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emprendedores.png; sourceTree = "<group>"; };
-		EFB8F61D1A577B12003EA845 /* familia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = familia.png; sourceTree = "<group>"; };
-		EFB8F61E1A577B12003EA845 /* funcionarios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = funcionarios.png; sourceTree = "<group>"; };
-		EFB8F61F1A577B12003EA845 /* ingresar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ingresar.png; sourceTree = "<group>"; };
 		EFB8F6201A577B12003EA845 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
-		EFB8F6211A577B12003EA845 /* mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapa.png; sourceTree = "<group>"; };
-		EFB8F6221A577B12003EA845 /* option0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = option0.png; sourceTree = "<group>"; };
-		EFB8F6231A577B12003EA845 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		EFB8F6241A577B12003EA845 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
-		EFB8F6251A577B12003EA845 /* trabajo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trabajo.png; sourceTree = "<group>"; };
 		EFB8F6261A577B12003EA845 /* tut1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tut1.png; sourceTree = "<group>"; };
 		EFB8F6271A577B12003EA845 /* tut2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tut2.png; sourceTree = "<group>"; };
 		EFB8F6281A577B12003EA845 /* tut3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tut3.png; sourceTree = "<group>"; };
 		EFB8F6291A577B12003EA845 /* tut4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tut4.png; sourceTree = "<group>"; };
-		EFB8F62A1A577B12003EA845 /* vecinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vecinal.png; sourceTree = "<group>"; };
-		EFB8F62B1A577B12003EA845 /* verTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verTest.png; sourceTree = "<group>"; };
-		EFB8F63C1A5A2882003EA845 /* imagenPerfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagenPerfil.png; sourceTree = "<group>"; };
 		EFB8F63E1A5A291C003EA845 /* SeeTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeTestTableViewController.h; sourceTree = "<group>"; };
 		EFB8F63F1A5A291C003EA845 /* SeeTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeTestTableViewController.m; sourceTree = "<group>"; };
 		EFB8F6411A5A296C003EA845 /* TestCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCellTableViewCell.h; sourceTree = "<group>"; };
 		EFB8F6421A5A296C003EA845 /* TestCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCellTableViewCell.m; sourceTree = "<group>"; };
-		EFD70BDB1A5AA1A100316C51 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
-		EFD70BDD1A5AA2A700316C51 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
-		EFD70BDF1A5AA4F200316C51 /* background4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background4.png; sourceTree = "<group>"; };
 		EFEF6A311A4D123000046820 /* CIDE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIDE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEF6A351A4D123000046820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFEF6A361A4D123000046820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -268,6 +240,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EFA4656E1A65D2FD00BE92D8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
+				EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */,
+				EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */,
+				EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EFA4656F1A65D32700BE92D8 /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */,
+				EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */,
+				EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */,
+				EFB8F6261A577B12003EA845 /* tut1.png */,
+				EFB8F6271A577B12003EA845 /* tut2.png */,
+				EFB8F6281A577B12003EA845 /* tut3.png */,
+				EFB8F6291A577B12003EA845 /* tut4.png */,
+				EFEF6A351A4D123000046820 /* Info.plist */,
+			);
+			name = Tutorials;
+			sourceTree = "<group>";
+		};
 		EFEF6A281A4D123000046820 = {
 			isa = PBXGroup;
 			children = (
@@ -338,42 +336,18 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFA4656C1A6548D100BE92D8 /* next.png */,
+				EFA4656F1A65D32700BE92D8 /* Tutorials */,
+				EFA4656E1A65D2FD00BE92D8 /* Fonts */,
+				F33D8BDD1A606A7400E5C250 /* Categories */,
 				EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */,
-				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
-				EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */,
-				EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */,
-				EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */,
 				EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */,
 				F33D8BE91A64B8D000E5C250 /* back.png */,
+				EFA4656C1A6548D100BE92D8 /* next.png */,
 				EF20E91F1A5D5FB200542567 /* fondo1.png */,
-				F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */,
-				EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */,
-				EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */,
 				EF20E9061A5CD8FE00542567 /* femenino.png */,
 				EF20E9071A5CD8FE00542567 /* masculino.png */,
-				F33D8BDD1A606A7400E5C250 /* Categories */,
-				EFD70BDF1A5AA4F200316C51 /* background4.png */,
-				EFD70BDD1A5AA2A700316C51 /* background2.png */,
-				EFD70BDB1A5AA1A100316C51 /* background1.png */,
-				EFB8F63C1A5A2882003EA845 /* imagenPerfil.png */,
-				EFB8F61C1A577B12003EA845 /* emprendedores.png */,
-				EFB8F61D1A577B12003EA845 /* familia.png */,
-				EFB8F61E1A577B12003EA845 /* funcionarios.png */,
-				EFB8F61F1A577B12003EA845 /* ingresar.png */,
 				EFB8F6201A577B12003EA845 /* Logo.png */,
-				EFB8F6211A577B12003EA845 /* mapa.png */,
-				EFB8F6221A577B12003EA845 /* option0.png */,
-				EFB8F6231A577B12003EA845 /* settings.png */,
 				EFB8F6241A577B12003EA845 /* splash.png */,
-				EFB8F6251A577B12003EA845 /* trabajo.png */,
-				EFB8F6261A577B12003EA845 /* tut1.png */,
-				EFB8F6271A577B12003EA845 /* tut2.png */,
-				EFB8F6281A577B12003EA845 /* tut3.png */,
-				EFB8F6291A577B12003EA845 /* tut4.png */,
-				EFB8F62A1A577B12003EA845 /* vecinal.png */,
-				EFB8F62B1A577B12003EA845 /* verTest.png */,
-				EFEF6A351A4D123000046820 /* Info.plist */,
 				EFEF6A361A4D123000046820 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -459,11 +433,11 @@
 				TargetAttributes = {
 					EFEF6A301A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = E48473Z6UM;
+						DevelopmentTeam = 35F5988A69;
 					};
 					EFEF6A491A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = E48473Z6UM;
+						DevelopmentTeam = 35F5988A69;
 						TestTargetID = EFEF6A301A4D123000046820;
 					};
 				};
@@ -494,47 +468,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */,
-				EFB8F62D1A577B12003EA845 /* familia.png in Resources */,
 				EF20E9051A5CD6A100542567 /* iconos_categorias-06.png in Resources */,
-				EFB8F6311A577B12003EA845 /* mapa.png in Resources */,
 				EFB8F6361A577B12003EA845 /* tut1.png in Resources */,
 				EF20E9091A5CD8FE00542567 /* masculino.png in Resources */,
 				EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */,
-				EFB8F6351A577B12003EA845 /* trabajo.png in Resources */,
 				EFA465681A64DE7700BE92D8 /* SourceSansPro-Regular.ttf in Resources */,
 				EFA4656B1A64DE8800BE92D8 /* botones_navegacion_settins.png in Resources */,
-				EFB8F6331A577B12003EA845 /* settings.png in Resources */,
 				EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */,
-				EFB8F63A1A577B12003EA845 /* vecinal.png in Resources */,
 				EFA465661A64DE7700BE92D8 /* SourceSansPro-Bold.ttf in Resources */,
 				EFA4656D1A6548D100BE92D8 /* next.png in Resources */,
 				F33D8BEA1A64B8D000E5C250 /* back.png in Resources */,
 				EFB8F6391A577B12003EA845 /* tut4.png in Resources */,
 				EFB8F6341A577B12003EA845 /* splash.png in Resources */,
 				EFA465691A64DE7700BE92D8 /* RobotoSlab-Regular.ttf in Resources */,
-				EFD70BE01A5AA4F200316C51 /* background4.png in Resources */,
-				EFB8F62C1A577B12003EA845 /* emprendedores.png in Resources */,
-				EFB8F63D1A5A2882003EA845 /* imagenPerfil.png in Resources */,
-				EFB8F62E1A577B12003EA845 /* funcionarios.png in Resources */,
-				EFD70BDE1A5AA2A700316C51 /* background2.png in Resources */,
 				EFB8F6301A577B12003EA845 /* Logo.png in Resources */,
 				F33D8BDC1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg in Resources */,
 				EF20E91D1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg in Resources */,
 				EF20E9021A5CD6A100542567 /* iconos_categorias-03.png in Resources */,
-				EFB8F62F1A577B12003EA845 /* ingresar.png in Resources */,
 				EFB8F6381A577B12003EA845 /* tut3.png in Resources */,
 				EFB8F6371A577B12003EA845 /* tut2.png in Resources */,
 				EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */,
 				EF20E9031A5CD6A100542567 /* iconos_categorias-04.png in Resources */,
 				EFA465671A64DE7700BE92D8 /* SourceSansPro-Light.ttf in Resources */,
-				EFB8F63B1A577B12003EA845 /* verTest.png in Resources */,
 				EFEF6A421A4D123000046820 /* Images.xcassets in Resources */,
 				EF20E9081A5CD8FE00542567 /* femenino.png in Resources */,
 				EF20E9201A5D5FB200542567 /* fondo1.png in Resources */,
-				EFD70BDC1A5AA1A200316C51 /* background1.png in Resources */,
 				EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */,
 				EFA465611A64DE5A00BE92D8 /* botones_navegacion_cerrar.png in Resources */,
-				EFB8F6321A577B12003EA845 /* option0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
