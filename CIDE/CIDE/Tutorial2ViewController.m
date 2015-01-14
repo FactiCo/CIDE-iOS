@@ -64,8 +64,8 @@
    forControlEvents:UIControlEventTouchDown];
     //[back setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     [back setTitle:@"X" forState:UIControlStateNormal];
-    back.titleLabel.textColor=[UIColor blackColor];//[UIColor colorWithRed:(83/255.0) green:(197/255.0) blue:(147/255.0) alpha:1];
-    //[back.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
+   [back setTitleColor:[UIColor colorWithRed:(83/255.0) green:(197/255.0) blue:(147/255.0) alpha:1] forState:UIControlStateNormal] ;
+    [back.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
     [fondo addSubview:back];
     UIImageView *log=[[UIImageView alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-40, 26, 80, 80) ];
     log.image=[UIImage imageNamed:@"jd.png"];

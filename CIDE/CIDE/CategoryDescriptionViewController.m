@@ -17,6 +17,7 @@
 @interface CategoryDescriptionViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, retain) NSArray *imageData;
 @property (nonatomic, retain) NSArray *descriptionData;
+@property (nonatomic, retain) NSArray *descriptionLargeData;
 @property (nonatomic, retain) NSArray *nameData;
 
 @property (weak, nonatomic) IBOutlet UILabel *navigationTitle;
@@ -62,6 +63,10 @@
     
     self.descriptionData = @[@"Trabajadores, empleadores y sindicatos requieren una justicia rápida, transparente y eficaz para resolver conflictos que suceden en los espacios de trabajo. Despidos injustificados, prestaciones no entregadas, legislación laboral no aplicada, son algunos temas que se abordan en el Foro “Justicia en el trabajo”.", @"Divorcios, herencias, pensiones, tutelas o violencia familiar son temas complejos, pues entran en juego sentimientos y relaciones de poder. El Foro “Justicia para familias” busca identificar en qué casos se deben rediseñar políticas públicas, simplificar legislación o utilizar sistemas alternativos de solución de conflictos.", @"Los espacio de convivencia, sean urbanos o rurales, suelen generar distintos tipos de conflictos. Un barrio, un condominio, una comunidad tienen diversos actores, reglas y normas de entendimiento. Temas como contaminación ambiental, usos de suelo y prevención del delito se tratan en el Foro “Justicia vecinal y comunitaria”.", @"Los ciudadanos pueden combatir abusos cometidos por las autoridades por medio de la justicia administrativa. Una multa injusta, una licitación alejada de la ley o el mal mantenimiento de las calles son ejemplos de actos de autoridad que se combaten ante un tribunal. Estos temas se tratan en el Foro “Justicia para ciudadanos”.", @"La debilidad del sistema de justicia frena el crecimiento económico y el potencial de los emprendedores. Para las empresas es arriesgado invertir cuando no cuentan con las instituciones de justicia adecuadas para dirimir conflictos o sancionar autoridades. Estos temas se discuten en el Foro “Justicia para emprendedores”.",@"Desde la resolución de conflictos agrarios, la necesidad de mejorar la capacitación de jueces y defensores, hasta la protección a consumidores y a usuarios del sistema bancario son otros temas de justicia cotidiana que requieren especial atención y consulta. Conoce los temas que se abordan en el Foro “Otras Justicias”."];
     
+    
+    //Info large
+    //Textos que Jordy mando al mail 
+    self.descriptionLargeData = @[@"",@"",@"",@"",@"",@""];
     //SET FONT
     self.descriptionTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:553.0];
     self.addTest.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:16.0];
