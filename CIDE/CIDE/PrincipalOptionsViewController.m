@@ -31,7 +31,6 @@
     }
     
     self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:20.0];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated

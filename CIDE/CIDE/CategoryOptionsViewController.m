@@ -23,6 +23,7 @@
     UIView *viewWhitOption3;
     UIView *viewWhitOption4;
     UIView *viewWhitOption5;
+    UIView *viewWhitOption6;
     UIImageView *background;
     float unitH;
     float unitw;
@@ -53,7 +54,7 @@
     UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*4-50, unitw*42, 50)];
     map.backgroundColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [map setTitle:@"Mapa de testimonios" forState:UIControlStateNormal];
-    map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:18.0];
+    map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:38];
    // [[map layer] setBorderWidth:2.0f];
     [map addTarget:self
              action:@selector(goToMAp:)
@@ -249,8 +250,8 @@
     [self.viewWhitOption6 addSubview: textCategory6];
     
     [self.view addSubview:self.viewWhitOption6];
-
 }
+
 -(void)goToDescription2:(int)option{
 
     CategoryDescriptionViewController *description;
