@@ -85,6 +85,8 @@
 		EFEF6E351A4F815800046820 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E341A4F815800046820 /* libsqlite3.dylib */; };
 		F33D8BDC1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */; };
 		F33D8BEA1A64B8D000E5C250 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F33D8BE91A64B8D000E5C250 /* back.png */; };
+		F3C35D081A65DA3E00071C41 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D071A65DA3E00071C41 /* close.png */; };
+		F3C35D0A1A6605B000071C41 /* engrane.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D091A6605B000071C41 /* engrane.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +201,8 @@
 		EFEF6E341A4F815800046820 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal01.jpg"; sourceTree = "<group>"; };
 		F33D8BE91A64B8D000E5C250 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		F3C35D071A65DA3E00071C41 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		F3C35D091A6605B000071C41 /* engrane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engrane.png; sourceTree = "<group>"; };
 		FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -338,6 +342,8 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3C35D071A65DA3E00071C41 /* close.png */,
+				F3C35D091A6605B000071C41 /* engrane.png */,
 				EFA4656C1A6548D100BE92D8 /* next.png */,
 				EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */,
 				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
@@ -493,7 +499,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C35D081A65DA3E00071C41 /* close.png in Resources */,
 				EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */,
+				F3C35D0A1A6605B000071C41 /* engrane.png in Resources */,
 				EFB8F62D1A577B12003EA845 /* familia.png in Resources */,
 				EF20E9051A5CD6A100542567 /* iconos_categorias-06.png in Resources */,
 				EFB8F6311A577B12003EA845 /* mapa.png in Resources */,

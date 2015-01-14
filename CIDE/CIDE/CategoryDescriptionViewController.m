@@ -38,8 +38,22 @@
 @end
 
 @implementation CategoryDescriptionViewController
-
+{
+    UIView * aux;
+}
 - (void)viewDidLoad {
+    aux=[[UIView alloc]initWithFrame:CGRectMake(10, 30, self.view.frame.size.width-20, self.view.frame.size.height-40)];
+    aux.backgroundColor=[UIColor whiteColor];
+    [self.view addSubview:aux];
+    aux.hidden=TRUE;
+    
+    UIButton *close=[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-50, 0, 30, 30)];
+    close.backgroundColor=[UIColor clearColor];
+    [close addTarget:self
+             action:@selector(closeMoreDetail)
+   forControlEvents:UIControlEventTouchDown];
+    [close setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    [aux addSubview:close];
     
     [super viewDidLoad];
     self.imageData = @[[UIImage imageNamed:@"trabajo.png"], [UIImage imageNamed:@"familia.png"], [UIImage imageNamed:@"vecinal.png"], [UIImage imageNamed:@"funcionarios.png"], [UIImage imageNamed:@"emprendedores.png"]];
@@ -47,9 +61,14 @@
     self.descriptionData = @[@"La Justicia Laboral es un tema pendiente en México. Actualmente, los procesos para obtener justicia en el trabajo son caros, complejos y las figuras de justicia alternativa se utilizan poco. ", @"Justicia en las Familias trata diversos temas y conflictos como el divorcio, sucesiones, pensiones alimenticias, entre otros. Es un tema complejo, pues intervienen relaciones de poder y vínculos afectivos. Las mujeres suelen ser las personas más desfavorecidas. ", @"La convivencia vecinal y comunitaria es probablemente el mayor tema de conflictos diarios entre personas que habitan un mismo espacio o territorio. Conflictos derivados de los espacios públicos y uso de suelo se tratarán en este apartado. ", @"Los ciudadanos tienen la facultad de defenderse frente a actos injustos de las autoridades. Sin embargo, en muchas ocasiones estos procesos resultan mucho más largos y complejos que la reparación del daño. La responsabilidad patrimonial del Estado es un tema fundamental.", @"Emprender es un reto constante en términos legales. Los micro, pequeños y medianos empresarios se enfrentan a numerosos obstáculos y las alternativas de justicia son pocas. "];
     
     //SET FONT
-    self.descriptionTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    self.descriptionTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:53.0];
     self.addTest.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:16.0];
     self.seeTest.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:16.0];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showMoreDetail)];
+    
+    [_descriptionTextView addGestureRecognizer:tap];
+    
     
     self.nameData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores"];
     
@@ -63,7 +82,23 @@
     
     [self setDataCategory: self.option];
 }
+-(void)showMoreDetail{
+    aux.hidden=FALSE;
+    _imageCategory.hidden=TRUE;
+    _descriptionTextView.hidden=TRUE;
+    _addTest.hidden=TRUE;
+    
 
+
+}
+-(void)closeMoreDetail{
+    aux.hidden=TRUE;
+    _imageCategory.hidden=FALSE;
+    _descriptionTextView.hidden=FALSE;
+    _addTest.hidden=FALSE;
+    
+
+}
 - (void)setDataCategory:(NSInteger )option {
     self.navigationTitle.text = self.nameData[option];
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"iconos_categorias-0%ld.png", option + 2]];

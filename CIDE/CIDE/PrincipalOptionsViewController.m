@@ -30,7 +30,7 @@
         [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:20.0]];
     }
     
-    self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:18.0];
+    self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:15.0];
     
 }
 
