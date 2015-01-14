@@ -25,7 +25,6 @@
 		EFA465671A64DE7700BE92D8 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */; };
 		EFA465681A64DE7700BE92D8 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */; };
 		EFA465691A64DE7700BE92D8 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */; };
-		EFA4656B1A64DE8800BE92D8 /* botones_navegacion_settins.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */; };
 		EFA4656D1A6548D100BE92D8 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4656C1A6548D100BE92D8 /* next.png */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
@@ -74,6 +73,8 @@
 		F3C35D521A6656B500071C41 /* iconos_categorias-05.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D511A6656B500071C41 /* iconos_categorias-05.png */; };
 		F3C35D541A6656CE00071C41 /* iconos_categorias-06.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D531A6656CE00071C41 /* iconos_categorias-06.png */; };
 		F3C35D561A6656DC00071C41 /* iconos_categorias-07.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D551A6656DC00071C41 /* iconos_categorias-07.png */; };
+		F3C35D581A665E6100071C41 /* botones_navegacion_settins.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D571A665E6100071C41 /* botones_navegacion_settins.png */; };
+		F3C35D5A1A6660D500071C41 /* jd.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D591A6660D500071C41 /* jd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +116,6 @@
 		EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
-		EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botones_navegacion_settins.png; sourceTree = "<group>"; };
 		EFA4656C1A6548D100BE92D8 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
@@ -177,6 +177,8 @@
 		F3C35D511A6656B500071C41 /* iconos_categorias-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-05.png"; sourceTree = "<group>"; };
 		F3C35D531A6656CE00071C41 /* iconos_categorias-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-06.png"; sourceTree = "<group>"; };
 		F3C35D551A6656DC00071C41 /* iconos_categorias-07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-07.png"; sourceTree = "<group>"; };
+		F3C35D571A665E6100071C41 /* botones_navegacion_settins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botones_navegacion_settins.png; sourceTree = "<group>"; };
+		F3C35D591A6660D500071C41 /* jd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jd.png; sourceTree = "<group>"; };
 		FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				F3C35D451A66527600071C41 /* justicia-ciudadana-postal01.jpg */,
+				F3C35D591A6660D500071C41 /* jd.png */,
 				F3C35D461A66527600071C41 /* justicia-ciudadana-postal03.jpg */,
 				F3C35D471A66527600071C41 /* Justicia-Ciudadana-postal02.jpg */,
 				EFB8F6261A577B12003EA845 /* tut1.png */,
@@ -344,7 +347,7 @@
 				F3C35D0B1A66177600071C41 /* Fuentes */,
 				F3C35D071A65DA3E00071C41 /* close.png */,
 				F3C35D091A6605B000071C41 /* engrane.png */,
-				EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */,
+				F3C35D571A665E6100071C41 /* botones_navegacion_settins.png */,
 				EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */,
 				F33D8BE91A64B8D000E5C250 /* back.png */,
 				EFA4656C1A6548D100BE92D8 /* next.png */,
@@ -491,13 +494,14 @@
 				F3C35D0A1A6605B000071C41 /* engrane.png in Resources */,
 				EFB8F6361A577B12003EA845 /* tut1.png in Resources */,
 				EF20E9091A5CD8FE00542567 /* masculino.png in Resources */,
+				F3C35D5A1A6660D500071C41 /* jd.png in Resources */,
 				EFA465681A64DE7700BE92D8 /* SourceSansPro-Regular.ttf in Resources */,
-				EFA4656B1A64DE8800BE92D8 /* botones_navegacion_settins.png in Resources */,
 				F3C35D501A66569F00071C41 /* iconos_categorias-04.png in Resources */,
 				F3C35D4C1A66566200071C41 /* iconos_categorias-02.png in Resources */,
 				F3C35D541A6656CE00071C41 /* iconos_categorias-06.png in Resources */,
 				EFA465661A64DE7700BE92D8 /* SourceSansPro-Bold.ttf in Resources */,
 				EFA4656D1A6548D100BE92D8 /* next.png in Resources */,
+				F3C35D581A665E6100071C41 /* botones_navegacion_settins.png in Resources */,
 				F33D8BEA1A64B8D000E5C250 /* back.png in Resources */,
 				EFB8F6391A577B12003EA845 /* tut4.png in Resources */,
 				EFB8F6341A577B12003EA845 /* splash.png in Resources */,

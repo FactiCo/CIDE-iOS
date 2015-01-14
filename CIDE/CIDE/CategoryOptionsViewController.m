@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titleLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:24.0];
+    self.titleLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
     
     //Test
     unitH=(self.view.frame.size.height/100);
@@ -95,7 +95,7 @@
     UILabel *textCategory1=[[UILabel alloc]initWithFrame:CGRectMake(category1.frame.origin.x, category1.frame.origin.y+category1.frame.size.height +5 , category1.frame.size.width, 30)];
     textCategory1.backgroundColor=[UIColor clearColor];
     textCategory1.text=@"Justicia en el trabajo";
-    textCategory1.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:13];
+    textCategory1.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
     textCategory1.numberOfLines=4;
     [textCategory1 sizeToFit];
     textCategory1.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
@@ -123,7 +123,7 @@
     textCategory2.text=@"Justicia para familias";
     textCategory2.numberOfLines=3;
     textCategory2.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    textCategory2.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:13];
+    textCategory2.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
     [textCategory2 sizeToFit];
     textCategory2.textAlignment=NSTextAlignmentCenter;
     
@@ -153,7 +153,7 @@
     textCategory3.text=@"Justicia vecinal y comunitaria";
     textCategory3.numberOfLines=4;
     textCategory3.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    textCategory3.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:13];
+    textCategory3.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
     [textCategory3 sizeToFit];
     textCategory3.textAlignment=NSTextAlignmentCenter;
     
@@ -185,7 +185,7 @@
     textCategory4.text=@"Justicia para ciudadanos";
     textCategory4.numberOfLines=4;
     textCategory4.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    textCategory4.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:13];
+    textCategory4.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
     [textCategory4 sizeToFit];
     textCategory4.textAlignment=NSTextAlignmentCenter;
     
@@ -217,7 +217,7 @@
     textCategory5.text=@"Justicia para emprendedores";
     textCategory5.numberOfLines=4;
     textCategory5.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
-    textCategory5.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:13];
+    textCategory5.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
     [textCategory5 sizeToFit];
     textCategory5.textAlignment=NSTextAlignmentCenter;
     
@@ -249,7 +249,7 @@
     textCategory6.text = @"Otros temas de Justicia Cotidiana";
     textCategory6.numberOfLines = 4;
     textCategory6.textColor = [UIColor colorWithRed:(108 / 255.0) green:(218 / 255.0) blue:(132 / 255.0) alpha:1];
-    textCategory6.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:14];
+    textCategory6.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
     [textCategory6 sizeToFit];
     textCategory6.textAlignment = NSTextAlignmentCenter;
     

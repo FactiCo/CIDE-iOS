@@ -15,6 +15,7 @@
 @property (weak, nonatomic) UIImageView *image1;
 @property (nonatomic) CGFloat height;
 
+
 @end
 
 @implementation Tutorial2ViewController
@@ -50,6 +51,25 @@
     UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, (height) * 2, width, height)];
     image3.image = [UIImage imageNamed:@"justicia-ciudadana-postal03.jpg"];
     [self.scrollView addSubview:image3];
+    
+    UIView *fondo=[[UIView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
+    fondo.backgroundColor=[UIColor whiteColor];
+    [self.view addSubview:fondo];
+    
+    
+    UIButton *back=[[UIButton alloc]initWithFrame:CGRectMake(fondo.frame.size.width-30, 7, 30, 30)];
+    back.backgroundColor=[UIColor whiteColor];
+    [back addTarget:self
+             action:@selector(doneAction:)
+   forControlEvents:UIControlEventTouchDown];
+    //[back setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [back setTitle:@"X" forState:UIControlStateNormal];
+    back.titleLabel.textColor=[UIColor blackColor];//[UIColor colorWithRed:(83/255.0) green:(197/255.0) blue:(147/255.0) alpha:1];
+    //[back.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
+    [fondo addSubview:back];
+    UIImageView *log=[[UIImageView alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-40, 26, 80, 80) ];
+    log.image=[UIImage imageNamed:@"jd.png"];
+    [self.view addSubview:log];
     
 }
 

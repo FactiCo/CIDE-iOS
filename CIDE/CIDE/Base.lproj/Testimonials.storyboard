@@ -93,6 +93,11 @@
                             </pageControl>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jae-xD-lZP">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <subviews>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jd.png" translatesAutoresizingMaskIntoConstraints="NO" id="loQ-3I-K9h">
+                                        <rect key="frame" x="130" y="16" width="80" height="80"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDW-bP-K5a">
@@ -197,7 +202,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCJ-mh-Jpe">
-                                        <rect key="frame" x="205" y="8" width="125" height="30"/>
+                                        <rect key="frame" x="195" y="8" width="125" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="125" id="4h7-t9-8FX"/>
                                             <constraint firstAttribute="height" constant="30" id="ioz-yv-7IS"/>
@@ -209,7 +214,7 @@
                                             <segue destination="haW-1S-Ajb" kind="presentation" id="xaU-Id-3PY"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Primera aplicación para recopilar y visualizar testimonios y propuestas de Justicia Cotidiana en México" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-TR-qX4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Aplicación para recopilar y visualizar testimonios y propuestas de Justicia Cotidiana en México" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa4-TR-qX4">
                                         <rect key="frame" x="88" y="28" width="215" height="82"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="82" id="HIQ-bw-yDp"/>
@@ -226,7 +231,7 @@
                                     <constraint firstItem="Wa4-TR-qX4" firstAttribute="leading" secondItem="bsW-6T-0ME" secondAttribute="trailing" constant="12" id="NtA-1b-GCO"/>
                                     <constraint firstItem="bsW-6T-0ME" firstAttribute="leading" secondItem="pNQ-ws-tFe" secondAttribute="leading" constant="20" id="OtS-y3-9r6"/>
                                     <constraint firstAttribute="centerY" secondItem="bsW-6T-0ME" secondAttribute="centerY" constant="-0.5" id="PeT-0u-6eH"/>
-                                    <constraint firstAttribute="trailing" secondItem="wCJ-mh-Jpe" secondAttribute="trailing" constant="-10" id="ZKF-nJ-MJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="wCJ-mh-Jpe" secondAttribute="trailing" id="ZKF-nJ-MJV"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué es la justicia cotidiana?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1a-dm-zwA">
@@ -241,7 +246,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu testimonio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOB-Jm-ZU6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testimonios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOB-Jm-ZU6">
                                 <rect key="frame" x="16" y="351" width="250" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -253,7 +258,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vota las propuestas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEj-pa-MeP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propuestas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEj-pa-MeP">
                                 <rect key="frame" x="16" y="489" width="250" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -390,48 +395,74 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3h-2o-PwK">
                                 <rect key="frame" x="0.0" y="184" width="320" height="200"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c75-vZ-geE">
-                                        <rect key="frame" x="16" y="85" width="288" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="IPn-6v-T4M"/>
-                                        </constraints>
-                                        <state key="normal" title="Tutorial">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hY5-Yd-rVN">
-                                        <rect key="frame" x="16" y="20" width="288" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="2yi-L4-CVg"/>
-                                        </constraints>
-                                        <state key="normal" title="Aviso de Privacidad">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shc-fb-Y7R" customClass="FBLoginView">
-                                        <rect key="frame" x="50" y="136" width="220" height="44"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="bE1-aM-hlD"/>
-                                            <constraint firstAttribute="width" constant="220" id="il4-pq-xMa"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="9Fe-kT-Mgr"/>
-                                    <constraint firstAttribute="centerX" secondItem="shc-fb-Y7R" secondAttribute="centerX" id="CAI-Yp-m9t"/>
-                                    <constraint firstItem="c75-vZ-geE" firstAttribute="leading" secondItem="T3h-2o-PwK" secondAttribute="leading" constant="16" id="Ckb-Vy-Tzc"/>
-                                    <constraint firstAttribute="centerY" secondItem="c75-vZ-geE" secondAttribute="centerY" id="KlB-Ld-vqw"/>
-                                    <constraint firstAttribute="trailing" secondItem="c75-vZ-geE" secondAttribute="trailing" constant="16" id="KnX-n4-t4y"/>
-                                    <constraint firstItem="hY5-Yd-rVN" firstAttribute="top" secondItem="T3h-2o-PwK" secondAttribute="top" constant="20" id="L36-Cg-Azt"/>
-                                    <constraint firstAttribute="bottom" secondItem="shc-fb-Y7R" secondAttribute="bottom" constant="20" id="Q2q-be-x7J"/>
-                                    <constraint firstItem="hY5-Yd-rVN" firstAttribute="leading" secondItem="T3h-2o-PwK" secondAttribute="leading" constant="16" id="WiK-UJ-YmQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="hY5-Yd-rVN" secondAttribute="trailing" constant="16" id="ltB-8j-qxk"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Ub-nrG">
+                                <rect key="frame" x="137" y="52" width="70" height="30"/>
+                                <state key="normal" title="Acerca de">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shc-fb-Y7R" customClass="FBLoginView">
+                                <rect key="frame" x="55" y="493" width="220" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bE1-aM-hlD"/>
+                                    <constraint firstAttribute="width" constant="220" id="il4-pq-xMa"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNz-2I-b9T">
+                                <rect key="frame" x="10" y="96" width="300" height="358"/>
+                                <mutableString key="text">El Centro de Investigación y Docencia Económicas (CIDE) es una institución 
+
+pública y autónoma fundada en 1974 que se dedica a la docencia e investigación en 
+
+ciencias sociales, comprometido con la generación de conocimiento que pueda ser 
+
+relevante para el desarrollo nacional. Se ha orientado al diseño y evaluación de 
+
+políticas públicas, al diagnóstico de problemas sociales y a la elaboración de 
+
+propuestas de solución, desde una perspectiva plural, con la participación de 
+
+politólogos, abogados, economistas, internacionalistas, entre otros especialistas.
+
+En noviembre de 2014, el Presidente de la República solicitó al CIDE  la tarea de 
+
+encabezar una amplia consulta que permitiera el diálogo entre ciudadanos, 
+
+académicos, organizaciones sociales, especialistas, autoridades, con el propósito de 
+
+elaborar recomendaciones para hacer más eficaz el sistema de justicia, que las 
+
+reglas de convivencia social se cumplan, las personas puedan reivindicar sus 
+
+derechos y los infractores tengan consecuencias por sus actos.
+
+En conjunto con Infotec, centro público de innovación y desarrollo tecnológico 
+
+adscrito al Consejo Nacional de Ciencia y Tecnología (Conacyt), el CIDE e 
+
+instituciones aliadas hemos construido esta plataforma tecnológica que permite 
+
+recopilar testimonios desde cualquier lugar del país sobre las problemáticas 
+
+referidas y conocer las propuestas de expertos para mejorar la justicia en México. 
+
+Gracias por participar.</mutableString>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpU-oF-Fgk">
+                                <rect key="frame" x="82" y="462" width="166" height="30"/>
+                                <state key="normal" title="Términos y Condiciones">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33725491166114807" green="0.33725491166114807" blue="0.33725491166114807" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
@@ -440,13 +471,10 @@
                             <constraint firstAttribute="trailing" secondItem="T3h-2o-PwK" secondAttribute="trailing" id="9oW-F1-wTa"/>
                             <constraint firstItem="Zj1-cp-FZp" firstAttribute="top" secondItem="ZWN-45-lkA" secondAttribute="bottom" id="AO3-3T-8Kb"/>
                             <constraint firstAttribute="trailing" secondItem="Zj1-cp-FZp" secondAttribute="trailing" constant="16" id="F7v-ym-FQR"/>
+                            <constraint firstAttribute="centerX" secondItem="MNz-2I-b9T" secondAttribute="centerX" id="NBY-SP-wWl"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outletCollection property="settingsButtons" destination="hY5-Yd-rVN" id="on8-m4-JV1"/>
-                        <outletCollection property="settingsButtons" destination="c75-vZ-geE" id="kiG-Tg-qLI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRM-9p-W7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1376,25 +1404,11 @@ dos veces</string>
                                     <constraint firstAttribute="height" constant="130" id="dFt-Yg-IBh"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ8-7g-Ljg">
-                                <rect key="frame" x="16" y="32" width="75" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="544-wx-YRn"/>
-                                    <constraint firstAttribute="height" constant="30" id="Tjx-4g-K6M"/>
-                                </constraints>
-                                <state key="normal" image="back.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backAction:" destination="UvX-Je-HZS" eventType="touchUpInside" id="vvZ-ax-B5s"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu testimonio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrf-ww-eK4">
-                                <rect key="frame" x="40" y="36" width="240" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ingresa tu testimonio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrf-ww-eK4">
+                                <rect key="frame" x="40" y="32" width="240" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="iDs-fa-jb6"/>
                                 </constraints>
@@ -1513,13 +1527,20 @@ dos veces</string>
                                     <segue destination="Vlh-dN-LLf" kind="show" identifier="goToFormulario" id="qSM-qo-Y12"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXt-63-8iQ">
+                                <rect key="frame" x="0.0" y="28" width="80" height="30"/>
+                                <state key="normal" title="Button" image="back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="UvX-Je-HZS" eventType="touchDown" id="zco-Y1-LPz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="idK-h8-UDU" secondAttribute="centerX" id="1jv-cp-2gC"/>
-                            <constraint firstItem="zZ8-7g-Ljg" firstAttribute="top" secondItem="Ozx-yj-C43" secondAttribute="bottom" constant="12" id="1y8-oI-ySU"/>
                             <constraint firstItem="ulw-kp-KXG" firstAttribute="top" secondItem="Ozx-yj-C43" secondAttribute="bottom" constant="60" id="2sx-MJ-vdY"/>
-                            <constraint firstItem="zZ8-7g-Ljg" firstAttribute="leading" secondItem="PQn-11-KzN" secondAttribute="leading" constant="16" id="6Rh-s7-Yl3"/>
                             <constraint firstItem="uXX-4V-2yh" firstAttribute="centerY" secondItem="TeK-eT-ALy" secondAttribute="centerY" constant="5" id="9Qt-yc-B6p"/>
                             <constraint firstItem="TeK-eT-ALy" firstAttribute="top" secondItem="idK-h8-UDU" secondAttribute="bottom" constant="4" id="9wH-ia-KBj"/>
                             <constraint firstItem="pxq-PV-eUD" firstAttribute="top" secondItem="Ufn-uD-iuA" secondAttribute="bottom" id="Cj5-fc-Udf"/>
@@ -2018,10 +2039,11 @@ dos veces</string>
     <resources>
         <image name="Logo.png" width="273" height="268"/>
         <image name="back.png" width="161" height="61"/>
-        <image name="botones_navegacion_settins.png" width="122" height="26"/>
+        <image name="botones_navegacion_settins.png" width="251" height="61"/>
         <image name="femenino.png" width="47" height="44"/>
         <image name="fondo1.png" width="1081" height="1708"/>
         <image name="iconos_categorias-02.png" width="114" height="114"/>
+        <image name="jd.png" width="151" height="147"/>
         <image name="next.png" width="161" height="61"/>
     </resources>
     <inferredMetricsTieBreakers>
