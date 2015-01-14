@@ -342,14 +342,11 @@
 		EFEF6A341A4D123000046820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3C35D0B1A66177600071C41 /* Fuentes */,
 				F3C35D071A65DA3E00071C41 /* close.png */,
 				F3C35D091A6605B000071C41 /* engrane.png */,
 				EFA4656C1A6548D100BE92D8 /* next.png */,
 				EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */,
-				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
-				EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */,
-				EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */,
-				EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */,
 				EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */,
 				F33D8BE91A64B8D000E5C250 /* back.png */,
 				EF20E91F1A5D5FB200542567 /* fondo1.png */,
@@ -412,6 +409,17 @@
 				EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		F3C35D0B1A66177600071C41 /* Fuentes */ = {
+			isa = PBXGroup;
+			children = (
+				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
+				EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */,
+				EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */,
+				EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */,
+			);
+			name = Fuentes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

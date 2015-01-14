@@ -22,6 +22,7 @@
     UIView *viewWhitOption3;
     UIView *viewWhitOption4;
     UIView *viewWhitOption5;
+    UIView *viewWhitOption6;
     UIImageView *background;
     float unitH;
     float unitw;
@@ -50,7 +51,7 @@
     UIButton *map=[[UIButton alloc]initWithFrame:CGRectMake(unitw*29, self.view.frame.size.height-unitH*4-50, unitw*42, 50)];
     map.backgroundColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     [map setTitle:@"Mapa de testimonios" forState:UIControlStateNormal];
-    map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:18.0];
+    map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:38];
    // [[map layer] setBorderWidth:2.0f];
     [map addTarget:self
              action:@selector(goToMAp:)
@@ -215,6 +216,36 @@
     
     [self.view addSubview:viewWhitOption5];
 
+    //View6
+    
+    
+    viewWhitOption6=[[UIView alloc]init];
+    viewWhitOption6.frame=CGRectMake(unitw*65, 90+viewWhitOption3.frame.size.height+unitH*3, unitw*29, unitH*31);
+    viewWhitOption6.backgroundColor=[UIColor whiteColor];
+    viewWhitOption6.tag=5;
+    /***************************************/
+    /*  Codigo Gesto Touch para View     */
+    /***************************************/
+    
+    UITapGestureRecognizer *tapGesture6 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
+    
+    [viewWhitOption6 addGestureRecognizer:tapGesture6];
+    
+    // Set Category Image
+    UIImageView *category6=[[UIImageView alloc]initWithFrame:CGRectMake((viewWhitOption6.frame.size.width/10)*1, (viewWhitOption6.frame.size.height/10)*2, (viewWhitOption6.frame.size.width/10)*8, (viewWhitOption6.frame.size.width/10)*8)];
+    category6.image=[UIImage imageNamed:@"iconos_categorias-04.png"];
+    [viewWhitOption6 addSubview:category6];
+    [self.view addSubview:viewWhitOption6];
+    UILabel *textCategory6=[[UILabel alloc]initWithFrame:CGRectMake(category6.frame.origin.x, category6.frame.origin.y+category6.frame.size.height +5 , category6.frame.size.width, 30)];
+    textCategory6.backgroundColor=[UIColor clearColor];
+    textCategory6.text=@"Otros temas de Justicia Cotidiana";
+    textCategory6.numberOfLines=5;
+    textCategory6.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];    [textCategory6 setFont:[UIFont boldSystemFontOfSize:10 ]];
+    textCategory6.textAlignment=NSTextAlignmentCenter;
+    
+    [viewWhitOption6 addSubview: textCategory6];
+    
+    [self.view addSubview:viewWhitOption6];
 
 }
 -(void)goToDescription2:(int)option{
