@@ -8,19 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3191832CD86C943D575AED91 /* libPods-CIDE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */; };
-		EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */; };
-		EF20E9021A5CD6A100542567 /* iconos_categorias-03.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FD1A5CD6A100542567 /* iconos_categorias-03.png */; };
-		EF20E9031A5CD6A100542567 /* iconos_categorias-04.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FE1A5CD6A100542567 /* iconos_categorias-04.png */; };
-		EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E8FF1A5CD6A100542567 /* iconos_categorias-05.png */; };
-		EF20E9051A5CD6A100542567 /* iconos_categorias-06.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9001A5CD6A100542567 /* iconos_categorias-06.png */; };
 		EF20E9081A5CD8FE00542567 /* femenino.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9061A5CD8FE00542567 /* femenino.png */; };
 		EF20E9091A5CD8FE00542567 /* masculino.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E9071A5CD8FE00542567 /* masculino.png */; };
 		EF20E90C1A5CDDEF00542567 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E90B1A5CDDEF00542567 /* SettingsViewController.m */; };
 		EF20E90F1A5D4CFF00542567 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E90E1A5D4CFF00542567 /* MapViewController.m */; };
 		EF20E9121A5D4DE200542567 /* TestimonialFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9111A5D4DE200542567 /* TestimonialFormViewController.m */; };
 		EF20E9181A5D4E6200542567 /* TestimonialsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9171A5D4E6200542567 /* TestimonialsListViewController.m */; };
-		EF20E91D1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */; };
-		EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */; };
 		EF20E9201A5D5FB200542567 /* fondo1.png in Resources */ = {isa = PBXBuildFile; fileRef = EF20E91F1A5D5FB200542567 /* fondo1.png */; };
 		EF20E9231A61FCB400542567 /* LoginFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9221A61FCB400542567 /* LoginFBViewController.m */; };
 		EF20E9641A62144800542567 /* PropuestasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20E9631A62144800542567 /* PropuestasViewController.m */; };
@@ -69,10 +62,18 @@
 		EFEF6E311A4F813300046820 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E301A4F813300046820 /* SystemConfiguration.framework */; };
 		EFEF6E331A4F814000046820 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E321A4F814000046820 /* libz.dylib */; };
 		EFEF6E351A4F815800046820 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEF6E341A4F815800046820 /* libsqlite3.dylib */; };
-		F33D8BDC1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */; };
 		F33D8BEA1A64B8D000E5C250 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F33D8BE91A64B8D000E5C250 /* back.png */; };
 		F3C35D081A65DA3E00071C41 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D071A65DA3E00071C41 /* close.png */; };
 		F3C35D0A1A6605B000071C41 /* engrane.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D091A6605B000071C41 /* engrane.png */; };
+		F3C35D481A66527600071C41 /* justicia-ciudadana-postal01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D451A66527600071C41 /* justicia-ciudadana-postal01.jpg */; };
+		F3C35D491A66527600071C41 /* justicia-ciudadana-postal03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D461A66527600071C41 /* justicia-ciudadana-postal03.jpg */; };
+		F3C35D4A1A66527600071C41 /* Justicia-Ciudadana-postal02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D471A66527600071C41 /* Justicia-Ciudadana-postal02.jpg */; };
+		F3C35D4C1A66566200071C41 /* iconos_categorias-02.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D4B1A66566200071C41 /* iconos_categorias-02.png */; };
+		F3C35D4E1A66568500071C41 /* iconos_categorias-03.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D4D1A66568500071C41 /* iconos_categorias-03.png */; };
+		F3C35D501A66569F00071C41 /* iconos_categorias-04.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D4F1A66569F00071C41 /* iconos_categorias-04.png */; };
+		F3C35D521A6656B500071C41 /* iconos_categorias-05.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D511A6656B500071C41 /* iconos_categorias-05.png */; };
+		F3C35D541A6656CE00071C41 /* iconos_categorias-06.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D531A6656CE00071C41 /* iconos_categorias-06.png */; };
+		F3C35D561A6656DC00071C41 /* iconos_categorias-07.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C35D551A6656DC00071C41 /* iconos_categorias-07.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +89,6 @@
 /* Begin PBXFileReference section */
 		0F773C2C6F2CD1C903C2F623 /* Pods-CIDE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.release.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.release.xcconfig"; sourceTree = "<group>"; };
 		A47A3EEBC32C99FE6AE14ECA /* libPods-CIDE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIDE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-02.png"; sourceTree = "<group>"; };
-		EF20E8FD1A5CD6A100542567 /* iconos_categorias-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-03.png"; sourceTree = "<group>"; };
-		EF20E8FE1A5CD6A100542567 /* iconos_categorias-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-04.png"; sourceTree = "<group>"; };
-		EF20E8FF1A5CD6A100542567 /* iconos_categorias-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-05.png"; sourceTree = "<group>"; };
-		EF20E9001A5CD6A100542567 /* iconos_categorias-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-06.png"; sourceTree = "<group>"; };
 		EF20E9061A5CD8FE00542567 /* femenino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femenino.png; sourceTree = "<group>"; };
 		EF20E9071A5CD8FE00542567 /* masculino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masculino.png; sourceTree = "<group>"; };
 		EF20E90A1A5CDDEF00542567 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -103,8 +99,6 @@
 		EF20E9111A5D4DE200542567 /* TestimonialFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialFormViewController.m; sourceTree = "<group>"; };
 		EF20E9161A5D4E6200542567 /* TestimonialsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialsListViewController.h; sourceTree = "<group>"; };
 		EF20E9171A5D4E6200542567 /* TestimonialsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialsListViewController.m; sourceTree = "<group>"; };
-		EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Justicia-Ciudadana-postal02.jpg"; sourceTree = "<group>"; };
-		EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal03.jpg"; sourceTree = "<group>"; };
 		EF20E91F1A5D5FB200542567 /* fondo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo1.png; sourceTree = "<group>"; };
 		EF20E9211A61FCB400542567 /* LoginFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginFBViewController.h; sourceTree = "<group>"; };
 		EF20E9221A61FCB400542567 /* LoginFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginFBViewController.m; sourceTree = "<group>"; };
@@ -171,10 +165,18 @@
 		EFEF6E301A4F813300046820 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EFEF6E321A4F814000046820 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EFEF6E341A4F815800046820 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal01.jpg"; sourceTree = "<group>"; };
 		F33D8BE91A64B8D000E5C250 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		F3C35D071A65DA3E00071C41 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		F3C35D091A6605B000071C41 /* engrane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engrane.png; sourceTree = "<group>"; };
+		F3C35D451A66527600071C41 /* justicia-ciudadana-postal01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal01.jpg"; sourceTree = "<group>"; };
+		F3C35D461A66527600071C41 /* justicia-ciudadana-postal03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justicia-ciudadana-postal03.jpg"; sourceTree = "<group>"; };
+		F3C35D471A66527600071C41 /* Justicia-Ciudadana-postal02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Justicia-Ciudadana-postal02.jpg"; sourceTree = "<group>"; };
+		F3C35D4B1A66566200071C41 /* iconos_categorias-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-02.png"; sourceTree = "<group>"; };
+		F3C35D4D1A66568500071C41 /* iconos_categorias-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-03.png"; sourceTree = "<group>"; };
+		F3C35D4F1A66569F00071C41 /* iconos_categorias-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-04.png"; sourceTree = "<group>"; };
+		F3C35D511A6656B500071C41 /* iconos_categorias-05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-05.png"; sourceTree = "<group>"; };
+		F3C35D531A6656CE00071C41 /* iconos_categorias-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-06.png"; sourceTree = "<group>"; };
+		F3C35D551A6656DC00071C41 /* iconos_categorias-07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconos_categorias-07.png"; sourceTree = "<group>"; };
 		FEB08B2317CF39F40E70BE4B /* Pods-CIDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIDE/Pods-CIDE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,10 +249,6 @@
 		EFA4656E1A65D2FD00BE92D8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EFA465621A64DE7700BE92D8 /* SourceSansPro-Bold.ttf */,
-				EFA465631A64DE7700BE92D8 /* SourceSansPro-Light.ttf */,
-				EFA465641A64DE7700BE92D8 /* SourceSansPro-Regular.ttf */,
-				EFA465651A64DE7700BE92D8 /* RobotoSlab-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -258,9 +256,9 @@
 		EFA4656F1A65D32700BE92D8 /* Tutorials */ = {
 			isa = PBXGroup;
 			children = (
-				F33D8BDB1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg */,
-				EF20E91A1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg */,
-				EF20E91B1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg */,
+				F3C35D451A66527600071C41 /* justicia-ciudadana-postal01.jpg */,
+				F3C35D461A66527600071C41 /* justicia-ciudadana-postal03.jpg */,
+				F3C35D471A66527600071C41 /* Justicia-Ciudadana-postal02.jpg */,
 				EFB8F6261A577B12003EA845 /* tut1.png */,
 				EFB8F6271A577B12003EA845 /* tut2.png */,
 				EFB8F6281A577B12003EA845 /* tut3.png */,
@@ -346,7 +344,6 @@
 				F3C35D0B1A66177600071C41 /* Fuentes */,
 				F3C35D071A65DA3E00071C41 /* close.png */,
 				F3C35D091A6605B000071C41 /* engrane.png */,
-				EFA4656C1A6548D100BE92D8 /* next.png */,
 				EFA4656A1A64DE8800BE92D8 /* botones_navegacion_settins.png */,
 				EFA465601A64DE5A00BE92D8 /* botones_navegacion_cerrar.png */,
 				F33D8BE91A64B8D000E5C250 /* back.png */,
@@ -381,11 +378,12 @@
 		F33D8BDD1A606A7400E5C250 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				EF20E8FD1A5CD6A100542567 /* iconos_categorias-03.png */,
-				EF20E8FE1A5CD6A100542567 /* iconos_categorias-04.png */,
-				EF20E8FF1A5CD6A100542567 /* iconos_categorias-05.png */,
-				EF20E9001A5CD6A100542567 /* iconos_categorias-06.png */,
-				EF20E8FC1A5CD6A100542567 /* iconos_categorias-02.png */,
+				F3C35D4B1A66566200071C41 /* iconos_categorias-02.png */,
+				F3C35D4D1A66568500071C41 /* iconos_categorias-03.png */,
+				F3C35D4F1A66569F00071C41 /* iconos_categorias-04.png */,
+				F3C35D511A6656B500071C41 /* iconos_categorias-05.png */,
+				F3C35D531A6656CE00071C41 /* iconos_categorias-06.png */,
+				F3C35D551A6656DC00071C41 /* iconos_categorias-07.png */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -452,11 +450,11 @@
 				TargetAttributes = {
 					EFEF6A301A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 35F5988A69;
+						DevelopmentTeam = E48473Z6UM;
 					};
 					EFEF6A491A4D123000046820 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 35F5988A69;
+						DevelopmentTeam = E48473Z6UM;
 						TestTargetID = EFEF6A301A4D123000046820;
 					};
 				};
@@ -488,34 +486,34 @@
 			files = (
 				F3C35D081A65DA3E00071C41 /* close.png in Resources */,
 				EFEF6A401A4D123000046820 /* Testimonials.storyboard in Resources */,
+				F3C35D561A6656DC00071C41 /* iconos_categorias-07.png in Resources */,
+				F3C35D491A66527600071C41 /* justicia-ciudadana-postal03.jpg in Resources */,
 				F3C35D0A1A6605B000071C41 /* engrane.png in Resources */,
-				EFB8F62D1A577B12003EA845 /* familia.png in Resources */,
-				EF20E9051A5CD6A100542567 /* iconos_categorias-06.png in Resources */,
 				EFB8F6361A577B12003EA845 /* tut1.png in Resources */,
 				EF20E9091A5CD8FE00542567 /* masculino.png in Resources */,
-				EF20E9041A5CD6A100542567 /* iconos_categorias-05.png in Resources */,
 				EFA465681A64DE7700BE92D8 /* SourceSansPro-Regular.ttf in Resources */,
 				EFA4656B1A64DE8800BE92D8 /* botones_navegacion_settins.png in Resources */,
-				EF20E91E1A5D5E1000542567 /* justicia-ciudadana-postal03.jpg in Resources */,
+				F3C35D501A66569F00071C41 /* iconos_categorias-04.png in Resources */,
+				F3C35D4C1A66566200071C41 /* iconos_categorias-02.png in Resources */,
+				F3C35D541A6656CE00071C41 /* iconos_categorias-06.png in Resources */,
 				EFA465661A64DE7700BE92D8 /* SourceSansPro-Bold.ttf in Resources */,
 				EFA4656D1A6548D100BE92D8 /* next.png in Resources */,
 				F33D8BEA1A64B8D000E5C250 /* back.png in Resources */,
 				EFB8F6391A577B12003EA845 /* tut4.png in Resources */,
 				EFB8F6341A577B12003EA845 /* splash.png in Resources */,
+				F3C35D481A66527600071C41 /* justicia-ciudadana-postal01.jpg in Resources */,
 				EFA465691A64DE7700BE92D8 /* RobotoSlab-Regular.ttf in Resources */,
+				F3C35D4A1A66527600071C41 /* Justicia-Ciudadana-postal02.jpg in Resources */,
 				EFB8F6301A577B12003EA845 /* Logo.png in Resources */,
-				F33D8BDC1A5D966C00E5C250 /* justicia-ciudadana-postal01.jpg in Resources */,
-				EF20E91D1A5D5E1000542567 /* Justicia-Ciudadana-postal02.jpg in Resources */,
-				EF20E9021A5CD6A100542567 /* iconos_categorias-03.png in Resources */,
 				EFB8F6381A577B12003EA845 /* tut3.png in Resources */,
 				EFB8F6371A577B12003EA845 /* tut2.png in Resources */,
 				EFEF6A451A4D123000046820 /* LaunchScreen.xib in Resources */,
-				EF20E9031A5CD6A100542567 /* iconos_categorias-04.png in Resources */,
 				EFA465671A64DE7700BE92D8 /* SourceSansPro-Light.ttf in Resources */,
+				F3C35D4E1A66568500071C41 /* iconos_categorias-03.png in Resources */,
+				F3C35D521A6656B500071C41 /* iconos_categorias-05.png in Resources */,
 				EFEF6A421A4D123000046820 /* Images.xcassets in Resources */,
 				EF20E9081A5CD8FE00542567 /* femenino.png in Resources */,
 				EF20E9201A5D5FB200542567 /* fondo1.png in Resources */,
-				EF20E9011A5CD6A100542567 /* iconos_categorias-02.png in Resources */,
 				EFA465611A64DE5A00BE92D8 /* botones_navegacion_cerrar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
