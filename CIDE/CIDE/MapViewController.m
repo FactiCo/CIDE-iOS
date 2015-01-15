@@ -13,6 +13,7 @@
 @property (nonatomic) NSString *urlMap;
 @property (nonatomic) NSURLConnection *connection;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) IBOutlet UILabel *navigationTitle;
 
 @end
 
@@ -20,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _navigationTitle.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18.0];
+    
     self.urlMap = @"http://justiciacotidiana.mx/es/JusticiaCotidiana/mapatestimonios";
     NSURL *targetURL = [NSURL URLWithString:self.urlMap];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];

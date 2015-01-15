@@ -127,7 +127,7 @@
     [self.view addSubview:viewWhitOption2];
     UILabel *textCategory2=[[UILabel alloc]initWithFrame:CGRectMake(category2.frame.origin.x, category2.frame.origin.y+category2.frame.size.height +5 , category2.frame.size.width, 30)];
     textCategory2.backgroundColor=[UIColor clearColor];
-    textCategory2.text=@"Justicia para familias";
+    textCategory2.text=@"Justicia para ciudadanos";
     textCategory2.numberOfLines=3;
     textCategory2.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     if(self.view.frame.size.height<=480){
@@ -160,7 +160,7 @@
     [self.view addSubview:viewWhitOption3];
     UILabel *textCategory3=[[UILabel alloc]initWithFrame:CGRectMake(category3.frame.origin.x, category3.frame.origin.y+category3.frame.size.height +5 , category3.frame.size.width, 30)];
     textCategory3.backgroundColor=[UIColor clearColor];
-    textCategory3.text=@"Justicia vecinal y comunitaria";
+    textCategory3.text=@"Justicia para familias";
     textCategory3.numberOfLines=4;
     textCategory3.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     
@@ -197,7 +197,7 @@
     [self.view addSubview:viewWhitOption4];
     UILabel *textCategory4=[[UILabel alloc]initWithFrame:CGRectMake(category4.frame.origin.x, category4.frame.origin.y+category4.frame.size.height +5 , category4.frame.size.width, 30)];
     textCategory4.backgroundColor=[UIColor clearColor];
-    textCategory4.text=@"Justicia para ciudadanos";
+    textCategory4.text=@"Justicia para emprendedores";
     textCategory4.numberOfLines=4;
     textCategory4.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     if(self.view.frame.size.height<=480){
@@ -232,7 +232,7 @@
     [self.view addSubview:viewWhitOption5];
     UILabel *textCategory5=[[UILabel alloc]initWithFrame:CGRectMake(category5.frame.origin.x, category5.frame.origin.y+category5.frame.size.height +5 , category5.frame.size.width, 30)];
     textCategory5.backgroundColor=[UIColor clearColor];
-    textCategory5.text=@"Justicia para emprendedores";
+    textCategory5.text=@"Justicia vecinal y comunitaria";
     textCategory5.numberOfLines=4;
     textCategory5.textColor=[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1];
     if(self.view.frame.size.height<=480){

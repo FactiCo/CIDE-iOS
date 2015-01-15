@@ -9,8 +9,11 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *aboutButton;
+@property (strong, nonatomic) IBOutlet UIButton *conditionsButton;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *settingsButtons;
+
 
 
 @end
@@ -20,29 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    for (UILabel *label in self.settingsButtons) {
-        [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:16.0]];
-    }
     
-}
+    [self.aboutButton.titleLabel setFont:[UIFont fontWithName:@"SourceSansPro-Bold" size:20.0]];
+    [self.conditionsButton.titleLabel setFont:[UIFont fontWithName:@"SourceSansPro-Bold" size:20.0]];
+    self.textView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:16.0];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)closeAction:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

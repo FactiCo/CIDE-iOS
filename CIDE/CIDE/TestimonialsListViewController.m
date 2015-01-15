@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSArray *nameData;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImage *femeninoImage, *masculinoImage;
+@property (strong, nonatomic) IBOutlet UILabel *navigationTitle;
 
 @end
 
@@ -28,6 +29,7 @@
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];
     [self.tableView setSeparatorColor:[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1]];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.navigationTitle.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18.0];
     
 }
 

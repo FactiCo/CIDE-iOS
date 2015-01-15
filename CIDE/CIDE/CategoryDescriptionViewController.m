@@ -59,7 +59,7 @@
     [aux addSubview:close];
     
     [super viewDidLoad];
-    self.imageData = @[[UIImage imageNamed:@"trabajo.png"], [UIImage imageNamed:@"familia.png"], [UIImage imageNamed:@"vecinal.png"], [UIImage imageNamed:@"funcionarios.png"], [UIImage imageNamed:@"emprendedores.png"],[UIImage imageNamed:@"emprendedores.png"]];
+    self.imageData = @[[UIImage imageNamed:@"iconos_categorias-02.png"], [UIImage imageNamed:@"iconos_categorias-03.png"], [UIImage imageNamed:@"iconos_categorias-04.png"], [UIImage imageNamed:@"iconos_categorias-05.png"], [UIImage imageNamed:@"iconos_categorias-06.png"],[UIImage imageNamed:@"iconos_categorias-07.png"]];
     
     self.descriptionData = @[@"Trabajadores, empleadores y sindicatos requieren una justicia rápida, transparente y eficaz para resolver conflictos que suceden en los espacios de trabajo. Despidos injustificados, prestaciones no entregadas, legislación laboral no aplicada, son algunos temas que se abordan en el Foro “Justicia en el trabajo”.", @"Divorcios, herencias, pensiones, tutelas o violencia familiar son temas complejos, pues entran en juego sentimientos y relaciones de poder. El Foro “Justicia para familias” busca identificar en qué casos se deben rediseñar políticas públicas, simplificar legislación o utilizar sistemas alternativos de solución de conflictos.", @"Los espacio de convivencia, sean urbanos o rurales, suelen generar distintos tipos de conflictos. Un barrio, un condominio, una comunidad tienen diversos actores, reglas y normas de entendimiento. Temas como contaminación ambiental, usos de suelo y prevención del delito se tratan en el Foro “Justicia vecinal y comunitaria”.", @"Los ciudadanos pueden combatir abusos cometidos por las autoridades por medio de la justicia administrativa. Una multa injusta, una licitación alejada de la ley o el mal mantenimiento de las calles son ejemplos de actos de autoridad que se combaten ante un tribunal. Estos temas se tratan en el Foro “Justicia para ciudadanos”.", @"La debilidad del sistema de justicia frena el crecimiento económico y el potencial de los emprendedores. Para las empresas es arriesgado invertir cuando no cuentan con las instituciones de justicia adecuadas para dirimir conflictos o sancionar autoridades. Estos temas se discuten en el Foro “Justicia para emprendedores”.",@"Desde la resolución de conflictos agrarios, la necesidad de mejorar la capacitación de jueces y defensores, hasta la protección a consumidores y a usuarios del sistema bancario son otros temas de justicia cotidiana que requieren especial atención y consulta. Conoce los temas que se abordan en el Foro “Otras Justicias”."];
     
@@ -77,7 +77,7 @@
     [_descriptionTextView addGestureRecognizer:tap];
     
     
-    self.nameData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores",@"Otros temas de Justicia Cotidiana"];
+    self.nameData = @[@"Justicia en el trabajo", @"Justicia para ciudadanos", @"Justicia para familias", @"Justicia para emprendedores", @"Justicia vecinal y comunitaria",@"Otros temas de Justicia Cotidiana"];
     
     self.femeninoImage = [UIImage imageNamed:@"femenino.png"];
     self.masculinoImage = [UIImage imageNamed:@"masculino.png"];

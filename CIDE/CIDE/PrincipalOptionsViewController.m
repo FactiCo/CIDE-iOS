@@ -37,7 +37,7 @@
     self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:14.0];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+/*- (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -46,7 +46,7 @@
         [self performSegueWithIdentifier:@"goToTutorial" sender:self];
         [defaults setBool:YES forKey:@"tutorial_viewed"];
     }
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -61,13 +61,13 @@
     }
 }
 
-- (IBAction)propuestasAction:(id)sender {
+/*- (IBAction)propuestasAction:(id)sender {
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded || FBSession.activeSession.state == FBSessionStateOpen) {
         [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
     } else {
         [self performSegueWithIdentifier:@"goToLogin" sender:self];
     }
-}
+}*/
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

@@ -43,6 +43,8 @@
 @property (nonatomic) BOOL isCategorySelected;
 @property (nonatomic) BOOL isEntitySelected;
 
+@property (nonatomic) NSString *capitalizedString;
+
 @end
 
 @implementation TestimonialsTableViewController
@@ -53,7 +55,7 @@
     self.genderData = @[@"Hombre", @"Mujer", @"Sin especificar"];
     self.educationData = @[@"Sin estudios", @"Primaria", @"Secundaria", @"Técnico", @"Media superior", @"Superior", @"Posgrado", @"Sin especificar"];
     
-    self.categoryData = @[@"Justicia en el trabajo", @"Justicia para familias", @"Justicia vecinal y comunitaria", @"Justicia para ciudadanos", @"Justicia para emprendedores",@"Otros temas de Justicia Cotidiana"];
+    self.categoryData = @[@"Justicia en el trabajo", @"Justicia para ciudadanos", @"Justicia para familias", @"Justicia para emprendedores", @"Justicia vecinal y comunitaria",@"Otros temas de Justicia Cotidiana"];
     
     self.entityData = @[@"Aguascalientes", @"Baja California", @"Baja California Sur", @"Campeche", @"Chiapas", @"Chihuahua", @"Coahuila", @"Colima", @"Distrito Federal", @"Durango",@"Estado de México", @"Guanajuato", @"Guerrero", @"Hidalgo", @"Jalisco", @"Michoacán", @"Morelos", @"Nayarit", @"Nuevo León", @"Oaxaca", @"Puebla", @"Querétaro", @"Quintana Roo", @"San Luis Potosí", @"Sinaloa", @"Sonora", @"Tabasco", @"Tamaulipas", @"Tlaxcala", @"Veracruz", @"Yucatán", @"Zacatecas"];
     
@@ -66,6 +68,10 @@
     self.genderLabel.text = [self.genderData objectAtIndex:0];
     self.educationLabel.text = [self.educationData objectAtIndex:0];
     self.categoryLabel.text = [self.categoryData objectAtIndex:self.option];
+    
+    self.capitalizedString = [self.categoryLabel.text capitalizedString];
+    self.capitalizedString = [self.capitalizedString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
     self.entityLabel.text = [self.entityData objectAtIndex:0];
     self.entityId = 1;
     
@@ -151,7 +157,7 @@
 }
 
 - (void)shareAction {
-    NSString *string = @"Acabo de compartir mi testimonio desde #JusticiaCotidiana www.justiciacotidiana.mx";
+    NSString *string = [NSString stringWithFormat:@"He enviado un testimonio sobre #%@ desde www.justiciacotidiana.mx @JusCotidiana", self.capitalizedString];
     __block UIViewController *weakSelf = self;
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]
                                                         initWithActivityItems:@[string]
