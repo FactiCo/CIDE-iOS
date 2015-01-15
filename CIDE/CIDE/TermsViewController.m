@@ -9,6 +9,8 @@
 #import "TermsViewController.h"
 
 @interface TermsViewController ()
+@property (strong, nonatomic) IBOutlet UITextView *termsText;
+@property (strong, nonatomic) IBOutlet UILabel *navigationTitle;
 
 @end
 
@@ -17,21 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.termsText.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    self.navigationTitle.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18.0];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)doneAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
