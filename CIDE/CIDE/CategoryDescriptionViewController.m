@@ -108,13 +108,16 @@
 }
 - (void)setDataCategory:(NSInteger )option {
     self.navigationTitle.text = self.nameData[option];
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"iconos_categorias-0%ld.png", option + 2]];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"iconos_categorias-0%d.png", option + 2]];
     self.imageCategory.image = image;
     [self.view bringSubviewToFront:self.imageCategory];
     self.descriptionTextView.text = [self.descriptionData objectAtIndex:option];
-    
+    _descriptionTextView.textColor=[UIColor blackColor];
+    self.descriptionTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+    [self.descriptionTextView setContentOffset:CGPointZero animated:YES];
+    //[_descriptionTextView sizeToFit];
     [self.view bringSubviewToFront:self.descriptionTextView];
-    [_descriptionTextView sizeToFit];
+    
     [self.view bringSubviewToFront:self.addTest];
     [self.view bringSubviewToFront:self.seeTest];
 }
@@ -158,7 +161,10 @@
             
             for (NSDictionary *item in responseObject[@"items"]) {
                 if ([item[@"category"] isEqualToString:self.nameData[self.option]]) {
-                    [_testimonials addObject:item];
+                
+                        [_testimonials addObject:item];
+                    
+                    
                 }
                 if ([_testimonials count] >= 3) {
                     break;

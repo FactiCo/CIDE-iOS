@@ -23,14 +23,18 @@
     [super viewDidLoad];
     
     for(UILabel *lbl in self.descriptionLabels) {
-        [lbl setFont:[UIFont fontWithName:@"SourceSansPro-Light" size:18.0]];
+       
+        [lbl setFont:[UIFont fontWithName:@"SourceSansPro-Light" size:14.0]];
     }
 
     for (UILabel *label in self.titlesLabel) {
         [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:20.0]];
     }
-    
-    self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:15.0];
+    NSLog(@"%f",self.view.frame.size.height);
+    if(self.view.frame.size.height<=480){
+         self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11.0];
+    }else
+    self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:14.0];
 }
 
 - (void)viewDidAppear:(BOOL)animated
