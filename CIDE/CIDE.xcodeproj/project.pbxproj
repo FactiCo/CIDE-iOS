@@ -28,6 +28,7 @@
 		EFA4656D1A6548D100BE92D8 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4656C1A6548D100BE92D8 /* next.png */; };
 		EFA465721A67927600BE92D8 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465711A67927600BE92D8 /* TermsViewController.m */; };
 		EFA465751A6795B700BE92D8 /* PropuestasMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465741A6795B700BE92D8 /* PropuestasMsgViewController.m */; };
+		EFA465781A68E21400BE92D8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465771A68E21400BE92D8 /* InfoViewController.m */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -124,6 +125,8 @@
 		EFA465711A67927600BE92D8 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		EFA465731A6795B700BE92D8 /* PropuestasMsgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropuestasMsgViewController.h; sourceTree = "<group>"; };
 		EFA465741A6795B700BE92D8 /* PropuestasMsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestasMsgViewController.m; sourceTree = "<group>"; };
+		EFA465761A68E21400BE92D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		EFA465771A68E21400BE92D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				EFA465711A67927600BE92D8 /* TermsViewController.m */,
 				EFA465731A6795B700BE92D8 /* PropuestasMsgViewController.h */,
 				EFA465741A6795B700BE92D8 /* PropuestasMsgViewController.m */,
+				EFA465761A68E21400BE92D8 /* InfoViewController.h */,
+				EFA465771A68E21400BE92D8 /* InfoViewController.m */,
 			);
 			path = CIDE;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 			files = (
 				EF20E9641A62144800542567 /* PropuestasViewController.m in Sources */,
 				EFA4655F1A631F3100BE92D8 /* ArgumentosViewController.m in Sources */,
+				EFA465781A68E21400BE92D8 /* InfoViewController.m in Sources */,
 				EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */,
 				EFB8F6171A56CAEE003EA845 /* Tutorial2ViewController.m in Sources */,
 				EF20E9181A5D4E6200542567 /* TestimonialsListViewController.m in Sources */,
@@ -734,7 +740,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CIDE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -754,7 +760,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CIDE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

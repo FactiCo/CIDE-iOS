@@ -47,32 +47,6 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-#pragma mark - data
-/*
-- (NSMutableArray *)testimonials {
-    if (!_testimonials) {
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/testimonios" parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject){
-            [self.activityIndicator stopAnimating];
-            self.activityIndicator.hidden = YES;
-            _testimonials = [NSMutableArray array];
-            for (NSDictionary *item in responseObject[@"items"]) {
-                if ([item[@"category"] isEqualToString:self.nameData[self.option]]) {
-                    [_testimonials addObject:item];
-                }
-            }
-            [self.tableView reloadData];
-            
-        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error %@", error);
-            [self.activityIndicator stopAnimating];
-            self.activityIndicator.hidden = YES;
-        }];
-        _testimonials = [NSMutableArray array];
-    }
-    return _testimonials;
-}*/
-
 #pragma mark - table view
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
