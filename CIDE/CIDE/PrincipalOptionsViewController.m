@@ -33,6 +33,8 @@
     NSLog(@"%f",self.view.frame.size.height);
     if(self.view.frame.size.height<=480){
          self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11.0];
+    }else if(self.view.frame.size.height==568){
+        self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11.0];
     }else
     self.headerLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:14.0];
 }

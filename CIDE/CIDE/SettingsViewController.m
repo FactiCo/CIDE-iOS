@@ -25,7 +25,14 @@
     // Do any additional setup after loading the view.
     
     [self.aboutButton.titleLabel setFont:[UIFont fontWithName:@"SourceSansPro-Bold" size:20.0]];
+    if(self.view.frame.size.height<=480){
+       [self.conditionsButton.titleLabel setFont:[UIFont fontWithName:@"SourceSansPro-Bold" size:14.0]];
+    }else if(self.view.frame.size.height==568){
+        [self.conditionsButton.titleLabel setFont:[UIFont fontWithName:@"SourceSansPro-Bold" size:15.0]];
+    }else
     [self.conditionsButton.titleLabel setFont:[UIFont fontWithName:@"SourceSansPro-Bold" size:20.0]];
+    
+    
     self.textView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:16.0];
 
 }

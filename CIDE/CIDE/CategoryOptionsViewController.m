@@ -57,7 +57,10 @@
     
     if(self.view.frame.size.height<=480){
          map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:11];
-    }else
+    } else if(self.view.frame.size.height==568){
+        map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:12];
+    }
+    else
     map.titleLabel.font = [UIFont fontWithName:@"RobotoSlab-Regular" size:14];
    // [[map layer] setBorderWidth:2.0f];
     [map addTarget:self

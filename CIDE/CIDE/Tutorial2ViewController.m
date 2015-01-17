@@ -38,19 +38,27 @@
     CGFloat height = self.scrollView.frame.size.height;
     self.height = height;
     
-    self.scrollView.contentSize = CGSizeMake(width, height * 3);
+    self.scrollView.contentSize = CGSizeMake(width, height * 5);
     UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-    image1.image = [UIImage imageNamed:@"justicia-ciudadana-postal01.jpg"];
+    image1.image = [UIImage imageNamed:@"info1.png"];
     [self.scrollView addSubview:image1];
     self.image1 = image1;
     
     UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, height, width, height)];
-    image2.image = [UIImage imageNamed:@"Justicia-Ciudadana-postal02.jpg"];
+    image2.image = [UIImage imageNamed:@"info2.png"];
     [self.scrollView addSubview:image2];
     
     UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, (height) * 2, width, height)];
-    image3.image = [UIImage imageNamed:@"justicia-ciudadana-postal03.jpg"];
+    image3.image = [UIImage imageNamed:@"info3.png"];
     [self.scrollView addSubview:image3];
+    
+    UIImageView *image4 = [[UIImageView alloc] initWithFrame:CGRectMake(0, (height) * 3, width, height)];
+    image4.image = [UIImage imageNamed:@"info4.png"];
+    [self.scrollView addSubview:image4];
+    
+    UIImageView *image5 = [[UIImageView alloc] initWithFrame:CGRectMake(0, (height) * 4, width, height)];
+    image5.image = [UIImage imageNamed:@"info5.png"];
+    [self.scrollView addSubview:image5];
     
     UIView *fondo=[[UIView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
     fondo.backgroundColor=[UIColor whiteColor];
