@@ -85,7 +85,7 @@
         constant = UIInterfaceOrientationIsLandscape(self.interfaceOrientation) ? keyboardSize.width : keyboardSize.height;
     }
 //    constant = constant + top - height;
-    self.bottomConstraint.constant = constant;
+    self.bottomConstraint.constant = constant - self.tabBarController.tabBar.bounds.size.height;
     [self.view setNeedsUpdateConstraints];
     
     [UIView animateWithDuration:duration animations:^{

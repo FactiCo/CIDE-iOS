@@ -9,10 +9,11 @@
 #import "PropuestaDetailViewController.h"
 #import <AFHTTPRequestOperationManager.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "ArgumentosViewController.h"
 
-@interface PropuestaDetailViewController () <UINavigationControllerDelegate, ArgumentosControllerDelegate>
+@interface PropuestaDetailViewController () <UINavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *propuestaLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailTextView;
@@ -20,15 +21,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UIButton *button3;
 @property (strong, nonatomic) IBOutlet UITextView *questionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *voteResultLabel;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *voteButtons;
-
-@property (copy, nonatomic) NSString *facebookId;
-@property (copy, nonatomic) NSString *facebookName;
 
 @end
 
 @implementation PropuestaDetailViewController
+
+@synthesize facebookId = _facebookId;
+@synthesize facebookName = _facebookName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,8 +42,10 @@
     self.propuestaLabel.text = self.propuesta[@"title"];
    // self.detailTextView.text = self.propuesta[@"description"];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[_propuesta[@"description"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-    _detailTextView.attributedText = attributedString;
+    self.voteResultLabel.hidden = YES;
+    self.detailTextView.attributedText = attributedString;
     [self setupQuestion:self.propuesta[@"question"]];
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.contentView.bounds.size.height);
     
     [self getFacebookData];
 }
@@ -93,6 +97,7 @@
     NSDictionary *params = @{@"proposalId": self.propuesta[@"_id"], @"fcbookid": self.facebookId, @"value": values[sender.tag]};
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"Success");
+        [self updateVoteResult];
         [self showAlertWithTitle:@"Gracias" message:@"Tu voto ha sido registrado"];
         [self voteButtonsEnabled:YES];
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -120,6 +125,12 @@
     }];
 }
 
+- (void)updateVoteResult {
+    [self buttonsHidden:YES];
+    self.voteResultLabel.hidden = NO;
+    // TODO asignar texto
+}
+
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
     [alert show];
@@ -128,6 +139,12 @@
 - (void)buttonsEnabled:(BOOL)enabled {
     for (UIButton *button in @[self.button1, self.button2, self.button3]) {
         button.enabled = enabled;
+    }
+}
+
+- (void)buttonsHidden:(BOOL)hidden {
+    for (UIButton *button in @[self.button1, self.button2, self.button3]) {
+        button.hidden = hidden;
     }
 }
 

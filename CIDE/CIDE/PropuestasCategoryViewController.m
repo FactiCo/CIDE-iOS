@@ -9,6 +9,7 @@
 #import "PropuestasCategoryViewController.h"
 #import <AFHTTPRequestOperationManager.h>
 #import "PropuestaDetailViewController.h"
+#import "ArgumentosViewController.h"
 #import "PropTableViewCell.h"
 
 @interface PropuestasCategoryViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -49,9 +50,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"PropuestaDetail"]) {
-        PropuestaDetailViewController *controller = segue.destinationViewController;
+        UITabBarController *tabController = segue.destinationViewController;
+        PropuestaDetailViewController *controller = tabController.viewControllers[0];
         controller.propuesta = sender;
         self.propuestas = nil;
+        
+        ArgumentosViewController *argumentosController = tabController.viewControllers[1];
+        argumentosController.propuesta = sender;
+        argumentosController.delegate = controller;
+        argumentosController.dataSource = controller;
     }
 }
 
@@ -91,7 +98,7 @@
     }
     NSDictionary *data = self.propuestas[indexPath.row];
     cell.autorLabel.text = data[@"name"];
-    cell.titleTextView.text = data[@"title"];
+    cell.titleLabel.text = data[@"title"];
     
     return cell;
 }

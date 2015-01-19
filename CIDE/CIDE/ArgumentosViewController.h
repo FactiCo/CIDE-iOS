@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol ArgumentosControllerDelegate;
+@protocol ArgumentosControllerDataSource;
 
 @interface ArgumentosViewController : UIViewController
 
@@ -17,6 +18,7 @@
 @property (copy, nonatomic) NSString *facebookId;
 @property (copy, nonatomic) NSString *facebookName;
 @property (weak, nonatomic) id<ArgumentosControllerDelegate> delegate;
+@property (weak, nonatomic) id<ArgumentosControllerDataSource> dataSource;
 
 @end
 
@@ -24,5 +26,12 @@
 
 @optional
 - (void)argumentosControllerWillDismiss:(ArgumentosViewController *)controller;
+
+@end
+
+@protocol ArgumentosControllerDataSource <NSObject>
+
+@property (copy, nonatomic) NSString *facebookId;
+@property (copy, nonatomic) NSString *facebookName;
 
 @end

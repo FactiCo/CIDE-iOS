@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ArgumentosViewController.h"
 
-@interface PropuestaDetailViewController : UIViewController
+@interface PropuestaDetailViewController : UIViewController <ArgumentosControllerDelegate, ArgumentosControllerDataSource>
 
 @property (strong, nonatomic) NSDictionary *propuesta;
 
