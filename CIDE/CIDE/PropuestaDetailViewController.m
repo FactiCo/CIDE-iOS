@@ -13,12 +13,14 @@
 
 @interface PropuestaDetailViewController () <UINavigationControllerDelegate, ArgumentosControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *propuestaLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UIButton *button3;
-@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (strong, nonatomic) IBOutlet UITextView *questionTextView;
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *voteButtons;
 
 @property (copy, nonatomic) NSString *facebookId;
@@ -34,7 +36,7 @@
     self.button1.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.button2.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.button3.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    
+    self.categoryLabel.text = self.propuesta[@"category"];
     self.propuestaLabel.text = self.propuesta[@"title"];
    // self.detailTextView.text = self.propuesta[@"description"];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[_propuesta[@"description"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
@@ -45,7 +47,7 @@
 }
 
 - (void)setupQuestion:(NSDictionary *)question {
-    self.questionLabel.text = question[@"title"];
+    self.questionTextView.text = question[@"title"];
     self.button1.titleLabel.text = question[@"answers"][0][@"title"];
     self.button2.titleLabel.text = question[@"answers"][1][@"title"];
     self.button3.titleLabel.text = question[@"answers"][2][@"title"];

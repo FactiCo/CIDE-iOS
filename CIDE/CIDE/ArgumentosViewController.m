@@ -8,6 +8,7 @@
 
 #import "ArgumentosViewController.h"
 #import <AFHTTPRequestOperationManager.h>
+#import "TestCellTableViewCell.h"
 
 @interface ArgumentosViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -139,7 +140,7 @@
 
 #pragma mark - data
 
-- (NSDictionary *)propuesta
+/*- (NSDictionary *)propuesta
 {
     if (!_propuesta) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -159,7 +160,7 @@
         }];
     }
     return _propuesta;
-}
+}*/
 
 #pragma mark - table view data source
 
@@ -169,13 +170,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleCell = @"ArgumentCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleCell];
+    TestCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
+        cell = [[TestCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
     }
     NSDictionary *comment = self.propuesta[@"comments"][@"data"][indexPath.row];
-    cell.textLabel.text = comment[@"from"][@"name"];
-    cell.detailTextLabel.text = comment[@"message"];
+    cell.nameLabel.text = comment[@"from"][@"name"];
+    cell.explanationTextView.text = comment[@"message"];
+    
+    cell.nameLabel.font = [UIFont fontWithName:@"SourceSansPro-Bold" size:16.0];
+    cell.explanationTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
+   // cell.textLabel.text = comment[@"from"][@"name"];
+    //cell.detailTextLabel.text = comment[@"message"];
     
     return cell;
 }

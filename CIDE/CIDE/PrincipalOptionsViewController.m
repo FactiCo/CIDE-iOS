@@ -63,13 +63,13 @@
     }
 }
 
-/*- (IBAction)propuestasAction:(id)sender {
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded || FBSession.activeSession.state == FBSessionStateOpen) {
+- (IBAction)propuestasAction:(id)sender {
+   // if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded || FBSession.activeSession.state == FBSessionStateOpen) {
         [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
-    } else {
-        [self performSegueWithIdentifier:@"goToLogin" sender:self];
-    }
-}*/
+   // } else {
+      //  [self performSegueWithIdentifier:@"goToLogin" sender:self];
+    //}
+}
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

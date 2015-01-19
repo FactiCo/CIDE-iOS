@@ -9,12 +9,15 @@
 #import "PropuestasCategoryViewController.h"
 #import <AFHTTPRequestOperationManager.h>
 #import "PropuestaDetailViewController.h"
+#import "PropTableViewCell.h"
 
 @interface PropuestasCategoryViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *categoryTitle;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) NSArray *imageData;
+@property (strong, nonatomic) IBOutlet UIImageView *imageCategory;
 
 @end
 
@@ -22,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.imageData = @[[UIImage imageNamed:@"iconos_categorias-02.png"], [UIImage imageNamed:@"iconos_categorias-03.png"], [UIImage imageNamed:@"iconos_categorias-04.png"], [UIImage imageNamed:@"iconos_categorias-05.png"], [UIImage imageNamed:@"iconos_categorias-06.png"],[UIImage imageNamed:@"iconos_categorias-07.png"]];
+    
+    self.imageCategory.image = [self.imageData objectAtIndex:self.pageIndex];
     
     self.categoryTitle.text = self.category;
     [self.tableView setSeparatorColor:[UIColor greenColor]];
@@ -78,12 +85,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleCell = @"PropuestaCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleCell];
+    PropTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
+        cell = [[PropTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
     }
     NSDictionary *data = self.propuestas[indexPath.row];
-    cell.textLabel.text = data[@"title"];
+    cell.autorLabel.text = data[@"name"];
+    cell.titleTextView.text = data[@"title"];
     
     return cell;
 }

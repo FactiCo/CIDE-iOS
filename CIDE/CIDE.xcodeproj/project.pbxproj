@@ -29,6 +29,7 @@
 		EFA465721A67927600BE92D8 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465711A67927600BE92D8 /* TermsViewController.m */; };
 		EFA465751A6795B700BE92D8 /* PropuestasMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465741A6795B700BE92D8 /* PropuestasMsgViewController.m */; };
 		EFA465781A68E21400BE92D8 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465771A68E21400BE92D8 /* InfoViewController.m */; };
+		EFA4657B1A6AFA4500BE92D8 /* PropTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA4657A1A6AFA4500BE92D8 /* PropTableViewCell.m */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -129,6 +130,8 @@
 		EFA465741A6795B700BE92D8 /* PropuestasMsgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropuestasMsgViewController.m; sourceTree = "<group>"; };
 		EFA465761A68E21400BE92D8 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		EFA465771A68E21400BE92D8 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		EFA465791A6AFA4500BE92D8 /* PropTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropTableViewCell.h; sourceTree = "<group>"; };
+		EFA4657A1A6AFA4500BE92D8 /* PropTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropTableViewCell.m; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				EFB8F63E1A5A291C003EA845 /* SeeTestTableViewController.h */,
 				EFB8F63F1A5A291C003EA845 /* SeeTestTableViewController.m */,
 				EFB8F6411A5A296C003EA845 /* TestCellTableViewCell.h */,
+				EFA465791A6AFA4500BE92D8 /* PropTableViewCell.h */,
+				EFA4657A1A6AFA4500BE92D8 /* PropTableViewCell.m */,
 				EFB8F6421A5A296C003EA845 /* TestCellTableViewCell.m */,
 				EFB8F60B1A54BFEC003EA845 /* CategoryOptionsViewController.h */,
 				EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */,
@@ -607,6 +612,7 @@
 				EF20E90F1A5D4CFF00542567 /* MapViewController.m in Sources */,
 				EF20E9121A5D4DE200542567 /* TestimonialFormViewController.m in Sources */,
 				EFA4655C1A62FAA800BE92D8 /* PropuestaDetailViewController.m in Sources */,
+				EFA4657B1A6AFA4500BE92D8 /* PropTableViewCell.m in Sources */,
 				EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */,
 				EFA465721A67927600BE92D8 /* TermsViewController.m in Sources */,
 				EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */,
