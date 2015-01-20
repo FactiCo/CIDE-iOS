@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) NSArray *imageData;
 @property (strong, nonatomic) IBOutlet UIImageView *imageCategory;
+@property (weak, nonatomic) IBOutlet UILabel *noDataLabel;
 
 @end
 
@@ -33,6 +34,9 @@
     
     self.categoryTitle.text = self.category;
     [self.tableView setSeparatorColor:[UIColor greenColor]];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.hidden = YES;
+    self.noDataLabel .hidden = YES;
 }
 
 - (void)setCategory:(NSString *)category
@@ -53,12 +57,13 @@
         UITabBarController *tabController = segue.destinationViewController;
         PropuestaDetailViewController *controller = tabController.viewControllers[0];
         controller.propuesta = sender;
+        controller.facebookDataSource = self.facebookDataSource;
         self.propuestas = nil;
         
         ArgumentosViewController *argumentosController = tabController.viewControllers[1];
         argumentosController.propuesta = sender;
         argumentosController.delegate = controller;
-        argumentosController.dataSource = controller;
+        argumentosController.facebookDataSource = self.facebookDataSource;
     }
 }
 
@@ -75,7 +80,12 @@
                     [_propuestas addObject:item];
                 }
             }
-            [self.tableView reloadData];
+            if ([_propuestas count]) {
+                self.tableView.hidden = NO;
+                [self.tableView reloadData];
+            } else {
+                self.noDataLabel.hidden = NO;
+            }
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error %@", error);
@@ -97,10 +107,33 @@
         cell = [[PropTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleCell];
     }
     NSDictionary *data = self.propuestas[indexPath.row];
-    cell.autorLabel.text = data[@"name"];
     cell.titleLabel.text = data[@"title"];
+    cell.countLabel.text = [NSString stringWithFormat:@"%d", [self countVotes:data]];
     
     return cell;
+}
+
+- (void)setUserImageWithPropuesta:(NSDictionary *)propuesta cell:(PropTableViewCell *)cell {
+    NSString *imageURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=square", @"123"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        cell.genderImage.image = responseObject;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Image error: %@", error);
+    }];
+    [requestOperation start];
+}
+
+- (NSUInteger)countVotes:(NSDictionary *)propuesta {
+    NSUInteger count = 0;
+    count += [propuesta[@"votes"][@"favor"][@"participantes"] count];
+    count += [propuesta[@"votes"][@"contra"][@"participantes"] count];
+    count += [propuesta[@"votes"][@"abstencion"][@"participantes"] count];
+    
+    return count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

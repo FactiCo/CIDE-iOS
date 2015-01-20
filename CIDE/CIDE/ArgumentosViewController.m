@@ -113,14 +113,14 @@
 }
 
 - (IBAction)commentAction:(UIButton *)sender {
-    if ([self.commentTextField.text length] && self.facebookId) {
+    if ([self.commentTextField.text length] && self.facebookDataSource.facebookId) {
         sender.enabled = NO;
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         NSString *url = @"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/comentarios";
         manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
         manager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
         
-        NSDictionary *params = @{@"parent": @"", @"proposalId": self.propuesta[@"_id"], @"from": @{@"fcbookid": self.facebookId, @"name": self.facebookName}, @"message": self.commentTextField.text};
+        NSDictionary *params = @{@"parent": @"", @"proposalId": self.propuesta[@"_id"], @"from": @{@"fcbookid": self.facebookDataSource.facebookId, @"name": self.facebookDataSource.facebookName}, @"message": self.commentTextField.text};
         [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSLog(@"Success");
             self.propuestaId = self.propuesta[@"_id"];

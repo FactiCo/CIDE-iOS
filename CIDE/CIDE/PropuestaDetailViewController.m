@@ -24,13 +24,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *voteResultLabel;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *voteButtons;
+@property (strong, nonatomic) NSArray *voteImages;
+@property (strong, nonatomic) NSArray *voteImagesDisabled;
 
 @end
 
 @implementation PropuestaDetailViewController
-
-@synthesize facebookId = _facebookId;
-@synthesize facebookName = _facebookName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,7 +46,11 @@
     [self setupQuestion:self.propuesta[@"question"]];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.contentView.bounds.size.height);
     
-    [self getFacebookData];
+    self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:(80/255.0) green:(184/255.0) blue:(98/255.0) alpha:1];
+    
+    self.voteImages = @[[UIImage imageNamed:@"botones_votacion-01.png"], [UIImage imageNamed:@"botones_votacion-02.png"], [UIImage imageNamed:@"botones_votacion-03.png"]];
+    
+    self.voteImagesDisabled = @[[UIImage imageNamed:@"botones_votacion-04.png"], [UIImage imageNamed:@"botones_votacion-05.png"], [UIImage imageNamed:@"botones_votacion-06.png"]];
 }
 
 - (void)setupQuestion:(NSDictionary *)question {
@@ -55,24 +58,6 @@
     self.button1.titleLabel.text = question[@"answers"][0][@"title"];
     self.button2.titleLabel.text = question[@"answers"][1][@"title"];
     self.button3.titleLabel.text = question[@"answers"][2][@"title"];
-}
-
-- (void)getFacebookData {
-    FBSession *session = [[FBSession alloc] initWithPermissions:@[@"basic_info"]];
-    [FBSession setActiveSession:session];
-    
-    [session openWithBehavior:FBSessionLoginBehaviorForcingWebView
-            completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-        if (FBSession.activeSession.isOpen) {
-            [[FBRequest requestForMe] startWithCompletionHandler:
-             ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
-                 if (!error) {
-                     self.facebookId = user.objectID;
-                     self.facebookName = user.name;
-                 }
-             }];
-        }
-    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +70,7 @@
 }
 
 - (IBAction)voteAction:(UIButton *)sender {
-    if (!self.facebookId) {
+    if (!self.facebookDataSource.facebookId) {
         return;
     }
     [self voteButtonsEnabled:NO];
@@ -94,12 +79,13 @@
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
     static NSString *values[] = {@"favor", @"abstinencia", @"contra"};
-    NSDictionary *params = @{@"proposalId": self.propuesta[@"_id"], @"fcbookid": self.facebookId, @"value": values[sender.tag]};
+    NSDictionary *params = @{@"proposalId": self.propuesta[@"_id"], @"fcbookid": self.facebookDataSource.facebookId, @"value": values[sender.tag]};
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"Success");
         [self updateVoteResult];
         [self showAlertWithTitle:@"Gracias" message:@"Tu voto ha sido registrado"];
         [self voteButtonsEnabled:YES];
+        [self highlightVote:sender.tag];
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error %@", error);
         [self voteButtonsEnabled:YES];
@@ -107,7 +93,7 @@
 }
 
 - (IBAction)answerAction:(UIButton *)sender {
-    if (!self.facebookId) {
+    if (!self.facebookDataSource.facebookId) {
         return;
     }
     [self buttonsEnabled:NO];
@@ -115,7 +101,7 @@
     NSString *url = [NSString stringWithFormat:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/preguntas/%@?answer=%@", self.propuesta[@"question"][@"_id"], self.propuesta[@"question"][@"answers"][sender.tag][@"_id"]];
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
-    [manager POST:url parameters:@{@"fcbookid": self.facebookId} success:^(AFHTTPRequestOperation *operation, id responseObject){
+    [manager POST:url parameters:@{@"fcbookid": self.facebookDataSource.facebookId} success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"Success");
         [self showAlertWithTitle:@"Gracias" message:@"Tu respuesta ha sido registrada"];
         [self buttonsEnabled:YES];
@@ -154,13 +140,14 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"goToArgumentos"]) {
-        ArgumentosViewController *controller = segue.destinationViewController;
-        controller.propuesta = self.propuesta;
-        controller.facebookId = self.facebookId;
-        controller.facebookName = self.facebookName;
-        controller.delegate = self;
+- (void)highlightVote:(NSInteger)index {
+    NSArray *buttons = @[self.button1, self.button2, self.button3];
+    for (NSInteger i = 0; i < 3; i++) {
+        if (index == i) {
+            [buttons[i] setImage:self.voteImages[i] forState:UIControlStateNormal];
+        } else {
+            [buttons[i] setImage:self.voteImagesDisabled[i] forState:UIControlStateNormal];
+        }
     }
 }
 

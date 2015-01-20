@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ArgumentosViewController.h"
+#import "PropuestasViewController.h"
 
-@interface PropuestaDetailViewController : UIViewController <ArgumentosControllerDelegate, ArgumentosControllerDataSource>
+@interface PropuestaDetailViewController : UIViewController <ArgumentosControllerDelegate>
 
 @property (strong, nonatomic) NSDictionary *propuesta;
+@property (weak, nonatomic) id<FacebookInfoDataSource> facebookDataSource;
 
 @end

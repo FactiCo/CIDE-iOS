@@ -7,6 +7,7 @@
 //
 
 #import "PropuestasViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 #import <AFHTTPRequestOperationManager.h>
 #import "PropuestasCategoryViewController.h"
 
@@ -21,6 +22,9 @@
 @end
 
 @implementation PropuestasViewController
+
+@synthesize facebookId = _facebookId;
+@synthesize facebookName = _facebookName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +50,26 @@
     
     [self.view bringSubviewToFront:self.backButton];
     [self.view bringSubviewToFront:self.pageControl];
+    
+    [self getFacebookData];
+}
+
+- (void)getFacebookData {
+    FBSession *session = [[FBSession alloc] initWithPermissions:@[@"basic_info"]];
+    [FBSession setActiveSession:session];
+    
+    [session openWithBehavior:FBSessionLoginBehaviorForcingWebView
+            completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                if (FBSession.activeSession.isOpen) {
+                    [[FBRequest requestForMe] startWithCompletionHandler:
+                     ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+                         if (!error) {
+                             self.facebookId = user.objectID;
+                             self.facebookName = user.name;
+                         }
+                     }];
+                }
+            }];
 }
 
 - (PropuestasCategoryViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -54,6 +78,7 @@
         PropuestasCategoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PropuestasCategoryController"];
         controller.category = self.categories[index];
         controller.pageIndex = index;
+        controller.facebookDataSource = self;
         
         return controller;
     }
@@ -99,6 +124,10 @@
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (IBAction)pageChanged:(id)sender {
+    
 }
 
 @end

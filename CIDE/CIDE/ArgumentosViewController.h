@@ -7,18 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PropuestasViewController.h"
 
 @protocol ArgumentosControllerDelegate;
-@protocol ArgumentosControllerDataSource;
 
 @interface ArgumentosViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *propuesta;
 
-@property (copy, nonatomic) NSString *facebookId;
-@property (copy, nonatomic) NSString *facebookName;
 @property (weak, nonatomic) id<ArgumentosControllerDelegate> delegate;
-@property (weak, nonatomic) id<ArgumentosControllerDataSource> dataSource;
+@property (weak, nonatomic) id<FacebookInfoDataSource> facebookDataSource;
 
 @end
 
@@ -26,12 +24,5 @@
 
 @optional
 - (void)argumentosControllerWillDismiss:(ArgumentosViewController *)controller;
-
-@end
-
-@protocol ArgumentosControllerDataSource <NSObject>
-
-@property (copy, nonatomic) NSString *facebookId;
-@property (copy, nonatomic) NSString *facebookName;
 
 @end

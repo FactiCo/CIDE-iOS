@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PropuestasViewController : UIViewController
+@protocol FacebookInfoDataSource <NSObject>
+
+@property (copy, nonatomic) NSString *facebookId;
+@property (copy, nonatomic) NSString *facebookName;
+
+@end
+
+@interface PropuestasViewController : UIViewController <FacebookInfoDataSource>
 
 @end

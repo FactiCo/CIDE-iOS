@@ -10,11 +10,8 @@
 
 @interface PropTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *genderImage;
-@property (strong, nonatomic) IBOutlet UILabel *autorLabel;
-@property (strong, nonatomic) IBOutlet UITextView *titleTextView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *votacionLabel;
-@property (strong, nonatomic) IBOutlet UILabel *acceptLabel;
-@property (strong, nonatomic) IBOutlet UILabel *abstLabel;
-@property (strong, nonatomic) IBOutlet UILabel *rejectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 @end
