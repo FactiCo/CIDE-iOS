@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) NSArray *imageData;
+@property (nonatomic, retain) NSDictionary *currentPropuesta;
 @property (strong, nonatomic) IBOutlet UIImageView *imageCategory;
 @property (weak, nonatomic) IBOutlet UILabel *noDataLabel;
 
@@ -51,21 +52,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"PropuestaDetail"]) {
-        UITabBarController *tabController = segue.destinationViewController;
-        PropuestaDetailViewController *controller = tabController.viewControllers[0];
-        controller.propuesta = sender;
-        controller.facebookDataSource = self.facebookDataSource;
-        self.propuestas = nil;
-        
-        ArgumentosViewController *argumentosController = tabController.viewControllers[1];
-        argumentosController.propuesta = sender;
-        argumentosController.delegate = controller;
-        argumentosController.facebookDataSource = self.facebookDataSource;
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"PropuestaDetail"]) {
+//        UITabBarController *tabController = segue.destinationViewController;
+//        PropuestaDetailViewController *controller = tabController.viewControllers[0];
+//        controller.propuesta = self.currentPropuesta;
+//        controller.facebookDataSource = self.facebookDataSource;
+//        
+//        ArgumentosViewController *argumentosController = tabController.viewControllers[1];
+//        argumentosController.propuesta = self.currentPropuesta;
+//        argumentosController.delegate = controller;
+//        argumentosController.facebookDataSource = self.facebookDataSource;
+//    }
+//}
 
 #pragma mark - data
 
@@ -108,7 +108,7 @@
     }
     NSDictionary *data = self.propuestas[indexPath.row];
     cell.titleLabel.text = data[@"title"];
-    cell.countLabel.text = [NSString stringWithFormat:@"%d", [self countVotes:data]];
+    cell.countLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self countVotes:data]];
     
     return cell;
 }
@@ -137,7 +137,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"PropuestaDetail" sender:self.propuestas[indexPath.row]];
+    self.currentPropuesta = self.propuestas[indexPath.row];
+    [self.delegate propuestasCategoryController:self didSelectPropuesta:self.currentPropuesta];
+//    [self performSegueWithIdentifier:@"PropuestaDetail" sender:self];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle {

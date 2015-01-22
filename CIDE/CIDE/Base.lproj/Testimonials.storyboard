@@ -365,7 +365,7 @@
                         <segue destination="S1a-Z6-eKd" kind="show" identifier="goToAviso" id="Gho-li-KGx"/>
                         <segue destination="uq2-G3-ZM2" kind="presentation" identifier="goToTutorial" id="RMQ-Li-L4R"/>
                         <segue destination="qww-Mn-OM4" kind="show" identifier="goToLogin" id="VtE-Es-UzC"/>
-                        <segue destination="Qo3-n0-BGq" kind="show" identifier="goToPropuestas" id="8BA-MD-tcV"/>
+                        <segue destination="Qo3-n0-BGq" kind="push" identifier="goToPropuestas" id="8BA-MD-tcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8Z-3y-Jw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -787,11 +787,13 @@ Gracias por participar.</string>
                             <constraint firstItem="R5A-NQ-mSr" firstAttribute="top" secondItem="9SN-rq-Zao" secondAttribute="bottom" constant="16" id="iFG-Ma-PgS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sIj-S0-tb1"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backButton" destination="R5A-NQ-mSr" id="Kjd-Ja-Cqn"/>
                         <outlet property="pageControl" destination="dTn-UB-qG2" id="Nmv-vL-Hu0"/>
+                        <segue destination="TeY-fy-CAP" kind="show" identifier="PropuestaDetail" id="bPS-p5-QLt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8n-yr-vLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1331,12 +1333,11 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                         <outlet property="imageCategory" destination="46e-EQ-xWz" id="D2n-2R-Wn5"/>
                         <outlet property="noDataLabel" destination="2ya-jC-edC" id="wKa-Np-2AV"/>
                         <outlet property="tableView" destination="nso-NB-o6l" id="Avj-zY-IQu"/>
-                        <segue destination="TeY-fy-CAP" kind="show" identifier="PropuestaDetail" id="otS-69-UIO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpU-Jf-v27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2475" y="1208"/>
+            <point key="canvasLocation" x="-2516" y="1048"/>
         </scene>
         <!--Propuesta-->
         <scene sceneID="cB2-qx-bfd">
@@ -1364,7 +1365,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backAction:" destination="glh-Nx-GHG" eventType="touchUpInside" id="Akf-Fg-KUs"/>
                                     <action selector="backAction:" destination="zjF-77-pFb" eventType="touchUpInside" id="mAf-yq-cuh"/>
                                 </connections>
                             </button>
@@ -1732,7 +1732,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhb-Yc-Pzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1642" y="1262"/>
+            <point key="canvasLocation" x="-1572" y="1258"/>
         </scene>
         <!--Argumentos-->
         <scene sceneID="x2h-QY-wpb">
@@ -1767,7 +1767,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVL-iR-BVP">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVL-iR-BVP">
                                                     <rect key="frame" x="46" y="27" width="234" height="35"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1838,9 +1838,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backAction:" destination="glh-Nx-GHG" eventType="touchUpInside" id="GDm-hM-PPk"/>
-                                    <action selector="backAction:" destination="g4s-14-yRE" eventType="touchUpInside" id="IZu-Nb-ogf"/>
-                                    <action selector="backAction:" destination="zjF-77-pFb" eventType="touchUpInside" id="j8m-ls-hsK"/>
+                                    <action selector="backAction:" destination="g4s-14-yRE" eventType="touchUpInside" id="xbA-tW-FrY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2714,6 +2712,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
         <image name="tabs_propuestas_encendidos-08.png" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hug-uv-pIQ"/>
+        <segue reference="8BA-MD-tcV"/>
     </inferredMetricsTieBreakers>
 </document>

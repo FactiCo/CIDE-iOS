@@ -108,7 +108,6 @@
 - (void)setupHtml:(NSString *)html {
     NSMutableString *resultHtml = [NSMutableString stringWithString:html];
     NSError *error;
-    NSLog(@"%@", html);
     
     NSRegularExpression *reWidth = [[NSRegularExpression alloc] initWithPattern:@"width=\"\\d+\"" options:NSRegularExpressionCaseInsensitive error:&error];
     
@@ -161,7 +160,7 @@
 }
 
 - (IBAction)backAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)voteAction:(UIButton *)sender {

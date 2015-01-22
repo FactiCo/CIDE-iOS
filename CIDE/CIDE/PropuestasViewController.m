@@ -10,13 +10,16 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <AFHTTPRequestOperationManager.h>
 #import "PropuestasCategoryViewController.h"
+#import "PropuestaDetailViewController.h"
+#import "ArgumentosViewController.h"
 
-@interface PropuestasViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface PropuestasViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate, PropuestasCategoryDelegate>
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) NSDictionary *propuesta;
 
 
 @end
@@ -76,6 +79,7 @@
         controller.category = self.categories[index];
         controller.pageIndex = index;
         controller.facebookDataSource = self;
+        controller.delegate = self;
         
         return controller;
     }
@@ -126,6 +130,29 @@
 - (IBAction)pageChanged:(UIPageControl *)sender {
     UIViewController *controller = [self viewControllerAtIndex:sender.currentPage];
     [self.pageViewController setViewControllers:@[controller] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+}
+
+#pragma mark - Propuesta delegate
+
+- (void)propuestasCategoryController:(PropuestasCategoryViewController *)controller didSelectPropuesta:(NSDictionary *)propuesta
+{
+    self.propuesta = propuesta;
+    [self performSegueWithIdentifier:@"PropuestaDetail" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"PropuestaDetail"]) {
+        UITabBarController *tabController = segue.destinationViewController;
+        PropuestaDetailViewController *controller = tabController.viewControllers[0];
+        controller.propuesta = self.propuesta;
+        controller.facebookDataSource = self;
+        
+        ArgumentosViewController *argumentosController = tabController.viewControllers[1];
+        argumentosController.propuesta = self.propuesta;
+        argumentosController.delegate = controller;
+        argumentosController.facebookDataSource = self;
+    }
 }
 
 @end

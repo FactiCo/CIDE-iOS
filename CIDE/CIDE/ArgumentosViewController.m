@@ -65,7 +65,7 @@
     if ([self.delegate respondsToSelector:@selector(argumentosControllerWillDismiss:)]) {
         [self.delegate argumentosControllerWillDismiss:self];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Keyboard
