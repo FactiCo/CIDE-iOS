@@ -58,18 +58,15 @@
     FBSession *session = [[FBSession alloc] initWithPermissions:@[@"basic_info"]];
     [FBSession setActiveSession:session];
     
-    [session openWithBehavior:FBSessionLoginBehaviorForcingWebView
-            completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                if (FBSession.activeSession.isOpen) {
-                    [[FBRequest requestForMe] startWithCompletionHandler:
-                     ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
-                         if (!error) {
-                             self.facebookId = user.objectID;
-                             self.facebookName = user.name;
-                         }
-                     }];
-                }
-            }];
+    if(session.isOpen) {
+        FBRequest *me = [FBRequest requestForMe];
+        [me startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> * user, NSError *error) {
+            if (!error) {
+                self.facebookId = user.objectID;
+                self.facebookName = user.name;
+            }
+        }];
+    }
 }
 
 - (PropuestasCategoryViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -126,8 +123,9 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (IBAction)pageChanged:(id)sender {
-    
+- (IBAction)pageChanged:(UIPageControl *)sender {
+    UIViewController *controller = [self viewControllerAtIndex:sender.currentPage];
+    [self.pageViewController setViewControllers:@[controller] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 @end

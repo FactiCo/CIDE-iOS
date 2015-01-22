@@ -31,7 +31,9 @@
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
-    [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
+    if (self.navigationController.topViewController == self) {
+        [self performSegueWithIdentifier:@"goToPropuestas" sender:self];
+    }
 }
 
 - (IBAction)backAction:(id)sender {

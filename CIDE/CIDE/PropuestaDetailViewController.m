@@ -93,9 +93,9 @@
     self.button3.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.categoryLabel.text = self.propuesta[@"category"];
     self.propuestaLabel.text = self.propuesta[@"title"];
-    NSString *html = [self.propuesta[@"description"] stringByReplacingOccurrencesOfString:@"width" withString:@"100%"];
+    NSString *html = self.propuesta[@"description"];
+    [self setupHtml:html];
     self.voteResultLabel.hidden = YES;
-    [self.webView loadHTMLString:html baseURL:nil];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.contentView.bounds.size.height);
     
     self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:(80/255.0) green:(184/255.0) blue:(98/255.0) alpha:1];
@@ -103,6 +103,22 @@
     self.voteImages = @[[UIImage imageNamed:@"botones_votacion-01.png"], [UIImage imageNamed:@"botones_votacion-02.png"], [UIImage imageNamed:@"botones_votacion-03.png"]];
     
     self.voteImagesDisabled = @[[UIImage imageNamed:@"botones_votacion-04.png"], [UIImage imageNamed:@"botones_votacion-05.png"], [UIImage imageNamed:@"botones_votacion-06.png"]];
+}
+
+- (void)setupHtml:(NSString *)html {
+    NSMutableString *resultHtml = [NSMutableString stringWithString:html];
+    NSError *error;
+    NSLog(@"%@", html);
+    
+    NSRegularExpression *reWidth = [[NSRegularExpression alloc] initWithPattern:@"width=\"\\d+\"" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSRegularExpression *reHeight = [[NSRegularExpression alloc] initWithPattern:@"height=\"\\d+\"" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    [reWidth replaceMatchesInString:resultHtml options:0 range:NSMakeRange(0, [html length]) withTemplate:@"width=\"100%\""];
+    
+    [reHeight replaceMatchesInString:resultHtml options:0 range:NSMakeRange(0, [html length]) withTemplate:@"height=\"auto\""];
+    
+    [self.webView loadHTMLString:resultHtml baseURL:nil];
 }
 
 - (void)setupQuestion:(NSDictionary *)question {

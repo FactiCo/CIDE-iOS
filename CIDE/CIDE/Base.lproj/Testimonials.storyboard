@@ -1094,6 +1094,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                             <constraint firstItem="lB5-9S-MG5" firstAttribute="top" secondItem="JdF-DB-1f6" secondAttribute="bottom" constant="8" id="mW8-h9-Tgu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="El9-QX-LD2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -1536,7 +1537,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="95k-df-sEh"/>
                                                             <constraint firstItem="6fb-nC-FgM" firstAttribute="leading" secondItem="xvP-Ew-MEf" secondAttribute="leading" constant="30" id="WEo-T0-pFN"/>
@@ -1560,7 +1560,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="52Y-Hu-iKL"/>
                                                             <constraint firstItem="nAi-Eg-o59" firstAttribute="top" secondItem="gkJ-X6-fW1" secondAttribute="top" id="5gd-hY-I0X"/>
@@ -1584,7 +1583,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="qDG-3K-5go" secondAttribute="trailing" id="2VV-sQ-Dbd"/>
                                                             <constraint firstAttribute="height" constant="25" id="2vS-V6-GTw"/>
@@ -1608,7 +1606,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="Edm-Bd-fWk" secondAttribute="trailing" id="EK4-oE-NKH"/>
                                                             <constraint firstItem="Edm-Bd-fWk" firstAttribute="leading" secondItem="P6w-GM-vf2" secondAttribute="leading" constant="30" id="Fr0-61-U1M"/>
@@ -1933,6 +1930,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                             <constraint firstItem="uw4-5P-FtA" firstAttribute="leading" secondItem="Iuz-7h-rni" secondAttribute="leading" constant="60" id="nJg-LD-a04"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BvA-yj-jsF"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -2190,6 +2188,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                             <constraint firstAttribute="trailing" secondItem="zrf-ww-eK4" secondAttribute="trailing" constant="40" id="zgo-tf-8Ph"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="S6q-2J-por"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="activityIndicator" destination="rBk-1l-k8j" id="DBh-9y-2tu"/>
@@ -2715,6 +2714,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
         <image name="tabs_propuestas_encendidos-08.png" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8BA-MD-tcV"/>
+        <segue reference="Hug-uv-pIQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -286,12 +286,13 @@
 }
 
 -(void)goToDescription2:(int)option{
+    [self performSegueWithIdentifier:@"goToDescription" sender:self];
 
-    CategoryDescriptionViewController *description;
-    description.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    description=[[self storyboard] instantiateViewControllerWithIdentifier:@"description"];
-    description.option=option;
-    [self presentViewController:description animated:NO completion:NULL];
+//    CategoryDescriptionViewController *description;
+//    description.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    description=[[self storyboard] instantiateViewControllerWithIdentifier:@"description"];
+//    description.option=option;
+//    [self presentViewController:description animated:NO completion:NULL];
 
 }
 -(void) tapView:(UITapGestureRecognizer *)gestureRecognizer{

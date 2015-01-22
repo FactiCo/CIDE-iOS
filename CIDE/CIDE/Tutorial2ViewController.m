@@ -31,6 +31,7 @@
     if (self.image1 == nil) {
         [self setupViews];
     }
+    [super viewDidLayoutSubviews];
 }
 
 - (void)setupViews {
