@@ -61,24 +61,24 @@
     image5.image = [UIImage imageNamed:@"info5.png"];
     [self.scrollView addSubview:image5];
     
-    UIView *fondo=[[UIView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
-    fondo.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:fondo];
+//    UIView *fondo=[[UIView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
+//    fondo.backgroundColor=[UIColor whiteColor];
+//    [self.view addSubview:fondo];
+
     
-    
-    UIButton *back=[[UIButton alloc]initWithFrame:CGRectMake(fondo.frame.size.width-30, 7, 30, 30)];
-    back.backgroundColor=[UIColor whiteColor];
-    [back addTarget:self
-             action:@selector(doneAction:)
-   forControlEvents:UIControlEventTouchDown];
-    //[back setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [back setTitle:@"X" forState:UIControlStateNormal];
-   [back setTitleColor:[UIColor colorWithRed:(83/255.0) green:(197/255.0) blue:(147/255.0) alpha:1] forState:UIControlStateNormal] ;
-    [back.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
-    [fondo addSubview:back];
-    UIImageView *log=[[UIImageView alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-40, 26, 80, 80) ];
-    log.image=[UIImage imageNamed:@"jd.png"];
-    [self.view addSubview:log];
+//    UIButton *back=[[UIButton alloc]initWithFrame:CGRectMake(fondo.frame.size.width-30, 7, 30, 30)];
+//    back.backgroundColor=[UIColor whiteColor];
+//    [back addTarget:self
+//             action:@selector(doneAction:)
+//   forControlEvents:UIControlEventTouchDown];
+//    //[back setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//    [back setTitle:@"X" forState:UIControlStateNormal];
+//   [back setTitleColor:[UIColor colorWithRed:(83/255.0) green:(197/255.0) blue:(147/255.0) alpha:1] forState:UIControlStateNormal] ;
+//    [back.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
+//    [fondo addSubview:back];
+//    UIImageView *log=[[UIImageView alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-40, 26, 80, 80) ];
+//    log.image=[UIImage imageNamed:@"jd.png"];
+//    [self.view addSubview:log];
     
 }
 

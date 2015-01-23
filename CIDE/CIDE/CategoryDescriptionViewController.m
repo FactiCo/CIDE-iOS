@@ -133,6 +133,7 @@
 //    [self.view bringSubviewToFront:self.seeTest];
     
     self.scrollView.contentSize = self.mainContainer.bounds.size;
+    NSLog(@"%f, %f", self.mainContainer.bounds.size.width, self.mainContainer.bounds.size.height);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -157,8 +158,8 @@
 
 
 - (IBAction)backAction:(id)sender {
-   // [self.navigationController popViewControllerAnimated:YES];
-       [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+//       [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -199,7 +200,9 @@
                 empty.text = @"Sin testimonios en esta categoría";
                 [self.view addSubview:empty];
             }
-            self.scrollView.contentSize = self.mainContainer.bounds.size;
+            self.scrollView.contentSize = CGSizeMake(self.mainContainer.bounds.size.width, self.mainContainer.bounds.size.height + 1000) ;
+            NSLog(@"%f, %f", self.scrollView.contentSize.width, self.scrollView.contentSize.height);
+            [self.view setNeedsLayout];
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error %@", error);

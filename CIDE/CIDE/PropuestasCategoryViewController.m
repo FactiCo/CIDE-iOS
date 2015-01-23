@@ -109,12 +109,18 @@
     NSDictionary *data = self.propuestas[indexPath.row];
     cell.titleLabel.text = data[@"title"];
     cell.countLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self countVotes:data]];
+    NSString *fcbookid = data[@"author"][@"fcbookid"];
+    if ([fcbookid isEqual:[NSNull null]]) {
+        cell.titleLabel.text = @"Moderador";
+    } else {
+        [self setUserImageWithPropuesta:data cell:cell];
+    }
     
     return cell;
 }
 
 - (void)setUserImageWithPropuesta:(NSDictionary *)propuesta cell:(PropTableViewCell *)cell {
-    NSString *imageURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=square", @"123"];
+    NSString *imageURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=square", propuesta[@"author"][@"fcbookid"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
