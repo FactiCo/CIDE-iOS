@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface LoginFBViewController () <FBLoginViewDelegate>
+@property (strong, nonatomic) IBOutlet FBLoginView *loginButton;
 
 @end
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [self.loginButton setReadPermissions:@[@"basic_info"]];
 }
 
 - (void)didReceiveMemoryWarning {

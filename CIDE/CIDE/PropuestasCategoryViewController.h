@@ -24,5 +24,5 @@
 
 @protocol PropuestasCategoryDelegate <NSObject>
 
-- (void)propuestasCategoryController:(PropuestasCategoryViewController *)controller didSelectPropuesta:(NSDictionary *)propuesta;
+- (void)propuestasCategoryController:(PropuestasCategoryViewController *)controller didSelectPropuesta:(NSDictionary *)propuesta withImage:(UIImage *)image;
 @end

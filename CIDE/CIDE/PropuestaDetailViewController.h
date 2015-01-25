@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) NSDictionary *propuesta;
 @property (weak, nonatomic) id<FacebookInfoDataSource> facebookDataSource;
+@property (strong, nonatomic) UIImage *userImage;
 
 @end

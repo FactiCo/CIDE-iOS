@@ -23,7 +23,6 @@
     UIView *viewWhitOption3;
     UIView *viewWhitOption4;
     UIView *viewWhitOption5;
-    UIView *viewWhitOption6;
     UIImageView *background;
     float unitH;
     float unitw;
@@ -285,31 +284,16 @@
     [self.view addSubview:self.viewWhitOption6];
 }
 
--(void)goToDescription2:(int)option{
-    [self performSegueWithIdentifier:@"goToDescription" sender:self];
-
-//    CategoryDescriptionViewController *description;
-//    description.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//    description=[[self storyboard] instantiateViewControllerWithIdentifier:@"description"];
-//    description.option=option;
-//    [self presentViewController:description animated:NO completion:NULL];
-
-}
--(void) tapView:(UITapGestureRecognizer *)gestureRecognizer{
+-(void)tapView:(UITapGestureRecognizer *)gestureRecognizer{
     
     //Get the View Tag
-     int option =(int)gestureRecognizer.view.tag;
-    [self goToDescription2:option];
+     self.option = gestureRecognizer.view.tag;
+    [self performSegueWithIdentifier:@"goToDescription" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)goToDescription:(id)sender {
-    self.option = [sender tag];
-    [self performSegueWithIdentifier:@"goToDescription" sender:self];
 }
 
 - (IBAction)backAction:(id)sender {
