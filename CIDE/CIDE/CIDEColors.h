@@ -6,8 +6,16 @@
 //  Copyright (c) 2015 Nayely Vergara. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface CIDEColors : NSObject
+@interface UIColor (CIDEColors)
+
++ (UIColor *)midGreen;
+
++ (UIColor *)strongGreen;
+
++ (UIColor *)lightGreen;
+
++ (UIColor *)normalGreen;
 
 @end
