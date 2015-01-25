@@ -11,6 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <QuartzCore/QuartzCore.h>
 #import "CorePlot-CocoaTouch.h"
+#import "CIDEColors.h"
 
 @interface PropuestaDetailViewController () <UINavigationControllerDelegate, CPTPieChartDataSource, UIWebViewDelegate>
 
@@ -46,7 +47,9 @@
 @property (strong, nonatomic) CPTXYGraph *graph;
 @property (strong, nonatomic) NSMutableArray *answersData;
 @property (strong, nonatomic) NSMutableArray *answerTitles;
-@property (strong, nonatomic) NSArray *answerColors;
+@property (nonatomic) NSInteger answerIndex;
+@property (strong, nonatomic) NSMutableArray *answerColors;
+@property (strong, nonatomic) NSArray *answerUIColors;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *webViewHeightConstraint;
 @property (strong, nonatomic) IBOutlet UILabel *respondeLabel;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *questionHeightConstraint;
@@ -60,19 +63,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CPTFill *color1 = [CPTFill fillWithColor:[CPTColor colorWithComponentRed:88.0 / 255.0 green:182.0 / 255.0 blue:153.0 / 255.0 alpha:1.0]];
-    CPTFill *color2 = [CPTFill fillWithColor:[CPTColor colorWithComponentRed:21.0 / 255.0 green:89.0 / 255.0 blue:112.0 / 255.0 alpha:1.0]];
-    CPTFill *color3 = [CPTFill fillWithColor:[CPTColor colorWithComponentRed:168.0 / 255.0 green:231.0 / 255.0 blue:201.0 / 255.0 alpha:1.0]];
-    CPTFill *color4 = [CPTFill fillWithColor:[CPTColor colorWithComponentRed:93.0 / 255.0 green:214.0 / 255.0 blue:113.0 / 255.0 alpha:1.0]];
-    self.answerColors = @[color1, color2, color3, color4];
-    
-    [self setupQuestion:self.propuesta[@"question"]];
+    self.answerUIColors = @[[UIColor midGreen], [UIColor strongGreen], [UIColor lightGreen], [UIColor normalGreen]];
+    self.answerColors = [NSMutableArray arrayWithCapacity:4];
+    for (UIColor *color in self.answerUIColors) {
+        [self.answerColors addObject:[CPTFill fillWithColor:[CPTColor colorWithCGColor:[color CGColor]]]];
+    }
     
     self.chartView.hidden = YES;
     self.graph = [[CPTXYGraph alloc] initWithFrame:self.chartView.bounds];
     self.graph.masksToBorder = NO;
     self.graph.axisSet = nil;
     self.chartView.hostedGraph = self.graph;
+    
+    [self setupQuestion:self.propuesta[@"question"]];
     
     CGFloat radius = self.chartView.bounds.size.height / 2.0 - 20.0;
     CPTPieChart *pieChart = [[CPTPieChart alloc] init];
@@ -133,6 +136,7 @@
 }
 
 - (void)setupQuestion:(NSDictionary *)question {
+    self.answerIndex = -1;
     self.answersData = [NSMutableArray array];
     self.answerTitles = [NSMutableArray array];
     self.chartData = question[@"answers"];
@@ -163,6 +167,30 @@
         self.questionView.hidden = YES;
         self.respondeLabel.hidden = YES;
         self.questionHeightConstraint.constant = 1.0;
+    }
+    [self validateAnswers:question[@"answers"]];
+}
+
+- (void)validateAnswers:(NSArray *)answers {
+    BOOL found = NO;
+    NSString *title = nil;
+    NSInteger count = 0;
+    for (NSDictionary *answer in answers) {
+        for (NSDictionary *participante in answer[@"participantes"]) {
+            if ([self.facebookDataSource.facebookId isEqualToString:participante[@"fcbookid"]]) {
+                found = YES;
+                title = answer[@"title"];
+                self.answerIndex = count;
+                break;
+            }
+        }
+        count++;
+        if (found) {
+            break;
+        }
+    }
+    if (found) {
+        [self updateAnswerResult:answers];
     }
 }
 
@@ -204,13 +232,14 @@
     [self buttonsEnabled:NO];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = [NSString stringWithFormat:@"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/preguntas/%@?answer=%@", self.propuesta[@"question"][@"_id"], self.propuesta[@"question"][@"answers"][sender.tag][@"_id"]];
+    self.answerIndex = sender.tag;
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
     [manager POST:url parameters:@{@"fcbookid": self.facebookDataSource.facebookId} success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"%@", responseObject);
         [self showAlertWithTitle:@"Gracias" message:@"Tu respuesta ha sido registrada"];
         [self buttonsEnabled:YES];
-        [self updateAnswerResult:responseObject];
+        [self updateAnswerResult:responseObject[@"statistics"]];
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error %@", error);
         [self buttonsEnabled:YES];
@@ -226,8 +255,8 @@
     self.voteResultLabel.hidden = NO;
 }
 
-- (void)updateAnswerResult:(NSDictionary *)data {
-    self.chartData = data[@"statistics"];
+- (void)updateAnswerResult:(NSArray *)data {
+    self.chartData = data;
     [self.graph reloadData];
     for (UIView *view in self.questionView.subviews) {
         view.hidden = YES;
@@ -290,6 +319,14 @@
 - (NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx
 {
     return self.answerTitles[idx];
+}
+
+- (NSAttributedString *)attributedLegendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx
+{
+    NSMutableAttributedString * string = [[NSMutableAttributedString alloc] initWithString:self.answerTitles[idx]];
+    UIColor *color = idx == self.answerIndex ? self.answerUIColors[idx] : [UIColor blackColor];
+    [string addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, [string length])];
+    return string;
 }
 
 - (CPTFill *)sliceFillForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx {

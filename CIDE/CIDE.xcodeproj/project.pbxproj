@@ -45,6 +45,7 @@
 		EFA465961A6E096500BE92D8 /* tabs_propuestas_encendidos-07.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA465881A6E096500BE92D8 /* tabs_propuestas_encendidos-07.png */; };
 		EFA465971A6E096500BE92D8 /* tabs_propuestas_encendidos-08.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA465891A6E096500BE92D8 /* tabs_propuestas_encendidos-08.png */; };
 		EFA465E91A6F3D5D00BE92D8 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA465E81A6F3D5D00BE92D8 /* libCorePlot-CocoaTouch.a */; };
+		EFA465EC1A7557DF00BE92D8 /* CIDEColors.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA465EB1A7557DF00BE92D8 /* CIDEColors.m */; };
 		EFB8F6011A54A21E003EA845 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6001A54A21E003EA845 /* TutorialViewController.m */; };
 		EFB8F6041A54B895003EA845 /* PrincipalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F6031A54B895003EA845 /* PrincipalOptionsViewController.m */; };
 		EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB8F60C1A54BFEC003EA845 /* CategoryOptionsViewController.m */; };
@@ -240,6 +241,8 @@
 		EFA465E61A6F3D5C00BE92D8 /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		EFA465E71A6F3D5C00BE92D8 /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		EFA465E81A6F3D5D00BE92D8 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		EFA465EA1A7557DF00BE92D8 /* CIDEColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIDEColors.h; sourceTree = "<group>"; };
+		EFA465EB1A7557DF00BE92D8 /* CIDEColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIDEColors.m; sourceTree = "<group>"; };
 		EFB8F5FF1A54A21E003EA845 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		EFB8F6001A54A21E003EA845 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		EFB8F6021A54B895003EA845 /* PrincipalOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrincipalOptionsViewController.h; sourceTree = "<group>"; };
@@ -558,6 +561,8 @@
 				EFA465741A6795B700BE92D8 /* PropuestasMsgViewController.m */,
 				EFA465761A68E21400BE92D8 /* InfoViewController.h */,
 				EFA465771A68E21400BE92D8 /* InfoViewController.m */,
+				EFA465EA1A7557DF00BE92D8 /* CIDEColors.h */,
+				EFA465EB1A7557DF00BE92D8 /* CIDEColors.m */,
 			);
 			path = CIDE;
 			sourceTree = "<group>";
@@ -839,6 +844,7 @@
 				EFA4657B1A6AFA4500BE92D8 /* PropTableViewCell.m in Sources */,
 				EFB8F6401A5A291C003EA845 /* SeeTestTableViewController.m in Sources */,
 				EFA465721A67927600BE92D8 /* TermsViewController.m in Sources */,
+				EFA465EC1A7557DF00BE92D8 /* CIDEColors.m in Sources */,
 				EF20E9671A62161100542567 /* PropuestasCategoryViewController.m in Sources */,
 				EFB8F60D1A54BFEC003EA845 /* CategoryOptionsViewController.m in Sources */,
 				EFB8F6431A5A296C003EA845 /* TestCellTableViewCell.m in Sources */,

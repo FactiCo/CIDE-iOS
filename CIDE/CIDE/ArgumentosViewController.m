@@ -34,7 +34,10 @@
     
     [self.tableView setSeparatorColor:[UIColor greenColor]];
     self.tableView.estimatedRowHeight = 70.0;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -87,7 +90,7 @@
         constant = UIInterfaceOrientationIsLandscape(self.interfaceOrientation) ? keyboardSize.width : keyboardSize.height;
     }
 //    constant = constant + top - height;
-    self.bottomConstraint.constant = constant - self.tabBarController.tabBar.bounds.size.height;
+    self.bottomConstraint.constant = constant;
     [self.view setNeedsUpdateConstraints];
     
     [UIView animateWithDuration:duration animations:^{
@@ -191,6 +194,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TestCellTableViewCell *testCell = (TestCellTableViewCell *)cell;
+    testCell.profileImageView.image = [UIImage imageNamed:@"masculino.png"];
+}
+
 - (void)setUserImageWithComment:(NSDictionary *)comment cell:(TestCellTableViewCell *)cell {
     NSString *imageURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=square", comment[@"from"][@"fcbookid"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
@@ -211,7 +220,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewAutomaticDimension;
+    TestCellTableViewCell *cell = (TestCellTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    CGSize size = [cell.explanationTextView sizeThatFits:cell.explanationTextView.bounds.size];
+    return size.height + 40;
+//    return UITableViewAutomaticDimension;
 }
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {

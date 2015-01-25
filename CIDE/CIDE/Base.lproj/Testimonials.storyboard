@@ -1386,7 +1386,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                 <rect key="frame" x="16" y="70" width="288" height="481"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dat-VS-p9X" userLabel="Content view">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="528"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="522"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo de propuesta" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXs-nl-7i5">
                                                 <rect key="frame" x="16" y="49" width="256" height="16"/>
@@ -1421,7 +1421,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                 </connections>
                                             </webView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responde la pregunta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaX-Hu-M6e">
-                                                <rect key="frame" x="16" y="299" width="256" height="21"/>
+                                                <rect key="frame" x="16" y="293" width="256" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="r2y-BA-r0U"/>
                                                 </constraints>
@@ -1439,22 +1439,10 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHV-Ns-9j5">
-                                                <rect key="frame" x="16" y="236" width="256" height="36"/>
+                                                <rect key="frame" x="16" y="236" width="256" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-E3-oeu">
-                                                        <rect key="frame" x="89" y="0.0" width="78" height="36"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <state key="normal" image="botones_votacion-02.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <state key="selected" image="botones_votacion-05.png"/>
-                                                        <connections>
-                                                            <action selector="voteAction:" destination="zjF-77-pFb" eventType="touchUpInside" id="7xL-vY-Vys"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voP-bX-zv2">
-                                                        <rect key="frame" x="179" y="0.0" width="77" height="36"/>
+                                                        <rect key="frame" x="173" y="0.0" width="83" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <state key="normal" image="botones_votacion-03.png">
@@ -1466,7 +1454,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTR-Gi-2JX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="30"/>
                                                         <color key="backgroundColor" red="0.42352941176470588" green="0.85490196078431369" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <state key="normal" image="botones_votacion-01.png">
@@ -1477,25 +1465,37 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                             <action selector="voteAction:" destination="zjF-77-pFb" eventType="touchUpInside" id="57F-6x-5BS"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-E3-oeu">
+                                                        <rect key="frame" x="87" y="0.0" width="82" height="30"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" image="botones_votacion-02.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <state key="selected" image="botones_votacion-05.png"/>
+                                                        <connections>
+                                                            <action selector="voteAction:" destination="zjF-77-pFb" eventType="touchUpInside" id="7xL-vY-Vys"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="0UN-0h-ggY"/>
+                                                    <constraint firstAttribute="height" constant="30" id="0UN-0h-ggY"/>
                                                     <constraint firstItem="WTR-Gi-2JX" firstAttribute="top" secondItem="dHV-Ns-9j5" secondAttribute="top" id="1uT-wW-AME"/>
                                                     <constraint firstItem="WTR-Gi-2JX" firstAttribute="leading" secondItem="dHV-Ns-9j5" secondAttribute="leading" id="9jS-OO-1bY"/>
-                                                    <constraint firstItem="Szc-E3-oeu" firstAttribute="leading" secondItem="WTR-Gi-2JX" secondAttribute="trailing" constant="12" id="B2m-Kj-kyw"/>
+                                                    <constraint firstItem="Szc-E3-oeu" firstAttribute="leading" secondItem="WTR-Gi-2JX" secondAttribute="trailing" constant="4" id="B2m-Kj-kyw"/>
                                                     <constraint firstItem="Szc-E3-oeu" firstAttribute="top" secondItem="dHV-Ns-9j5" secondAttribute="top" id="H7O-rp-Z7w"/>
                                                     <constraint firstItem="WTR-Gi-2JX" firstAttribute="width" secondItem="Szc-E3-oeu" secondAttribute="width" id="Hwe-cO-EX2"/>
                                                     <constraint firstAttribute="bottom" secondItem="WTR-Gi-2JX" secondAttribute="bottom" id="YB7-gC-T9d"/>
                                                     <constraint firstItem="WTR-Gi-2JX" firstAttribute="width" secondItem="voP-bX-zv2" secondAttribute="width" id="dTo-6S-U2t"/>
                                                     <constraint firstAttribute="trailing" secondItem="voP-bX-zv2" secondAttribute="trailing" id="jyp-qr-HPE"/>
                                                     <constraint firstAttribute="bottom" secondItem="Szc-E3-oeu" secondAttribute="bottom" id="lTx-0x-rBJ"/>
-                                                    <constraint firstItem="voP-bX-zv2" firstAttribute="leading" secondItem="Szc-E3-oeu" secondAttribute="trailing" constant="12" id="ovB-qu-Lys"/>
+                                                    <constraint firstItem="voP-bX-zv2" firstAttribute="leading" secondItem="Szc-E3-oeu" secondAttribute="trailing" constant="4" id="ovB-qu-Lys"/>
                                                     <constraint firstAttribute="bottom" secondItem="voP-bX-zv2" secondAttribute="bottom" id="yjQ-eO-mKD"/>
                                                     <constraint firstItem="voP-bX-zv2" firstAttribute="top" secondItem="dHV-Ns-9j5" secondAttribute="top" id="zIV-QA-H6a"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 personas han votado como tu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-dD-Csd">
-                                                <rect key="frame" x="16" y="274" width="256" height="17"/>
+                                                <rect key="frame" x="16" y="268" width="256" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="Q9R-1a-Nzp"/>
                                                 </constraints>
@@ -1504,7 +1504,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otT-Wp-mqQ">
-                                                <rect key="frame" x="16" y="328" width="256" height="180"/>
+                                                <rect key="frame" x="16" y="322" width="256" height="180"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-va-joB" customClass="CPTGraphHostingView">
                                                         <rect key="frame" x="28" y="0.0" width="228" height="180"/>
@@ -1757,7 +1757,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArgumentCell" id="Pgx-fH-8dL" customClass="TestCellTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArgumentCell" id="Pgx-fH-8dL" customClass="TestCellTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pgx-fH-8dL" id="5lc-IT-j5k">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1873,27 +1873,27 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dkL-lz-Hda" secondAttribute="trailing" id="1YY-ij-1vp"/>
-                            <constraint firstItem="JJ2-7E-cxI" firstAttribute="top" secondItem="Lsa-xF-Wjg" secondAttribute="bottom" id="6BK-02-37r"/>
+                            <constraint firstItem="hKy-fM-gNh" firstAttribute="top" secondItem="QWW-lt-jzo" secondAttribute="top" constant="78" id="5nY-UH-J6B"/>
                             <constraint firstItem="0cO-Ai-k19" firstAttribute="leading" secondItem="QWW-lt-jzo" secondAttribute="leading" constant="40" id="7Ry-wq-pnE"/>
                             <constraint firstItem="hKy-fM-gNh" firstAttribute="leading" secondItem="QWW-lt-jzo" secondAttribute="leading" constant="16" id="CCf-jT-OB6"/>
                             <constraint firstAttribute="trailing" secondItem="hKy-fM-gNh" secondAttribute="trailing" constant="16" id="CcN-co-8YN"/>
-                            <constraint firstItem="JJ2-7E-cxI" firstAttribute="top" secondItem="hKy-fM-gNh" secondAttribute="bottom" constant="70" id="D5D-hy-UIj"/>
                             <constraint firstItem="Trk-Oe-BCx" firstAttribute="leading" secondItem="QWW-lt-jzo" secondAttribute="leading" constant="16" id="DcI-bb-F9D"/>
-                            <constraint firstItem="hKy-fM-gNh" firstAttribute="top" secondItem="Trk-Oe-BCx" secondAttribute="bottom" constant="16" id="NU3-RN-c9b"/>
                             <constraint firstAttribute="trailing" secondItem="Lsa-xF-Wjg" secondAttribute="trailing" id="REF-1Y-bev"/>
                             <constraint firstItem="JJ2-7E-cxI" firstAttribute="top" secondItem="dkL-lz-Hda" secondAttribute="bottom" id="VVH-Ci-2YN"/>
                             <constraint firstAttribute="trailing" secondItem="0cO-Ai-k19" secondAttribute="trailing" constant="40" id="Z6W-ib-OZc"/>
                             <constraint firstItem="Lsa-xF-Wjg" firstAttribute="leading" secondItem="QWW-lt-jzo" secondAttribute="leading" id="aYo-3X-NJd"/>
                             <constraint firstItem="dkL-lz-Hda" firstAttribute="top" secondItem="tiM-RO-Sxt" secondAttribute="bottom" id="bHJ-4a-LYF"/>
+                            <constraint firstAttribute="bottom" secondItem="hKy-fM-gNh" secondAttribute="bottom" constant="119" id="dhK-bq-Idl"/>
                             <constraint firstItem="Trk-Oe-BCx" firstAttribute="top" secondItem="tiM-RO-Sxt" secondAttribute="bottom" constant="12" id="el1-Eq-kUd"/>
                             <constraint firstItem="0cO-Ai-k19" firstAttribute="top" secondItem="tiM-RO-Sxt" secondAttribute="bottom" constant="16" id="tPP-eR-eoJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Lsa-xF-Wjg" secondAttribute="bottom" constant="49" id="xlc-W3-kZd"/>
                             <constraint firstItem="dkL-lz-Hda" firstAttribute="leading" secondItem="QWW-lt-jzo" secondAttribute="leading" id="xud-dt-JAx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Argumentos" image="tabs_propuestas_encendidos-08.png" id="hPt-HI-GtZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="bottomConstraint" destination="6BK-02-37r" id="hyu-Jd-sRk"/>
+                        <outlet property="bottomConstraint" destination="xlc-W3-kZd" id="Hvn-zK-Nsu"/>
                         <outlet property="commentTextField" destination="khb-qU-p7R" id="9tK-Bw-7Qo"/>
                         <outlet property="tableView" destination="hKy-fM-gNh" id="wmZ-yZ-PIS"/>
                     </connections>
