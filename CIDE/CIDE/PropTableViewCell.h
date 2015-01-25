@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *votacionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (copy, nonatomic) NSString *identifier;
 
 @end

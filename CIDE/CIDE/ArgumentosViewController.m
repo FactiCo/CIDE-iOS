@@ -33,6 +33,8 @@
     [self.view addGestureRecognizer:tap];
     
     [self.tableView setSeparatorColor:[UIColor greenColor]];
+    self.tableView.estimatedRowHeight = 70.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -180,10 +182,36 @@
     
     cell.nameLabel.font = [UIFont fontWithName:@"SourceSansPro-Bold" size:16.0];
     cell.explanationTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
-   // cell.textLabel.text = comment[@"from"][@"name"];
-    //cell.detailTextLabel.text = comment[@"message"];
+    cell.profileImageView.layer.cornerRadius = cell.profileImageView.bounds.size.width / 2.0;
+    cell.profileImageView.layer.masksToBounds = YES;
+    
+    [self setUserImageWithComment:comment cell:cell];
+    cell.identifier = comment[@"_id"];
     
     return cell;
+}
+
+- (void)setUserImageWithComment:(NSDictionary *)comment cell:(TestCellTableViewCell *)cell {
+    NSString *imageURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=square", comment[@"from"][@"fcbookid"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([cell.identifier isEqualToString:comment[@"_id"]]) {
+            cell.profileImageView.image = responseObject;
+        } else {
+            NSLog(@"cell different id");
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Image error: %@", error);
+    }];
+    [requestOperation start];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
 }
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {

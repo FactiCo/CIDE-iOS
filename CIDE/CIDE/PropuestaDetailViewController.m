@@ -9,6 +9,7 @@
 #import "PropuestaDetailViewController.h"
 #import <AFHTTPRequestOperationManager.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <QuartzCore/QuartzCore.h>
 #import "CorePlot-CocoaTouch.h"
 
 @interface PropuestaDetailViewController () <UINavigationControllerDelegate, CPTPieChartDataSource, UIWebViewDelegate>
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *propuestaLabel;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIImageView *userImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
@@ -103,6 +105,12 @@
     self.voteImages = @[[UIImage imageNamed:@"botones_votacion-01.png"], [UIImage imageNamed:@"botones_votacion-02.png"], [UIImage imageNamed:@"botones_votacion-03.png"]];
     
     self.voteImagesDisabled = @[[UIImage imageNamed:@"botones_votacion-04.png"], [UIImage imageNamed:@"botones_votacion-05.png"], [UIImage imageNamed:@"botones_votacion-06.png"]];
+    
+    self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.width / 2.0;
+    self.userImageView.layer.masksToBounds = YES;
+    if (self.userImage) {
+        self.userImageView.image = self.userImage;
+    }
 }
 
 - (void)setupHtml:(NSString *)html {
@@ -116,6 +124,10 @@
     [reWidth replaceMatchesInString:resultHtml options:0 range:NSMakeRange(0, [html length]) withTemplate:@"width=\"100%\""];
     
     [reHeight replaceMatchesInString:resultHtml options:0 range:NSMakeRange(0, [html length]) withTemplate:@"height=\"auto\""];
+    
+    NSRegularExpression *reYoutube = [[NSRegularExpression alloc] initWithPattern:@"<iframe src=\"//www" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    [reYoutube replaceMatchesInString:resultHtml options:0 range:NSMakeRange(0, [html length]) withTemplate:@"<iframe src=\"http://www"];
     
     [self.webView loadHTMLString:resultHtml baseURL:nil];
 }
@@ -219,7 +231,6 @@
     [self.graph reloadData];
     for (UIView *view in self.questionView.subviews) {
         view.hidden = YES;
-        
     }
     self.uselessView.hidden = NO;
     self.questionView.hidden = NO;

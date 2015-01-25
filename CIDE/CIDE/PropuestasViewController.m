@@ -20,6 +20,7 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *categories;
 @property (strong, nonatomic) NSDictionary *propuesta;
+@property (strong, nonatomic) UIImage *userImage;
 
 
 @end
@@ -58,16 +59,32 @@
 }
 
 - (void)getFacebookData {
-    FBSession *session = [[FBSession alloc] initWithPermissions:@[@"basic_info"]];
-    [FBSession setActiveSession:session];
     
-    if(session.isOpen) {
-        FBRequest *me = [FBRequest requestForMe];
-        [me startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> * user, NSError *error) {
-            if (!error) {
-                self.facebookId = user.objectID;
-                self.facebookName = user.name;
-            }
+    if (FBSession.activeSession.isOpen) {
+        
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection,
+           NSDictionary<FBGraphUser> *user,
+           NSError *error) {
+             if (!error) {
+                 self.facebookId = user.objectID;
+                 self.facebookName = user.name;
+             }
+         }];
+    } else if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        
+        // If there's one, just open the session silently, without showing the user the login UI
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:NO completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+            [[FBRequest requestForMe] startWithCompletionHandler:
+             ^(FBRequestConnection *connection,
+               NSDictionary<FBGraphUser> *user,
+               NSError *error) {
+                 if (!error) {
+                     self.facebookId = user.objectID;
+                     self.facebookName = user.name;
+                 }
+             }];
+            
         }];
     }
 }
@@ -134,9 +151,10 @@
 
 #pragma mark - Propuesta delegate
 
-- (void)propuestasCategoryController:(PropuestasCategoryViewController *)controller didSelectPropuesta:(NSDictionary *)propuesta
+- (void)propuestasCategoryController:(PropuestasCategoryViewController *)controller didSelectPropuesta:(NSDictionary *)propuesta withImage:(UIImage *)image
 {
     self.propuesta = propuesta;
+    self.userImage = image;
     [self performSegueWithIdentifier:@"PropuestaDetail" sender:self];
 }
 
@@ -146,6 +164,7 @@
         UITabBarController *tabController = segue.destinationViewController;
         PropuestaDetailViewController *controller = tabController.viewControllers[0];
         controller.propuesta = self.propuesta;
+        controller.userImage = self.userImage;
         controller.facebookDataSource = self;
         
         ArgumentosViewController *argumentosController = tabController.viewControllers[1];

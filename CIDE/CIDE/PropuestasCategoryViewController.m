@@ -8,6 +8,7 @@
 
 #import "PropuestasCategoryViewController.h"
 #import <AFHTTPRequestOperationManager.h>
+#import <QuartzCore/QuartzCore.h>
 #import "PropuestaDetailViewController.h"
 #import "ArgumentosViewController.h"
 #import "PropTableViewCell.h"
@@ -18,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) NSArray *imageData;
-@property (nonatomic, retain) NSDictionary *currentPropuesta;
 @property (strong, nonatomic) IBOutlet UIImageView *imageCategory;
 @property (weak, nonatomic) IBOutlet UILabel *noDataLabel;
 
@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.imageData = @[[UIImage imageNamed:@"iconos_categorias-02.png"], [UIImage imageNamed:@"iconos_categorias-03.png"], [UIImage imageNamed:@"iconos_categorias-04.png"], [UIImage imageNamed:@"iconos_categorias-05.png"], [UIImage imageNamed:@"iconos_categorias-06.png"],[UIImage imageNamed:@"iconos_categorias-07.png"]];
+    self.imageData = @[[UIImage imageNamed:@"iconos_categorias-02.png"], [UIImage imageNamed:@"iconos_categorias-03.png"], [UIImage imageNamed:@"iconos_categorias-04.png"], [UIImage imageNamed:@"iconos_categorias-05.png"], [UIImage imageNamed:@"iconos_categorias-06.png"], [UIImage imageNamed:@"iconos_categorias-07.png"]];
     
     self.imageCategory.image = [self.imageData objectAtIndex:self.pageIndex];
     
@@ -38,6 +38,11 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.hidden = YES;
     self.noDataLabel .hidden = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.view bringSubviewToFront:self.activityIndicator];
 }
 
 - (void)setCategory:(NSString *)category
@@ -51,21 +56,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"PropuestaDetail"]) {
-//        UITabBarController *tabController = segue.destinationViewController;
-//        PropuestaDetailViewController *controller = tabController.viewControllers[0];
-//        controller.propuesta = self.currentPropuesta;
-//        controller.facebookDataSource = self.facebookDataSource;
-//        
-//        ArgumentosViewController *argumentosController = tabController.viewControllers[1];
-//        argumentosController.propuesta = self.currentPropuesta;
-//        argumentosController.delegate = controller;
-//        argumentosController.facebookDataSource = self.facebookDataSource;
-//    }
-//}
 
 #pragma mark - data
 
@@ -109,12 +99,13 @@
     NSDictionary *data = self.propuestas[indexPath.row];
     cell.titleLabel.text = data[@"title"];
     cell.countLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self countVotes:data]];
+    cell.genderImage.layer.cornerRadius = cell.genderImage.bounds.size.width / 2.0;
+    cell.genderImage.layer.masksToBounds = YES;
     NSString *fcbookid = data[@"author"][@"fcbookid"];
-    if ([fcbookid isEqual:[NSNull null]]) {
-        cell.titleLabel.text = @"Moderador";
-    } else {
+    if (![fcbookid isEqual:[NSNull null]]) {
         [self setUserImageWithPropuesta:data cell:cell];
     }
+    cell.identifier = data[@"_id"];
     
     return cell;
 }
@@ -125,7 +116,11 @@
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        cell.genderImage.image = responseObject;
+        if ([cell.identifier isEqualToString:propuesta[@"_id"]]) {
+            cell.genderImage.image = responseObject;
+        } else {
+            NSLog(@"cell different id");
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Image error: %@", error);
@@ -143,9 +138,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.currentPropuesta = self.propuestas[indexPath.row];
-    [self.delegate propuestasCategoryController:self didSelectPropuesta:self.currentPropuesta];
-//    [self performSegueWithIdentifier:@"PropuestaDetail" sender:self];
+    PropTableViewCell *cell = (PropTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    NSDictionary *propuesta = self.propuestas[indexPath.row];
+    [self.delegate propuestasCategoryController:self didSelectPropuesta:propuesta withImage:cell.genderImage.image];
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
