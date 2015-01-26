@@ -104,7 +104,7 @@
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 //    CGFloat height = self.containerView.bounds.size.height;
     
-    self.bottomConstraint.constant = 0.0;
+    self.bottomConstraint.constant = self.tabBarController.tabBar.bounds.size.height;
     [self.view setNeedsUpdateConstraints];
     
     [UIView animateWithDuration:animationDuration animations:^{

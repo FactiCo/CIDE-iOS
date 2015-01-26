@@ -533,7 +533,7 @@ Gracias por participar.</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OIL-Wf-Gtc" kind="showDetail" id="iCl-aL-YoJ"/>
+                                    <segue destination="OIL-Wf-Gtc" kind="presentation" id="iCl-aL-YoJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Ub-nrG">
@@ -787,9 +787,9 @@ Gracias por participar.</string>
                             <constraint firstItem="ima-NU-8tK" firstAttribute="leading" secondItem="dZC-Qq-Jsq" secondAttribute="leading" id="BGZ-TB-UkK"/>
                             <constraint firstAttribute="trailing" secondItem="ima-NU-8tK" secondAttribute="trailing" id="Jur-k5-TpT"/>
                             <constraint firstAttribute="centerX" secondItem="dTn-UB-qG2" secondAttribute="centerX" id="NTk-vd-fMq"/>
-                            <constraint firstItem="dTn-UB-qG2" firstAttribute="top" secondItem="9SN-rq-Zao" secondAttribute="bottom" constant="71" id="afZ-MF-ynN"/>
+                            <constraint firstItem="R5A-NQ-mSr" firstAttribute="top" secondItem="dZC-Qq-Jsq" secondAttribute="top" constant="36" id="RxA-bE-NEL"/>
+                            <constraint firstItem="dTn-UB-qG2" firstAttribute="top" secondItem="dZC-Qq-Jsq" secondAttribute="top" constant="91" id="b3J-FW-6GH"/>
                             <constraint firstItem="R5A-NQ-mSr" firstAttribute="leading" secondItem="dZC-Qq-Jsq" secondAttribute="leading" constant="16" id="hix-TB-grm"/>
-                            <constraint firstItem="R5A-NQ-mSr" firstAttribute="top" secondItem="9SN-rq-Zao" secondAttribute="bottom" constant="16" id="iFG-Ma-PgS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sIj-S0-tb1"/>
@@ -1007,7 +1007,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                 </constraints>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TestCell" id="5ft-nA-aA3" customClass="TestCellTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TestCell" id="5ft-nA-aA3" customClass="TestCellTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ft-nA-aA3" id="8sS-cF-EqQ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1061,7 +1061,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4W-G3-6lC">
-                                <rect key="frame" x="3" y="30" width="80" height="25"/>
+                                <rect key="frame" x="8" y="30" width="80" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="T4C-WX-R1W"/>
                                     <constraint firstAttribute="width" constant="80" id="f7H-x3-F69"/>
@@ -1087,11 +1087,11 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0lz-nd-vZz" firstAttribute="top" secondItem="hTd-b9-tqK" secondAttribute="bottom" constant="20" id="5Fe-DI-7Ma"/>
+                            <constraint firstItem="s4W-G3-6lC" firstAttribute="leading" secondItem="kAW-t1-KIY" secondAttribute="leading" constant="8" id="73n-bP-sGI"/>
                             <constraint firstAttribute="trailing" secondItem="lB5-9S-MG5" secondAttribute="trailing" constant="40" id="7yt-xg-yJj"/>
                             <constraint firstAttribute="trailing" secondItem="ISz-BB-BAa" secondAttribute="trailing" id="Def-Cd-Fh3"/>
                             <constraint firstItem="ISz-BB-BAa" firstAttribute="top" secondItem="JdF-DB-1f6" secondAttribute="bottom" id="Nxq-rM-pyY"/>
                             <constraint firstItem="0lz-nd-vZz" firstAttribute="top" secondItem="ISz-BB-BAa" secondAttribute="bottom" id="X1H-UV-9Uu"/>
-                            <constraint firstItem="s4W-G3-6lC" firstAttribute="leading" secondItem="kAW-t1-KIY" secondAttribute="leadingMargin" constant="-13" id="aha-uo-hOt"/>
                             <constraint firstItem="hTd-b9-tqK" firstAttribute="top" secondItem="lB5-9S-MG5" secondAttribute="bottom" constant="28" id="ala-8K-Sat"/>
                             <constraint firstAttribute="trailing" secondItem="hTd-b9-tqK" secondAttribute="trailing" constant="16" id="cnE-CH-b4q"/>
                             <constraint firstItem="lB5-9S-MG5" firstAttribute="leading" secondItem="kAW-t1-KIY" secondAttribute="leading" constant="40" id="cy3-Tj-y8V"/>
@@ -1342,7 +1342,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpU-Jf-v27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2468" y="1728"/>
+            <point key="canvasLocation" x="-2506" y="1672"/>
         </scene>
         <!--Propuesta-->
         <scene sceneID="cB2-qx-bfd">
@@ -2238,7 +2238,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                         <outlet property="tableHeightConstraint" destination="9WZ-ob-kUg" id="en5-We-UBC"/>
                         <outlet property="tableView" destination="hAU-Rm-1rw" id="JXJ-Ya-kLU"/>
                         <segue destination="glh-Nx-GHG" kind="show" identifier="goToSeeTest" id="R5P-Vi-xP7"/>
-                        <segue destination="Auj-UF-FQC" kind="showDetail" identifier="goToInfo" id="uC4-Cx-t3O"/>
+                        <segue destination="Auj-UF-FQC" kind="presentation" identifier="goToInfo" id="uC4-Cx-t3O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZj-y1-ute" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2744,6 +2744,6 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
         <image name="tabs_propuestas_encendidos-08.png" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hug-uv-pIQ"/>
+        <segue reference="8BA-MD-tcV"/>
     </inferredMetricsTieBreakers>
 </document>

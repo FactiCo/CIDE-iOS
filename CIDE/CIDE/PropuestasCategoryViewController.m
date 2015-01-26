@@ -43,13 +43,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.view bringSubviewToFront:self.activityIndicator];
-}
-
-- (void)setCategory:(NSString *)category
-{
-    if (_category != category) {
-        _category = category;
-    }
+    self.propuestas = nil;
+    self.tableView.hidden = YES;
+    [self.activityIndicator startAnimating];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

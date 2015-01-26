@@ -39,8 +39,7 @@
 @property (strong, nonatomic) IBOutlet CPTGraphHostingView *chartView;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *voteButtons;
-@property (strong, nonatomic) NSArray *voteImages;
-@property (strong, nonatomic) NSArray *voteImagesDisabled;
+@property (strong, nonatomic) NSDictionary *voteImagesDisabled;
 @property (nonatomic) NSUInteger questionCount;
 @property (strong, nonatomic) IBOutlet UIView *voteView1;
 @property (strong, nonatomic) IBOutlet UIView *voteView2;
@@ -69,9 +68,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.voteImages = @[[UIImage imageNamed:@"botones_votacion-01.png"], [UIImage imageNamed:@"botones_votacion-02.png"], [UIImage imageNamed:@"botones_votacion-03.png"]];
-    
-    self.voteImagesDisabled = @[[UIImage imageNamed:@"botones_votacion-04.png"], [UIImage imageNamed:@"botones_votacion-05.png"], [UIImage imageNamed:@"botones_votacion-06.png"]];
+    self.voteImagesDisabled = @{@"favor": [UIImage imageNamed:@"botones_votacion-04.png"],
+                                @"abstencion": [UIImage imageNamed:@"botones_votacion-05.png"],
+                                @"contra": [UIImage imageNamed:@"botones_votacion-06.png"]};
     
     self.answerUIColors = @[[UIColor midGreen], [UIColor strongGreen], [UIColor lightGreen], [UIColor normalGreen]];
     self.answerColors = [NSMutableArray arrayWithCapacity:4];
@@ -145,39 +144,22 @@
 }
 
 - (void)setupVotes:(NSDictionary *)votes {
-    BOOL found = NO;
-    NSString *title = nil;
-    NSInteger count = 0;
+    NSString *key = nil;
     for (NSString *voteKey in [votes allKeys]) {
         NSDictionary *value = votes[voteKey];
         for (NSDictionary *participante in value[@"participantes"]) {
             if ([self.facebookDataSource.facebookId isEqualToString:participante[@"fcbookid"]]) {
-                found = YES;
-                title = voteKey;
-                self.answerIndex = count;
+                key = voteKey;
                 break;
             }
         }
-        if (found) {
+        if (key) {
             break;
         }
-        count++;
     }
-    if (found) {
-//        [self voteButtonsEnabled:NO];
-        NSInteger index = 0;
-        for (UIButton *button in @[self.voteButton1, self.voteButton2, self.voteButton3]) {
-            if (index != count) {
-                [button setImage:self.voteImagesDisabled[index] forState:UIControlStateNormal];
-            }
-            index++;
-        }
-//        [self.voteButton1 setImage:self.voteImagesDisabled[0] forState:UIControlStateNormal];
-//        [self.voteButton1 setImage:self.voteImagesDisabled[1] forState:UIControlStateNormal];
-//        [self.voteButton1 setImage:self.voteImagesDisabled[2] forState:UIControlStateNormal];
-//        UIButton *selected = @[self.voteButton1, self.voteButton2, self.voteButton3][count];
-//        [selected setImage:self.voteImages[count] forState:UIControlStateNormal];
-        [self updateVoteResult:title];
+    if (key) {
+        [self highlightVote:key];
+        [self updateVoteResult:key];
     } else {
         self.allowVote = YES;
     }
@@ -260,13 +242,13 @@
     NSString *url = @"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/votos";
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
     manager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
-    static NSString *values[] = {@"favor", @"abstinencia", @"contra"};
+    static NSString *values[] = {@"favor", @"abstencion", @"contra"};
     NSDictionary *params = @{@"proposalId": self.propuesta[@"_id"], @"fcbookid": self.facebookDataSource.facebookId, @"value": values[sender.tag]};
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject){
         NSLog(@"Success");
         [self updateVoteResult:values[sender.tag]];
         [self showAlertWithTitle:@"Gracias" message:@"Tu voto ha sido registrado"];
-        [self highlightVote:sender.tag];
+        [self highlightVote:values[sender.tag]];
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error %@", error);
         self.allowVote = YES;
@@ -295,7 +277,7 @@
 }
 
 - (void)updateVoteResult:(NSString *)key {
-    NSDictionary *dict = @{@"favor": @"a favor", @"abstinencia": @"abstinencia", @"contra": @"en contra"};
+    NSDictionary *dict = @{@"favor": @"a favor", @"abstencion": @"abstinencia", @"contra": @"en contra"};
     self.voteResultLabel.hidden = NO;
     NSUInteger count = [self.propuesta[@"votes"][key][@"participantes"] count] + 1;
     self.voteResultLabel.text = [NSString stringWithFormat:@"%lu personas han votado %@ como tú", (unsigned long)count, dict[key]];
@@ -343,11 +325,11 @@
     }
 }
 
-- (void)highlightVote:(NSInteger)index {
-    NSInteger i = 0;
-    for (UIButton *button in @[self.button1, self.button2, self.button3]) {
-        if (i != index) {
-            [button setImage:self.voteImagesDisabled[i] forState:UIControlStateNormal];
+- (void)highlightVote:(NSString *)key {
+    NSDictionary *voteValues = @{@"favor": self.voteButton1, @"abstencion": self.voteButton2, @"contra": self.voteButton3};
+    for (NSString *voteKey in [voteValues allKeys]) {
+        if (![key isEqualToString:voteKey]) {
+            [voteValues[voteKey] setImage:self.voteImagesDisabled[voteKey] forState:UIControlStateNormal];
         }
     }
 }

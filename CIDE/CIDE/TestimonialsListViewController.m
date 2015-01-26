@@ -81,7 +81,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewAutomaticDimension;
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+        return UITableViewAutomaticDimension;
+    }
+    TestCellTableViewCell *cell = (TestCellTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    CGSize size = [cell.explanationTextView sizeThatFits:cell.explanationTextView.bounds.size];
+    return size.height + 40;
 }
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
