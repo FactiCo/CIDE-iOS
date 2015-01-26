@@ -15,12 +15,17 @@
 
 @interface PropuestaDetailViewController () <UINavigationControllerDelegate, CPTPieChartDataSource, UIWebViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *propuestaLabel;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIImageView *userImageView;
+
+@property (strong, nonatomic) IBOutlet UIButton *voteButton1;
+@property (strong, nonatomic) IBOutlet UIButton *voteButton2;
+@property (strong, nonatomic) IBOutlet UIButton *voteButton3;
 
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
@@ -55,6 +60,7 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *questionHeightConstraint;
 
 @property (strong, nonatomic) NSArray *chartData;
+@property (nonatomic) BOOL allowVote;
 
 @end
 
@@ -62,6 +68,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.voteImages = @[[UIImage imageNamed:@"botones_votacion-01.png"], [UIImage imageNamed:@"botones_votacion-02.png"], [UIImage imageNamed:@"botones_votacion-03.png"]];
+    
+    self.voteImagesDisabled = @[[UIImage imageNamed:@"botones_votacion-04.png"], [UIImage imageNamed:@"botones_votacion-05.png"], [UIImage imageNamed:@"botones_votacion-06.png"]];
     
     self.answerUIColors = @[[UIColor midGreen], [UIColor strongGreen], [UIColor lightGreen], [UIColor normalGreen]];
     self.answerColors = [NSMutableArray arrayWithCapacity:4];
@@ -93,6 +103,9 @@
     [self.graph setLegendAnchor:CPTRectAnchorBottom];
     [self.graph setLegendDisplacement:CGPointMake(0.0, radius / 10.0)];
     
+    self.voteResultLabel.hidden = YES;
+    [self setupVotes:self.propuesta[@"votes"]];
+    
     self.button1.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.button2.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.button3.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -100,20 +113,16 @@
     self.propuestaLabel.text = self.propuesta[@"title"];
     NSString *html = self.propuesta[@"description"];
     [self setupHtml:html];
-    self.voteResultLabel.hidden = YES;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.contentView.bounds.size.height);
     
     self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:(80/255.0) green:(184/255.0) blue:(98/255.0) alpha:1];
-    
-    self.voteImages = @[[UIImage imageNamed:@"botones_votacion-01.png"], [UIImage imageNamed:@"botones_votacion-02.png"], [UIImage imageNamed:@"botones_votacion-03.png"]];
-    
-    self.voteImagesDisabled = @[[UIImage imageNamed:@"botones_votacion-04.png"], [UIImage imageNamed:@"botones_votacion-05.png"], [UIImage imageNamed:@"botones_votacion-06.png"]];
     
     self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.width / 2.0;
     self.userImageView.layer.masksToBounds = YES;
     if (self.userImage) {
         self.userImageView.image = self.userImage;
     }
+    self.authorLabel.text = self.propuesta[@"author"][@"name"];
 }
 
 - (void)setupHtml:(NSString *)html {
@@ -133,6 +142,45 @@
     [reYoutube replaceMatchesInString:resultHtml options:0 range:NSMakeRange(0, [html length]) withTemplate:@"<iframe src=\"http://www"];
     
     [self.webView loadHTMLString:resultHtml baseURL:nil];
+}
+
+- (void)setupVotes:(NSDictionary *)votes {
+    BOOL found = NO;
+    NSString *title = nil;
+    NSInteger count = 0;
+    for (NSString *voteKey in [votes allKeys]) {
+        NSDictionary *value = votes[voteKey];
+        for (NSDictionary *participante in value[@"participantes"]) {
+            if ([self.facebookDataSource.facebookId isEqualToString:participante[@"fcbookid"]]) {
+                found = YES;
+                title = voteKey;
+                self.answerIndex = count;
+                break;
+            }
+        }
+        if (found) {
+            break;
+        }
+        count++;
+    }
+    if (found) {
+//        [self voteButtonsEnabled:NO];
+        NSInteger index = 0;
+        for (UIButton *button in @[self.voteButton1, self.voteButton2, self.voteButton3]) {
+            if (index != count) {
+                [button setImage:self.voteImagesDisabled[index] forState:UIControlStateNormal];
+            }
+            index++;
+        }
+//        [self.voteButton1 setImage:self.voteImagesDisabled[0] forState:UIControlStateNormal];
+//        [self.voteButton1 setImage:self.voteImagesDisabled[1] forState:UIControlStateNormal];
+//        [self.voteButton1 setImage:self.voteImagesDisabled[2] forState:UIControlStateNormal];
+//        UIButton *selected = @[self.voteButton1, self.voteButton2, self.voteButton3][count];
+//        [selected setImage:self.voteImages[count] forState:UIControlStateNormal];
+        [self updateVoteResult:title];
+    } else {
+        self.allowVote = YES;
+    }
 }
 
 - (void)setupQuestion:(NSDictionary *)question {
@@ -184,10 +232,10 @@
                 break;
             }
         }
-        count++;
         if (found) {
             break;
         }
+        count++;
     }
     if (found) {
         [self updateAnswerResult:answers];
@@ -204,10 +252,10 @@
 }
 
 - (IBAction)voteAction:(UIButton *)sender {
-    if (!self.facebookDataSource.facebookId) {
+    if (!self.facebookDataSource.facebookId || !self.allowVote) {
         return;
     }
-    [self voteButtonsEnabled:NO];
+    self.allowVote = NO;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = @"http://justiciacotidiana.mx:8080/justiciacotidiana/api/v1/votos";
     manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
@@ -221,7 +269,7 @@
         [self highlightVote:sender.tag];
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error %@", error);
-        [self voteButtonsEnabled:YES];
+        self.allowVote = YES;
     }];
 }
 
@@ -247,7 +295,6 @@
 }
 
 - (void)updateVoteResult:(NSString *)key {
-//    [self voteButtonsEnabled:NO];
     NSDictionary *dict = @{@"favor": @"a favor", @"abstinencia": @"abstinencia", @"contra": @"en contra"};
     self.voteResultLabel.hidden = NO;
     NSUInteger count = [self.propuesta[@"votes"][key][@"participantes"] count] + 1;
@@ -297,8 +344,12 @@
 }
 
 - (void)highlightVote:(NSInteger)index {
-    NSArray *buttons = @[self.button1, self.button2, self.button3];
-    [buttons[index] setImage:self.voteImages[index] forState:UIControlStateDisabled];
+    NSInteger i = 0;
+    for (UIButton *button in @[self.button1, self.button2, self.button3]) {
+        if (i != index) {
+            [button setImage:self.voteImagesDisabled[i] forState:UIControlStateNormal];
+        }
+    }
 }
 
 - (void)argumentosControllerWillDismiss:(ArgumentosViewController *)controller

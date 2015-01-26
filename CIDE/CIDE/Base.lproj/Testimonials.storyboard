@@ -1704,6 +1704,7 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
+                        <outlet property="authorLabel" destination="GBa-Vy-eIk" id="8Te-ys-0lV"/>
                         <outlet property="button1" destination="6fb-nC-FgM" id="reZ-mV-5zz"/>
                         <outlet property="button2" destination="nAi-Eg-o59" id="vKY-ev-pNo"/>
                         <outlet property="button3" destination="qDG-3K-5go" id="OQR-bI-dIG"/>
@@ -1721,6 +1722,9 @@ Si encuentras algún contenido que no cumpla con estas características, por fav
                         <outlet property="scrollView" destination="Xij-Ln-pV6" id="och-IC-ND8"/>
                         <outlet property="uselessView" destination="Urc-tF-oEf" id="m1I-kv-Weh"/>
                         <outlet property="userImageView" destination="iR8-qt-RE4" id="iT4-gB-gvP"/>
+                        <outlet property="voteButton1" destination="WTR-Gi-2JX" id="Xyg-iN-nLs"/>
+                        <outlet property="voteButton2" destination="Szc-E3-oeu" id="aEI-PG-EC4"/>
+                        <outlet property="voteButton3" destination="voP-bX-zv2" id="ohH-c7-7MG"/>
                         <outlet property="voteResultLabel" destination="vX6-dD-Csd" id="YAm-LR-faa"/>
                         <outlet property="voteView1" destination="xvP-Ew-MEf" id="6BI-UI-wk9"/>
                         <outlet property="voteView2" destination="gkJ-X6-fW1" id="5HX-y8-pol"/>
