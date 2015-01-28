@@ -86,7 +86,7 @@
     
     [self setupQuestion:self.propuesta[@"question"]];
     
-    CGFloat radius = self.chartView.bounds.size.height / 2.0 - 20.0;
+    CGFloat radius = self.chartView.bounds.size.width / 3.0;
     CPTPieChart *pieChart = [[CPTPieChart alloc] init];
     pieChart.dataSource = self;
     pieChart.pieRadius = radius - 30.0;
@@ -97,7 +97,7 @@
     [self.graph addPlot:pieChart];
     
     CPTLegend *theLegend = [CPTLegend legendWithGraph:self.graph];
-    [theLegend setNumberOfColumns:2];
+    [theLegend setNumberOfColumns:1];
     [self.graph setLegend:theLegend];
     [self.graph setLegendAnchor:CPTRectAnchorBottom];
     [self.graph setLegendDisplacement:CGPointMake(0.0, radius / 10.0)];
@@ -285,6 +285,7 @@
 }
 
 - (void)updateAnswerResult:(NSArray *)data {
+    self.questionHeightConstraint.constant = 240.0;
     self.chartData = data;
     [self.graph reloadData];
     for (UIView *view in self.questionView.subviews) {
