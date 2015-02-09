@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImage *femeninoImage, *masculinoImage;
 @property (strong, nonatomic) IBOutlet UILabel *navigationTitle;
+@property (strong, nonatomic) NSArray *entityData;
 
 @end
 
@@ -30,7 +31,7 @@
     [self.tableView setSeparatorColor:[UIColor colorWithRed:(108/255.0) green:(218/255.0) blue:(132/255.0) alpha:1]];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.navigationTitle.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18.0];
-    
+    self.entityData = @[@"Aguascalientes", @"Baja California", @"Baja California Sur", @"Campeche", @"Chiapas", @"Chihuahua", @"Coahuila", @"Colima", @"Distrito Federal", @"Durango",@"Estado de México", @"Guanajuato", @"Guerrero", @"Hidalgo", @"Jalisco", @"Michoacán", @"Morelos", @"Nayarit", @"Nuevo León", @"Oaxaca", @"Puebla", @"Querétaro", @"Quintana Roo", @"San Luis Potosí", @"Sinaloa", @"Sonora", @"Tabasco", @"Tamaulipas", @"Tlaxcala", @"Veracruz", @"Yucatán", @"Zacatecas"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,6 +67,10 @@
     cell.explanationTextView.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0];
     
     cell.nameLabel.text = data[@"name"];
+    
+    cell.ageLabel.text = data[@"age"];
+    NSInteger state = [data[@"state"] integerValue] - 1;
+    cell.stateLabel.text = self.entityData[state];
     
     // TEST Size
     

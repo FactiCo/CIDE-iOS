@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *explanationTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (copy, nonatomic) NSString *identifier;
+@property (strong, nonatomic) IBOutlet UILabel *ageLabel;
+@property (strong, nonatomic) IBOutlet UILabel *stateLabel;
 
 @end
